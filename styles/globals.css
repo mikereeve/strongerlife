@@ -1,0 +1,141 @@
+/* =============================================================
+ * Global Styles — The Stronger Life
+ * 
+ * Uses Tailwind CSS with custom brand tokens defined in
+ * tailwind.config.js. Google Fonts are loaded in app/layout.tsx.
+ * ============================================================= */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Base Resets & Defaults --- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-brand-cream text-brand-charcoal font-body leading-relaxed;
+  }
+
+  /* Heading defaults — all headings use the serif display font */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-brand-navy leading-tight;
+  }
+
+  h1 { @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight; }
+  h2 { @apply text-3xl md:text-4xl lg:text-[2.75rem] font-bold tracking-tight; }
+  h3 { @apply text-2xl md:text-3xl font-medium; }
+  h4 { @apply text-xl md:text-2xl font-medium; }
+  h5 { @apply text-lg md:text-xl font-normal; }
+  h6 { @apply text-base md:text-lg font-normal; }
+
+  /* Links default to accessible gold-dark for WCAG AA on light backgrounds */
+  a {
+    @apply text-brand-gold-dark hover:text-brand-navy transition-colors duration-200;
+  }
+
+  /* Ensure images are responsive by default */
+  img {
+    @apply max-w-full h-auto;
+  }
+}
+
+/* --- Reusable Component Classes --- */
+@layer components {
+  /* Primary call-to-action button */
+  .btn-primary {
+    @apply inline-block px-8 py-3.5 bg-brand-gold text-white font-body font-semibold
+           rounded-md hover:brightness-90 transition-all duration-300
+           shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
+  }
+
+  /* Secondary / outline button */
+  .btn-secondary {
+    @apply inline-block px-8 py-3.5 border-2 border-brand-navy text-brand-navy
+           font-body font-semibold rounded-md hover:bg-brand-navy hover:text-white
+           transition-all duration-300;
+  }
+
+  /* Page section wrapper — centers content with consistent padding */
+  .section-wrapper {
+    @apply max-w-content mx-auto px-6 md:px-8 lg:px-12;
+  }
+
+  /* Full-width section with vertical padding */
+  .section-block {
+    @apply py-16 md:py-24;
+  }
+
+  /* Card component for services, testimonials, etc. */
+  .card {
+    @apply bg-white rounded-xl shadow-md p-6 md:p-8
+           hover:shadow-lg transition-shadow duration-300;
+  }
+
+  /* Subtle divider line */
+  .divider {
+    @apply w-20 h-1 bg-brand-gold mx-auto my-8 rounded-full;
+  }
+
+  /* Masonry layout using CSS columns */
+  .masonry-grid {
+    columns: 1;
+    column-gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .masonry-grid {
+      columns: 2;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .masonry-grid {
+      columns: 3;
+    }
+  }
+
+  .masonry-item {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Audio player range input — custom thumb styling */
+  .audio-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #C8913A;
+    cursor: pointer;
+    border: none;
+  }
+
+  .audio-range::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #C8913A;
+    cursor: pointer;
+    border: none;
+  }
+}
+
+/* --- Utility Overrides --- */
+@layer utilities {
+  /* Text gradient for decorative headings */
+  .text-gradient {
+    @apply bg-clip-text text-transparent 
+           bg-gradient-to-r from-brand-navy to-brand-sage;
+  }
+
+  /* Subtle background texture overlay */
+  .bg-texture {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231B2A4A' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+}
