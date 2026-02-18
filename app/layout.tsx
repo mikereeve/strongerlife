@@ -117,21 +117,6 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col">
-        {/* Hidden form for Netlify Forms bot detection.
-            Netlify's build bots scan static HTML for forms with
-            data-netlify="true" so it can set up form handling.
-            The actual form is rendered by ContactForm.tsx and
-            submits via JS fetch.
-            Configure email notifications to thestrongerlife@gmail.com
-            in Netlify Dashboard → Site settings → Forms → Notifications. */}
-        <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
-          <input type="text" name="name" />
-          <input type="email" name="email" />
-          <input type="tel" name="phone" />
-          <input type="text" name="service" />
-          <textarea name="message" />
-        </form>
-
         {/* Skip to main content link for accessibility */}
         <a
           href="#main-content"

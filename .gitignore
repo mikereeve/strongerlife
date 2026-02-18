@@ -77,3 +77,6 @@ website-images/
 *.bak
 *.tmp
 *.temp
+
+# Local Netlify folder
+.netlify
