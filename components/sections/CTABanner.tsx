@@ -1,32 +1,18 @@
 /* =============================================================
  * CTABanner Component — The Stronger Life
  *
- * Full-width call-to-action section. Now supports two modes:
- *   1. Link mode (default) — navigates to a page (e.g., /contact)
- *   2. Calendly mode — opens the Calendly popup overlay
- *
- * Set useCalendly={true} to enable the popup behavior.
- * The button text and appearance remain the same either way.
+ * Full-width call-to-action section with a link to the
+ * contact page.
  *
  * Props:
  *   heading       — Primary CTA heading
  *   subheading    — Supporting text
  *   buttonText    — CTA button label
- *   buttonHref    — Link target (used when useCalendly is false)
+ *   buttonHref    — Link target
  *   variant       — "navy" (dark bg) or "cream" (light bg)
- *   useCalendly   — If true, button opens Calendly popup
  * ============================================================= */
 
-"use client";
-
 import Link from "next/link";
-import dynamic from "next/dynamic";
-
-// Lazy-load CalendlyPopupButton — only fetched when useCalendly={true}
-const CalendlyPopupButton = dynamic(
-  () => import("@/components/ui/CalendlyPopupButton"),
-  { ssr: false }
-);
 
 interface CTABannerProps {
   heading?: string;
@@ -34,7 +20,6 @@ interface CTABannerProps {
   buttonText?: string;
   buttonHref?: string;
   variant?: "navy" | "cream";
-  useCalendly?: boolean;
 }
 
 export default function CTABanner({
@@ -43,11 +28,9 @@ export default function CTABanner({
   buttonText = "Book Your Free Consultation",
   buttonHref = "/contact",
   variant = "navy",
-  useCalendly = false,
 }: CTABannerProps) {
   const isNavy = variant === "navy";
 
-  // Shared button styling for both link and Calendly modes
   const buttonStyle = `inline-block px-10 py-4 rounded-md font-semibold text-lg
     transition-all duration-300 shadow-lg hover:shadow-xl
     transform hover:-translate-y-0.5 no-underline cursor-pointer
@@ -79,18 +62,9 @@ export default function CTABanner({
           {subheading}
         </p>
 
-        {/* Render either a Calendly popup trigger or a standard link */}
-        {useCalendly ? (
-          <CalendlyPopupButton
-            text={buttonText}
-            className={buttonStyle}
-            variant="primary"
-          />
-        ) : (
-          <Link href={buttonHref} className={buttonStyle}>
-            {buttonText}
-          </Link>
-        )}
+        <Link href={buttonHref} className={buttonStyle}>
+          {buttonText}
+        </Link>
       </div>
     </section>
   );

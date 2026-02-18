@@ -104,9 +104,11 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
-        ${isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-md py-3"
-          : "bg-transparent py-5"
+        ${isMobileMenuOpen
+          ? "bg-white shadow-md py-3"
+          : isScrolled
+            ? "bg-white/95 backdrop-blur-md shadow-md py-3"
+            : "bg-transparent py-5"
         }`}
       role="banner"
     >
@@ -119,7 +121,7 @@ export default function Header() {
         >
           {/* TODO: Add /public/images/logo.png and replace text with <Image> */}
           <span className={`font-heading text-xl md:text-2xl font-bold transition-colors
-                           ${isScrolled ? "text-brand-navy group-hover:text-brand-gold-dark" : "text-white group-hover:text-brand-gold"}`}>
+                           ${isScrolled || isMobileMenuOpen ? "text-brand-navy group-hover:text-brand-gold-dark" : "text-white group-hover:text-brand-gold"}`}>
             The Stronger Life
           </span>
         </Link>
@@ -165,22 +167,22 @@ export default function Header() {
           <div className="flex flex-col gap-1.5">
             <span
               className={`block w-6 h-0.5 transition-all duration-300
-                ${isScrolled ? "bg-brand-navy" : "bg-white"}
+                ${isScrolled || isMobileMenuOpen ? "bg-brand-navy" : "bg-white"}
                 ${isMobileMenuOpen ? "rotate-45 translate-y-2" : ""}`}
             />
             <span
               className={`block w-6 h-0.5 transition-all duration-300
-                ${isScrolled ? "bg-brand-navy" : "bg-white"}
+                ${isScrolled || isMobileMenuOpen ? "bg-brand-navy" : "bg-white"}
                 ${isMobileMenuOpen ? "opacity-0" : ""}`}
             />
             <span
               className={`block w-6 h-0.5 transition-all duration-300
-                ${isScrolled ? "bg-brand-navy" : "bg-white"}
+                ${isScrolled || isMobileMenuOpen ? "bg-brand-navy" : "bg-white"}
                 ${isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}
             />
           </div>
           <span className={`text-sm font-medium transition-colors
-            ${isScrolled ? "text-brand-navy" : "text-white"}`}>
+            ${isScrolled || isMobileMenuOpen ? "text-brand-navy" : "text-white"}`}>
             {isMobileMenuOpen ? "Close" : "Menu"}
           </span>
         </button>

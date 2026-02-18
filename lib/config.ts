@@ -30,18 +30,6 @@ export const siteConfig = {
     linkedin: "https://www.linkedin.com/in/mattreeve02",
   },
 
-  /* --- Calendly Scheduling ---
-   * URL for the free consultation event type.
-   * Create this at https://calendly.com → Event Types.
-   * The env var override allows different URLs per environment.
-   */
-  calendly: {
-    url:
-      process.env.NEXT_PUBLIC_CALENDLY_URL ||
-      "https://calendly.com/thestrongerlife/free-consultation",
-    eventName: "Free 30-Minute Consultation",
-  },
-
   /* --- SEO Defaults ---
    * These are used as fallbacks when individual pages
    * don't specify their own metadata.
@@ -76,9 +64,9 @@ export const siteConfig = {
  * and reference it as "/audio/filename.mp3".
  */
 export const featuredMedia = {
-  url: "/audio/somebody-knew.mp3", // Replace with actual source URL
+  url: "/audio/SomebodyKnew.mp3",
   title: "Somebody Knew",
-  subtitle: "Matt Reeve",
+  subtitle: "Lyrics by Matt Reeve",
   description:
     "A personal song about the journey of love and the One who knew your story before it began.",
 } as const;

@@ -70,6 +70,9 @@ coverage/
 *.sqlite3
 *.db
 
+# Temporary images (low-res extracted from original site, pending high-res replacements)
+website-images/
+
 # Miscellaneous
 *.bak
 *.tmp

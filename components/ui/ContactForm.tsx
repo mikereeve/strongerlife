@@ -4,25 +4,22 @@
  * Client-side contact form with:
  * - Input validation and error states
  * - Service type selection (maps to offerings)
- * - Submission via Formspree (or any API endpoint)
+ * - Submission via Netlify Forms
  * - Success/error state handling
  * - Accessible labels and error messages
  * - Honeypot spam protection
  *
- * Integration Note:
- *   Replace the FORMSPREE_ENDPOINT constant with your actual
- *   Formspree form ID or any other form handling service
- *   (e.g., EmailJS, Netlify Forms, custom API route).
+ * Netlify Forms Integration:
+ *   Netlify detects the hidden static form in app/layout.tsx
+ *   and processes submissions automatically. Configure email
+ *   notifications to thestrongerlife@gmail.com in Netlify
+ *   Dashboard → Site settings → Forms → Notifications.
  * ============================================================= */
 
 "use client";
 
 import { useState, useRef, FormEvent } from "react";
 import { siteConfig } from "@/lib/config";
-
-// Submit through our own API route for server-side validation & rate limiting.
-// The Formspree endpoint is now server-side only (FORMSPREE_ENDPOINT in .env.local).
-const CONTACT_API = "/api/contact";
 
 // Available services for the dropdown — matches site offerings
 const SERVICE_OPTIONS = [
@@ -56,6 +53,13 @@ interface FieldErrors {
   email?: string;
   phone?: string;
   message?: string;
+}
+
+/** Encode form data as URL-encoded string for Netlify Forms */
+function encode(data: Record<string, string>) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
 }
 
 export default function ContactForm() {
@@ -135,12 +139,6 @@ export default function ContactForm() {
     // Honeypot check — if filled, it's a bot
     if (honeypot) return;
 
-    // Guard: API route must exist (always true unless misconfigured)
-    if (!CONTACT_API) {
-      setStatus("error");
-      return;
-    }
-
     // Client-side rate limiting
     const now = Date.now();
     if (now - lastSubmitRef.current < SUBMIT_COOLDOWN_MS) {
@@ -159,10 +157,11 @@ export default function ContactForm() {
     lastSubmitRef.current = now;
 
     try {
-      const response = await fetch(CONTACT_API, {
+      const response = await fetch("/", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": "contact",
           name: formData.name.trim(),
           email: formData.email.trim(),
           phone: formData.phone.trim(),
@@ -214,11 +213,11 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
       {/* Honeypot field — hidden from real users, traps bots */}
       <div className="absolute -left-[9999px]" aria-hidden="true">
-        <label htmlFor="_gotcha">Do not fill this out</label>
+        <label htmlFor="bot-field">Do not fill this out</label>
         <input
           type="text"
-          id="_gotcha"
-          name="_gotcha"
+          id="bot-field"
+          name="bot-field"
           value={honeypot}
           onChange={(e) => setHoneypot(e.target.value)}
           tabIndex={-1}

@@ -7,11 +7,14 @@
  * ============================================================= */
 
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { Playfair_Display, Source_Sans_3 } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { siteConfig, generateLocalBusinessSchema } from "@/lib/config";
 import "@/styles/globals.css";
+
+const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 /* --- Font Loading ---
  * Next.js automatically optimizes these Google Fonts:
@@ -106,7 +109,6 @@ export default function RootLayout({
       <head>
         {/* Preconnect to external domains for faster resource loading */}
         <link rel="preconnect" href="https://cdn.sanity.io" />
-        <link rel="preconnect" href="https://assets.calendly.com" />
 
         {/* JSON-LD Structured Data — helps Google understand the business */}
         <script
@@ -115,6 +117,21 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col">
+        {/* Hidden form for Netlify Forms bot detection.
+            Netlify's build bots scan static HTML for forms with
+            data-netlify="true" so it can set up form handling.
+            The actual form is rendered by ContactForm.tsx and
+            submits via JS fetch.
+            Configure email notifications to thestrongerlife@gmail.com
+            in Netlify Dashboard → Site settings → Forms → Notifications. */}
+        <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+          <input type="text" name="name" />
+          <input type="email" name="email" />
+          <input type="tel" name="phone" />
+          <input type="text" name="service" />
+          <textarea name="message" />
+        </form>
+
         {/* Skip to main content link for accessibility */}
         <a
           href="#main-content"
@@ -131,6 +148,24 @@ export default function RootLayout({
         </main>
 
         <Footer />
+
+        {/* Google Analytics — only loads when Measurement ID is configured */}
+        {GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_ID}');
+              `}
+            </Script>
+          </>
+        )}
       </body>
     </html>
   );

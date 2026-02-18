@@ -93,11 +93,22 @@ export default function AudioPlayer({ url, title, subtitle }: AudioPlayerProps) 
   const handleTimeUpdate = useCallback(() => {
     if (audioRef.current) {
       setCurrentTime(audioRef.current.currentTime);
+      // Some MP3s don't report duration via loadedmetadata/durationchange,
+      // but it becomes available once playback starts.
+      if (audioRef.current.duration && isFinite(audioRef.current.duration)) {
+        setDuration((prev) => prev || audioRef.current!.duration);
+      }
     }
   }, []);
 
   const handleLoadedMetadata = useCallback(() => {
-    if (audioRef.current) {
+    if (audioRef.current && isFinite(audioRef.current.duration)) {
+      setDuration(audioRef.current.duration);
+    }
+  }, []);
+
+  const handleDurationChange = useCallback(() => {
+    if (audioRef.current && isFinite(audioRef.current.duration)) {
       setDuration(audioRef.current.duration);
     }
   }, []);
@@ -243,11 +254,12 @@ export default function AudioPlayer({ url, title, subtitle }: AudioPlayerProps) 
           <audio
             ref={audioRef}
             src={url}
-            preload="metadata"
+            preload="auto"
             onEnded={handleEnded}
             onError={handleError}
             onTimeUpdate={handleTimeUpdate}
             onLoadedMetadata={handleLoadedMetadata}
+            onDurationChange={handleDurationChange}
           />
         </div>
       </div>

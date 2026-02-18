@@ -1,18 +1,11 @@
 /* =============================================================
  * Contact / Book Me Page — The Stronger Life
  *
- * Two-part contact experience:
- *   1. Contact form for general inquiries (left/top)
- *   2. Calendly inline embed for direct scheduling (right/bottom)
- *
- * The page uses a tabbed approach on mobile and a side-by-side
- * layout on desktop so visitors can choose their preferred
- * method of reaching out.
+ * Contact experience with form and contact details.
  * ============================================================= */
 
 import type { Metadata } from "next";
 import ContactForm from "@/components/ui/ContactForm";
-import CalendlyEmbed from "@/components/ui/CalendlyEmbed";
 import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
@@ -34,31 +27,9 @@ export default function ContactPage() {
             Let&apos;s Connect
           </h1>
           <p className="text-white/70 text-lg max-w-2xl mx-auto leading-relaxed">
-            Ready to take the next step? Schedule a free consultation
-            directly, or send a message and I&apos;ll get back to you
-            within 24 hours.
+            Ready to take the next step? Send a message and I&apos;ll
+            get back to you within 24 hours.
           </p>
-        </div>
-      </section>
-
-      {/* ========== CALENDLY SCHEDULING SECTION ========== */}
-      <section className="section-block bg-white">
-        <div className="section-wrapper">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-heading font-bold text-brand-navy mb-3">
-              Schedule Your Free Consultation
-            </h2>
-            <p className="text-brand-stone max-w-xl mx-auto leading-relaxed">
-              Pick a time that works for you. This is a free, no-pressure
-              30-minute conversation — either by video or in person — so
-              we can get to know each other and see if we&apos;re a great fit.
-            </p>
-          </div>
-
-          {/* Calendly inline widget — renders the full scheduling calendar */}
-          <div className="max-w-3xl mx-auto">
-            <CalendlyEmbed height={680} />
-          </div>
         </div>
       </section>
 
@@ -132,8 +103,8 @@ export default function ContactPage() {
                     <div className="flex gap-3">
                       <span className="text-brand-gold-dark font-bold shrink-0">1.</span>
                       <p>
-                        <strong className="text-brand-navy">Schedule</strong> —
-                        Pick a time above or send a message.
+                        <strong className="text-brand-navy">Reach Out</strong> —
+                        Send a message using the form.
                       </p>
                     </div>
                     <div className="flex gap-3">

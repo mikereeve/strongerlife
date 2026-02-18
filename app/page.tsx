@@ -14,6 +14,7 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ServiceCard from "@/components/ui/ServiceCard";
 import TestimonialCard from "@/components/ui/TestimonialCard";
@@ -109,10 +110,15 @@ export default function HomePage() {
             {/* Photo column */}
             <div className="relative">
               <div className="aspect-[4/5] rounded-2xl bg-brand-navy/10 overflow-hidden">
-                {/* TODO: Add /public/images/matt-reeve.jpg and replace this placeholder */}
-                <div className="w-full h-full flex items-center justify-center text-brand-stone">
-                  <p className="text-sm">Photo placeholder</p>
-                </div>
+                <Image
+                  src="/images/matt-profile.jpg"
+                  alt="Matt Reeve — Premarital Counselor, Marriage Coach & Wedding Officiant"
+                  width={1044}
+                  height={1200}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  className="w-full h-full object-cover"
+                  priority={false}
+                />
               </div>
 
               {/* Floating credential badge */}

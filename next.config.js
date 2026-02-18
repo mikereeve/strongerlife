@@ -106,12 +106,12 @@ const nextConfig = {
           {
             // Permissions-Policy — disable every browser API this site doesn't use.
             // Only autoplay/fullscreen/encrypted-media/pip/clipboard-write are
-            // kept for self + trusted embed origins (Spotify, YouTube, Calendly).
+            // kept for self + trusted embed origins (Spotify, YouTube).
             key: "Permissions-Policy",
             value: [
               // Kept for AudioPlayer + Spotify embeds
               'autoplay=(self "https://open.spotify.com")',
-              'fullscreen=(self "https://calendly.com" "https://open.spotify.com" "https://www.youtube.com" "https://www.youtube-nocookie.com" "https://player.vimeo.com")',
+              'fullscreen=(self "https://open.spotify.com" "https://www.youtube.com" "https://www.youtube-nocookie.com" "https://player.vimeo.com")',
               'encrypted-media=(self "https://open.spotify.com")',
               'picture-in-picture=(self "https://www.youtube.com" "https://www.youtube-nocookie.com" "https://player.vimeo.com" "https://open.spotify.com")',
               'clipboard-write=(self "https://open.spotify.com")',
@@ -152,19 +152,16 @@ const nextConfig = {
             value: [
               "default-src 'self'",
               // unsafe-eval only in dev (Next.js HMR); production builds exclude it
-              `script-src 'self' 'unsafe-inline'${process.env.NODE_ENV === "development" ? " 'unsafe-eval'" : ""} https://assets.calendly.com`,
-              "style-src 'self' 'unsafe-inline' https://assets.calendly.com",
+              `script-src 'self' 'unsafe-inline'${process.env.NODE_ENV === "development" ? " 'unsafe-eval'" : ""} https://www.googletagmanager.com`,
+              "style-src 'self' 'unsafe-inline'",
               // Restrict images to known domains instead of blanket https:
-              "img-src 'self' https://cdn.sanity.io https://www.thestrongerlife.org data:",
+              "img-src 'self' https://cdn.sanity.io https://www.thestrongerlife.org https://www.google-analytics.com data:",
               "font-src 'self' data:",
-              // Formspree removed — form now proxied through our /api/contact route
-              "connect-src 'self' https://cdn.sanity.io https://api.sanity.io https://assets.calendly.com",
-              // Added open.spotify.com for Spotify embeds
-              "frame-src https://calendly.com https://open.spotify.com https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com https://w.soundcloud.com",
+              "connect-src 'self' https://cdn.sanity.io https://api.sanity.io https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com",
+              "frame-src https://open.spotify.com https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com https://w.soundcloud.com",
               "media-src 'self' blob:",
               "object-src 'none'",
               "base-uri 'self'",
-              // Formspree removed — submissions go to our own API
               "form-action 'self'",
               // Prevent this site from being framed (belt + suspenders with X-Frame-Options)
               "frame-ancestors 'none'",
