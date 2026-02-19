@@ -12,7 +12,7 @@ export const siteConfig = {
   tagline: "Strengthening Marriages Before They Begin",
   description:
     "Christian premarital counseling, marriage coaching, and wedding officiant services helping couples grow stronger together — personally and relationally.",
-  url: "https://www.thestrongerlife.org",
+  url: "https://thestrongerlife.org",
   locale: "en_US",
 
   /* --- Contact Information --- */
