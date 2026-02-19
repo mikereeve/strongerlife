@@ -50,7 +50,7 @@ export default function AboutPage() {
             {/* Photo */}
             <div className="aspect-[3/4] rounded-2xl bg-brand-navy/10 overflow-hidden lg:sticky lg:top-32">
               <Image
-                src="/images/matt-jami-36.jpg"
+                src="/images/matt-jami.jpeg"
                 alt="Matt and Jami Reeve"
                 width={900}
                 height={1200}
