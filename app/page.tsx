@@ -23,11 +23,12 @@ import AudioPlayer from "@/components/ui/AudioPlayer";
 import { siteConfig, services, featuredTestimonials, featuredMedia } from "@/lib/config";
 
 /* --- Page Metadata ---
- * Overrides the default metadata from root layout
- * for this specific page. Title uses the template from layout.
+ * Overrides the default metadata from root layout.
+ * Uses title.absolute to bypass the layout's title template
+ * and prevent the brand name from being appended twice.
  */
 export const metadata: Metadata = {
-  title: siteConfig.seo.defaultTitle,
+  title: { absolute: siteConfig.seo.defaultTitle },
   description: siteConfig.description,
   alternates: {
     canonical: siteConfig.url,
