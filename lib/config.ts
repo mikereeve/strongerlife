@@ -18,7 +18,7 @@ export const siteConfig = {
   /* --- Contact Information --- */
   contact: {
     email: "matt@thestrongerlife.org",
-    phone: "", // Add phone number when available
+    phone: "(952) 393-8826",
     location: "St. Cloud, Minnesota",
   },
 

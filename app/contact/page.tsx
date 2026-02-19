@@ -72,7 +72,7 @@ export default function ContactPage() {
                 {siteConfig.contact.phone && (
                   <div>
                     <h3 className="text-sm font-medium text-brand-stone uppercase tracking-wide mb-2">
-                      Phone
+                      Call or Text
                     </h3>
                     <a href={`tel:${siteConfig.contact.phone}`}
                        className="text-brand-gold-dark hover:text-brand-navy transition-colors text-lg">

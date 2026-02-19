@@ -6,6 +6,7 @@
  * ============================================================= */
 
 import type { Metadata } from "next";
+import Image from "next/image";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CTABanner from "@/components/sections/CTABanner";
 import { siteConfig, generatePersonSchema } from "@/lib/config";
@@ -48,10 +49,15 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Photo */}
             <div className="aspect-[3/4] rounded-2xl bg-brand-navy/10 overflow-hidden lg:sticky lg:top-32">
-              {/* TODO: Add /public/images/matt-reeve-about.jpg and replace this placeholder */}
-              <div className="w-full h-full flex items-center justify-center text-brand-stone">
-                <p className="text-sm">Photo placeholder</p>
-              </div>
+              <Image
+                src="/images/matt-jami-36.jpg"
+                alt="Matt and Jami Reeve"
+                width={900}
+                height={1200}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 500px"
+                className="w-full h-full object-cover"
+                priority
+              />
             </div>
 
             {/* Bio content */}
