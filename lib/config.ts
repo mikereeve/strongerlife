@@ -17,7 +17,7 @@ export const siteConfig = {
 
   /* --- Contact Information --- */
   contact: {
-    email: "matt@thestrongerlife.org",
+    email: "thestrongerlife@gmail.com",
     phone: "(952) 393-8826",
     location: "St. Cloud, Minnesota",
   },
@@ -728,8 +728,8 @@ export const serviceFAQs = {
       answer: "The Custom Ceremony ($750) includes a face-to-face planning session, fully customized script, unlimited revisions, rehearsal coordination, early arrival and vendor coordination on the wedding day, professional officiation, and legal certificate filing. The Personalized Ceremony ($600) includes a phone consultation, professionally written ceremony, and legal filing. The Simple & Intimate ($500) is a 15-minute ceremony to legalize your union with legal filing included.",
     },
     {
-      question: "Do you perform non-religious or interfaith ceremonies?",
-      answer: "Yes. While Matt's background is in Christian ministry, he works with couples of all backgrounds and beliefs. He'll craft a ceremony that authentically reflects your values, faith tradition, or personal philosophy — whether that's deeply religious, spiritual, interfaith, or secular.",
+      question: "Do you perform non-religious ceremonies?",
+      answer: "Yes. While Matt's background is in Christian ministry, he works with couples of all backgrounds and beliefs. He'll craft a ceremony that authentically reflects your values, faith tradition, or personal philosophy — whether that's deeply religious, spiritual, or secular.",
     },
   ],
   marriageCoaching: [
