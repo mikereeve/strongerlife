@@ -10,20 +10,30 @@ import Link from "next/link";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ServiceCard from "@/components/ui/ServiceCard";
 import CTABanner from "@/components/sections/CTABanner";
-import { siteConfig, services, pricing } from "@/lib/config";
+import { siteConfig, services, pricing, generateBreadcrumbSchema } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "Services & Pricing",
+  title: "Services & Pricing — Premarital Counseling, Officiant & Coaching",
   description:
-    "Explore premarital counseling, wedding officiant, and marriage coaching services and pricing from The Stronger Life. Transparent pricing, no hidden fees.",
+    "Transparent pricing for premarital counseling ($400–$600), wedding officiant ($500–$750), and marriage coaching ($150/session) in St. Cloud, MN. Free first consultation.",
   alternates: {
     canonical: `${siteConfig.url}/services`,
   },
 };
 
 export default function ServicesPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: siteConfig.url },
+    { name: "Services & Pricing", url: `${siteConfig.url}/services` },
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       {/* ========== PAGE HERO ========== */}
       <section className="bg-brand-navy py-32 md:py-40">
         <div className="section-wrapper text-center">

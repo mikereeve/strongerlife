@@ -21,7 +21,7 @@ import { allPostsQuery } from "@/lib/sanity/queries";
 import { assertSanityConfig } from "@/lib/sanity/env";
 import type { PostListItem } from "@/lib/sanity/types";
 import BlogSearch from "@/components/ui/BlogSearch";
-import { siteConfig } from "@/lib/config";
+import { siteConfig, generateBreadcrumbSchema } from "@/lib/config";
 
 /* --- Page Metadata --- */
 export const metadata: Metadata = {
@@ -60,9 +60,18 @@ async function getPosts(): Promise<PostListItem[]> {
 
 export default async function BlogPage() {
   const posts = await getPosts();
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: siteConfig.url },
+    { name: "Blog", url: `${siteConfig.url}/blog` },
+  ]);
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       {/* ========== PAGE HERO ========== */}
       <section className="bg-brand-navy py-32 md:py-40">
         <div className="section-wrapper text-center">

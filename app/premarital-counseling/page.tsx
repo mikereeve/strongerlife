@@ -14,25 +14,32 @@ import Link from "next/link";
 import SectionHeading from "@/components/ui/SectionHeading";
 import TestimonialCard from "@/components/ui/TestimonialCard";
 import CTABanner from "@/components/sections/CTABanner";
-import { siteConfig, generateServiceSchema, featuredTestimonials, pricing } from "@/lib/config";
+import { siteConfig, generateServiceSchema, generateFAQSchema, generateBreadcrumbSchema, featuredTestimonials, pricing, serviceFAQs } from "@/lib/config";
 
 /* --- Page-Specific SEO Metadata --- */
 export const metadata: Metadata = {
-  title: "Christian Premarital Counseling",
+  title: "Christian Premarital Counseling in St. Cloud, MN",
   description:
-    "Personalized Christian premarital counseling to build a strong foundation for your marriage. Comprehensive sessions covering communication, conflict resolution, finances, and more.",
+    "Prepare/Enrich certified premarital counseling in St. Cloud, Minnesota. 5–6 personalized sessions covering communication, finances, and conflict resolution. In-person or virtual. Book a free consultation.",
   alternates: {
     canonical: `${siteConfig.url}/premarital-counseling`,
   },
   openGraph: {
-    title: "Christian Premarital Counseling | The Stronger Life",
+    title: "Christian Premarital Counseling in St. Cloud, MN | The Stronger Life",
     description:
-      "Comprehensive premarital counseling to ensure you have everything you need for a lasting, thriving marriage.",
+      "Prepare/Enrich certified premarital counseling helping couples build a strong foundation for a lasting, thriving marriage.",
     url: `${siteConfig.url}/premarital-counseling`,
   },
 };
 
 export default function PremaritalCounselingPage() {
+  const faqSchema = generateFAQSchema([...serviceFAQs.premaritalCounseling]);
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: siteConfig.url },
+    { name: "Services", url: `${siteConfig.url}/services` },
+    { name: "Premarital Counseling", url: `${siteConfig.url}/premarital-counseling` },
+  ]);
+
   // Generate service-specific structured data
   const serviceSchema = generateServiceSchema(
     "Christian Premarital Counseling",
@@ -46,10 +53,18 @@ export default function PremaritalCounselingPage() {
 
   return (
     <>
-      {/* Inject Service schema for this page */}
+      {/* Inject structured data schemas */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* ========== PAGE HERO ========== */}
@@ -194,6 +209,58 @@ export default function PremaritalCounselingPage() {
       <section className="section-block bg-white">
         <div className="section-wrapper max-w-2xl">
           <TestimonialCard {...featuredTestimonials[0]} />
+        </div>
+      </section>
+
+      {/* ========== FAQ SECTION ========== */}
+      <section className="section-block bg-brand-cream bg-texture">
+        <div className="section-wrapper max-w-narrow">
+          <SectionHeading
+            title="Frequently Asked Questions"
+            subtitle="Common questions about premarital counseling with The Stronger Life."
+            tag="h2"
+          />
+
+          <div className="mt-10 space-y-6">
+            {serviceFAQs.premaritalCounseling.map((faq, index) => (
+              <div key={index} className="card bg-white">
+                <h3 className="text-lg font-heading font-semibold text-brand-navy mb-3">
+                  {faq.question}
+                </h3>
+                <p className="text-brand-charcoal leading-relaxed text-sm">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ========== CROSS-LINKS ========== */}
+      <section className="section-block bg-white">
+        <div className="section-wrapper max-w-narrow">
+          <SectionHeading
+            title="Explore More Services"
+            tag="h2"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+            <Link href="/wedding-officiant" className="card hover:shadow-md transition-shadow no-underline group">
+              <h3 className="text-lg font-heading font-semibold text-brand-navy mb-2 group-hover:text-brand-gold-dark transition-colors">
+                Wedding Officiant Services
+              </h3>
+              <p className="text-brand-stone text-sm leading-relaxed">
+                Many couples bundle premarital counseling with officiant services and save $200. Let Matt craft a ceremony as unique as your love story.
+              </p>
+            </Link>
+            <Link href="/marriage-coaching" className="card hover:shadow-md transition-shadow no-underline group">
+              <h3 className="text-lg font-heading font-semibold text-brand-navy mb-2 group-hover:text-brand-gold-dark transition-colors">
+                Marriage Coaching
+              </h3>
+              <p className="text-brand-stone text-sm leading-relaxed">
+                Already married? Ongoing coaching helps you strengthen communication, navigate challenges, and grow together at every stage.
+              </p>
+            </Link>
+          </div>
         </div>
       </section>
 

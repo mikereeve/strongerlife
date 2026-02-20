@@ -6,7 +6,11 @@
  * dependencies — uses native <dialog> element.
  *
  * Props:
- *   photos — Array of { src, alt, label } objects
+ *   photos — Array of { src, alt, label, width, height } objects.
+ *            Width/height are source pixel dimensions used by
+ *            Next.js Image to compute aspect ratio and prevent
+ *            layout shift. The masonry grid displays images at
+ *            their natural aspect ratio via h-auto.
  * ============================================================= */
 
 "use client";
@@ -18,11 +22,22 @@ interface Photo {
   src: string;
   alt: string;
   label: string;
+  width: number;
+  height: number;
 }
 
 interface PhotoGalleryProps {
   photos: Photo[];
 }
+
+/* Scale source dimensions to a target width, preserving aspect ratio */
+function scaledSize(photo: Photo, targetWidth: number) {
+  const ratio = targetWidth / photo.width;
+  return { width: targetWidth, height: Math.round(photo.height * ratio) };
+}
+
+const GRID_WIDTH = 600;
+const LIGHTBOX_WIDTH = 1200;
 
 export default function PhotoGallery({ photos }: PhotoGalleryProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -73,8 +88,8 @@ export default function PhotoGallery({ photos }: PhotoGalleryProps) {
             <Image
               src={photo.src}
               alt={photo.alt}
-              width={400}
-              height={300}
+              width={scaledSize(photo, GRID_WIDTH).width}
+              height={scaledSize(photo, GRID_WIDTH).height}
               className="w-full h-auto rounded-xl transition-transform duration-500
                          group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -131,10 +146,11 @@ export default function PhotoGallery({ photos }: PhotoGalleryProps) {
             onClick={(e) => e.stopPropagation()}
           >
             <Image
+              key={photos[selectedIndex].src}
               src={photos[selectedIndex].src}
               alt={photos[selectedIndex].alt}
-              width={1200}
-              height={800}
+              width={scaledSize(photos[selectedIndex], LIGHTBOX_WIDTH).width}
+              height={scaledSize(photos[selectedIndex], LIGHTBOX_WIDTH).height}
               className="max-w-full max-h-[80vh] w-auto h-auto object-contain rounded-lg"
               sizes="100vw"
               priority

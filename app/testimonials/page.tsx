@@ -11,20 +11,50 @@ import TestimonialGrid from "@/components/ui/TestimonialGrid";
 import PhotoGallery from "@/components/ui/PhotoGallery";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CTABanner from "@/components/sections/CTABanner";
-import { siteConfig, allTestimonials, galleryPhotos } from "@/lib/config";
+import { siteConfig, allTestimonials, galleryPhotos, generateBreadcrumbSchema, generateReviewSchema } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "Testimonials",
+  title: "Testimonials — What Couples Are Saying",
   description:
-    "Read what couples are saying about their experience with The Stronger Life. Real stories from real couples about premarital counseling, marriage coaching, and wedding ceremonies.",
+    "Read 26+ five-star reviews from real couples about their premarital counseling, wedding officiant, and marriage coaching experience with Matt Reeve in St. Cloud, MN.",
   alternates: {
     canonical: `${siteConfig.url}/testimonials`,
   },
 };
 
 export default function TestimonialsPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: siteConfig.url },
+    { name: "Testimonials", url: `${siteConfig.url}/testimonials` },
+  ]);
+
+  const reviewSchemaData = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    review: generateReviewSchema(allTestimonials),
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      reviewCount: allTestimonials.length,
+      bestRating: "5",
+      worstRating: "1",
+    },
+  };
+
   return (
     <>
+      {/* Structured data for testimonials */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchemaData) }}
+      />
+
       {/* ========== PAGE HERO ========== */}
       <section className="bg-brand-navy py-32 md:py-40">
         <div className="section-wrapper text-center">

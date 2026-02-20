@@ -32,7 +32,7 @@ import { assertSanityConfig } from "@/lib/sanity/env";
 import type { Post } from "@/lib/sanity/types";
 import PortableTextRenderer from "@/components/ui/PortableTextRenderer";
 import CTABanner from "@/components/sections/CTABanner";
-import { siteConfig } from "@/lib/config";
+import { siteConfig, generateBreadcrumbSchema } from "@/lib/config";
 
 /* --- ISR Revalidation ---
  * Revalidate individual post pages every 60 seconds
@@ -149,6 +149,12 @@ export default async function BlogPostPage({
    * Helps Google display rich results (thumbnail, date, author)
    * in search results for blog posts.
    */
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: siteConfig.url },
+    { name: "Blog", url: `${siteConfig.url}/blog` },
+    { name: post.title, url: `${siteConfig.url}/blog/${post.slug}` },
+  ]);
+
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -173,10 +179,14 @@ export default async function BlogPostPage({
 
   return (
     <>
-      {/* Article schema for rich search results */}
+      {/* Structured data for rich search results */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* ========== POST HEADER ========== */}

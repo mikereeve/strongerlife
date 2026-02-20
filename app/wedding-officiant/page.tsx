@@ -11,19 +11,33 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import TestimonialCard from "@/components/ui/TestimonialCard";
 import CTABanner from "@/components/sections/CTABanner";
 import WeddingResources from "@/components/sections/WeddingResources";
-import { siteConfig, generateServiceSchema, featuredTestimonials, pricing } from "@/lib/config";
+import Link from "next/link";
+import { siteConfig, generateServiceSchema, generateFAQSchema, generateBreadcrumbSchema, featuredTestimonials, pricing, serviceFAQs } from "@/lib/config";
 
 /* --- Page-Specific SEO Metadata --- */
 export const metadata: Metadata = {
-  title: "Wedding Officiant",
+  title: "Wedding Officiant in St. Cloud & Central Minnesota",
   description:
-    "Personalized, passionate wedding ceremonies that reflect your unique love story. Ordained minister with 32+ years of experience serving St. Cloud, Minnesota and beyond.",
+    "Personalized wedding ceremonies in St. Cloud, MN and Central Minnesota. Ordained minister with 32+ years experience. Custom, personalized, or intimate packages from $500. Book a free meeting.",
   alternates: {
     canonical: `${siteConfig.url}/wedding-officiant`,
+  },
+  openGraph: {
+    title: "Wedding Officiant in St. Cloud & Central Minnesota | The Stronger Life",
+    description:
+      "Personalized, passionate wedding ceremonies that reflect your unique love story. 32+ years of ministry experience.",
+    url: `${siteConfig.url}/wedding-officiant`,
   },
 };
 
 export default function WeddingOfficiantPage() {
+  const faqSchema = generateFAQSchema([...serviceFAQs.weddingOfficiant]);
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: siteConfig.url },
+    { name: "Services", url: `${siteConfig.url}/services` },
+    { name: "Wedding Officiant", url: `${siteConfig.url}/wedding-officiant` },
+  ]);
+
   const serviceSchema = generateServiceSchema(
     "Wedding Officiant Services",
     "Personalized, passionate wedding ceremonies crafted to reflect each couple's unique love story. Full-service officiant support from planning through ceremony.",
@@ -40,6 +54,14 @@ export default function WeddingOfficiantPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* ========== PAGE HERO ========== */}
@@ -157,6 +179,58 @@ export default function WeddingOfficiantPage() {
 
       {/* ========== WEDDING RESOURCES ========== */}
       <WeddingResources />
+
+      {/* ========== FAQ SECTION ========== */}
+      <section className="section-block bg-brand-cream bg-texture">
+        <div className="section-wrapper max-w-narrow">
+          <SectionHeading
+            title="Frequently Asked Questions"
+            subtitle="Common questions about wedding officiant services with The Stronger Life."
+            tag="h2"
+          />
+
+          <div className="mt-10 space-y-6">
+            {serviceFAQs.weddingOfficiant.map((faq, index) => (
+              <div key={index} className="card bg-white">
+                <h3 className="text-lg font-heading font-semibold text-brand-navy mb-3">
+                  {faq.question}
+                </h3>
+                <p className="text-brand-charcoal leading-relaxed text-sm">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ========== CROSS-LINKS ========== */}
+      <section className="section-block bg-white">
+        <div className="section-wrapper max-w-narrow">
+          <SectionHeading
+            title="Explore More Services"
+            tag="h2"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+            <Link href="/premarital-counseling" className="card hover:shadow-md transition-shadow no-underline group">
+              <h3 className="text-lg font-heading font-semibold text-brand-navy mb-2 group-hover:text-brand-gold-dark transition-colors">
+                Premarital Counseling
+              </h3>
+              <p className="text-brand-stone text-sm leading-relaxed">
+                Save $200 when you bundle premarital counseling with officiant services. Build a strong foundation before you say &ldquo;I Do.&rdquo;
+              </p>
+            </Link>
+            <Link href="/marriage-coaching" className="card hover:shadow-md transition-shadow no-underline group">
+              <h3 className="text-lg font-heading font-semibold text-brand-navy mb-2 group-hover:text-brand-gold-dark transition-colors">
+                Marriage Coaching
+              </h3>
+              <p className="text-brand-stone text-sm leading-relaxed">
+                Continue growing together after the wedding. Coaching helps you navigate the first years of marriage and beyond.
+              </p>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* ========== BOTTOM CTA ========== */}
       <CTABanner

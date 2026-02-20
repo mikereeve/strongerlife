@@ -10,18 +10,32 @@ import type { Metadata } from "next";
 import SectionHeading from "@/components/ui/SectionHeading";
 import TestimonialCard from "@/components/ui/TestimonialCard";
 import CTABanner from "@/components/sections/CTABanner";
-import { siteConfig, generateServiceSchema, featuredTestimonials, pricing } from "@/lib/config";
+import Link from "next/link";
+import { siteConfig, generateServiceSchema, generateFAQSchema, generateBreadcrumbSchema, featuredTestimonials, pricing, serviceFAQs } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "Marriage & Relationship Coaching",
+  title: "Marriage & Relationship Coaching — Virtual & In-Person",
   description:
-    "Ongoing relationship and marriage coaching to help your relationship thrive. Available in person in St. Cloud, Minnesota and virtually nationwide.",
+    "Marriage and relationship coaching in St. Cloud, MN and virtually nationwide. Single sessions from $150 or save with packages. Strengthen communication, resolve conflict, and grow together.",
   alternates: {
     canonical: `${siteConfig.url}/marriage-coaching`,
+  },
+  openGraph: {
+    title: "Marriage & Relationship Coaching | The Stronger Life",
+    description:
+      "Ongoing relationship coaching to help your relationship thrive. Available in-person in St. Cloud, Minnesota and virtually nationwide.",
+    url: `${siteConfig.url}/marriage-coaching`,
   },
 };
 
 export default function MarriageCoachingPage() {
+  const faqSchema = generateFAQSchema([...serviceFAQs.marriageCoaching]);
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: siteConfig.url },
+    { name: "Services", url: `${siteConfig.url}/services` },
+    { name: "Marriage Coaching", url: `${siteConfig.url}/marriage-coaching` },
+  ]);
+
   const serviceSchema = generateServiceSchema(
     "Marriage & Relationship Coaching",
     "Ongoing coaching and support for couples at any stage of their relationship. Available in person and virtually nationwide.",
@@ -38,6 +52,14 @@ export default function MarriageCoachingPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* ========== PAGE HERO ========== */}
@@ -153,6 +175,58 @@ export default function MarriageCoachingPage() {
       <section className="section-block bg-white">
         <div className="section-wrapper max-w-2xl">
           <TestimonialCard {...featuredTestimonials[2]} />
+        </div>
+      </section>
+
+      {/* ========== FAQ SECTION ========== */}
+      <section className="section-block bg-brand-cream bg-texture">
+        <div className="section-wrapper max-w-narrow">
+          <SectionHeading
+            title="Frequently Asked Questions"
+            subtitle="Common questions about marriage and relationship coaching."
+            tag="h2"
+          />
+
+          <div className="mt-10 space-y-6">
+            {serviceFAQs.marriageCoaching.map((faq, index) => (
+              <div key={index} className="card bg-white">
+                <h3 className="text-lg font-heading font-semibold text-brand-navy mb-3">
+                  {faq.question}
+                </h3>
+                <p className="text-brand-charcoal leading-relaxed text-sm">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ========== CROSS-LINKS ========== */}
+      <section className="section-block bg-white">
+        <div className="section-wrapper max-w-narrow">
+          <SectionHeading
+            title="Explore More Services"
+            tag="h2"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+            <Link href="/premarital-counseling" className="card hover:shadow-md transition-shadow no-underline group">
+              <h3 className="text-lg font-heading font-semibold text-brand-navy mb-2 group-hover:text-brand-gold-dark transition-colors">
+                Premarital Counseling
+              </h3>
+              <p className="text-brand-stone text-sm leading-relaxed">
+                Getting engaged? Prepare/Enrich certified counseling helps you build a strong foundation before your wedding day.
+              </p>
+            </Link>
+            <Link href="/wedding-officiant" className="card hover:shadow-md transition-shadow no-underline group">
+              <h3 className="text-lg font-heading font-semibold text-brand-navy mb-2 group-hover:text-brand-gold-dark transition-colors">
+                Wedding Officiant
+              </h3>
+              <p className="text-brand-stone text-sm leading-relaxed">
+                Planning a vow renewal or know someone getting married? Matt creates personalized ceremonies that tell your story.
+              </p>
+            </Link>
+          </div>
         </div>
       </section>
 

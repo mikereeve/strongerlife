@@ -20,7 +20,7 @@ import ServiceCard from "@/components/ui/ServiceCard";
 import TestimonialCard from "@/components/ui/TestimonialCard";
 import CTABanner from "@/components/sections/CTABanner";
 import AudioPlayer from "@/components/ui/AudioPlayer";
-import { siteConfig, services, featuredTestimonials, featuredMedia } from "@/lib/config";
+import { siteConfig, services, featuredTestimonials, featuredMedia, generateBreadcrumbSchema, generateWebSiteSchema } from "@/lib/config";
 
 /* --- Page Metadata ---
  * Overrides the default metadata from root layout.
@@ -29,15 +29,31 @@ import { siteConfig, services, featuredTestimonials, featuredMedia } from "@/lib
  */
 export const metadata: Metadata = {
   title: { absolute: siteConfig.seo.defaultTitle },
-  description: siteConfig.description,
+  description:
+    "Christian premarital counseling, wedding officiant, and marriage coaching in St. Cloud, MN. 32+ years experience helping couples grow stronger together. Book a free consultation.",
   alternates: {
     canonical: siteConfig.url,
   },
 };
 
 export default function HomePage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: siteConfig.url },
+  ]);
+  const webSiteSchema = generateWebSiteSchema();
+
   return (
     <>
+      {/* Structured data for homepage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
+      />
+
       {/* ========== HERO SECTION ========== */}
       <section className="relative min-h-[85vh] flex items-center bg-brand-navy overflow-hidden">
         {/* Gradient overlay for text readability */}

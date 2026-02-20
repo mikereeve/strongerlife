@@ -6,20 +6,30 @@
 
 import type { Metadata } from "next";
 import ContactForm from "@/components/ui/ContactForm";
-import { siteConfig } from "@/lib/config";
+import { siteConfig, generateBreadcrumbSchema } from "@/lib/config";
 
 export const metadata: Metadata = {
-  title: "Contact & Book a Consultation",
+  title: "Contact & Book a Free Consultation",
   description:
-    "Schedule a free 30-minute consultation with Matt Reeve. Get in touch about premarital counseling, wedding officiant services, or marriage coaching.",
+    "Schedule a free 30-minute consultation with Matt Reeve in St. Cloud, MN or virtually. Premarital counseling, wedding officiant, and marriage coaching inquiries welcome.",
   alternates: {
     canonical: `${siteConfig.url}/contact`,
   },
 };
 
 export default function ContactPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: siteConfig.url },
+    { name: "Contact", url: `${siteConfig.url}/contact` },
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       {/* ========== PAGE HERO ========== */}
       <section className="bg-brand-navy py-32 md:py-40">
         <div className="section-wrapper text-center">

@@ -36,7 +36,7 @@ export const siteConfig = {
    */
   seo: {
     titleTemplate: "%s | The Stronger Life",
-    defaultTitle: "The Stronger Life | Christian Premarital Counseling & Marriage Coaching",
+    defaultTitle: "Christian Premarital Counseling & Wedding Officiant in St. Cloud, MN | The Stronger Life",
     openGraph: {
       type: "website",
       siteName: "The Stronger Life",
@@ -45,7 +45,7 @@ export const siteConfig = {
           url: "/images/og-default.jpg", // 1200x630px recommended
           width: 1200,
           height: 630,
-          alt: "The Stronger Life — Premarital Counseling & Marriage Coaching",
+          alt: "The Stronger Life — Christian Premarital Counseling & Wedding Officiant in St. Cloud, MN",
         },
       ],
     },
@@ -425,15 +425,19 @@ export const pricing = {
  */
 /* --- Couple Gallery Photos ---
  * Displayed on the testimonials page in a masonry gallery.
- * Images should be placed in /public/images/couples/.
- * Matt can provide high-res originals or we optimize from old site.
+ * Images are placed in /public/images/couples/ at 1200px wide.
+ * Next.js generates optimized AVIF/WebP variants automatically.
+ * Width/height are the actual source dimensions — used by
+ * Next.js to calculate aspect ratio and prevent layout shift.
  */
 export const galleryPhotos = [
-  { src: "/images/couples/couple-1.jpg", alt: "Amanda and Matt — 2010", label: "Amanda & Matt · 2010" },
-  { src: "/images/couples/couple-2.jpg", alt: "Brody and Meghan — 2014", label: "Brody & Meghan · 2014" },
-  { src: "/images/couples/couple-3.jpg", alt: "Bronson and Alisha — 2019", label: "Bronson & Alisha · 2019" },
-  { src: "/images/couples/couple-4.jpg", alt: "Group photo — The 4 of us", label: "The 4 of Us" },
-  { src: "/images/couples/couple-5.jpg", alt: "Wedding ceremony moment", label: "A Beautiful Moment" },
+  { src: "/images/couples/couple-1.jpg", alt: "Matt and Amanda — wedding ceremony couple", label: "Matt & Amanda", width: 1200, height: 1801 },
+  { src: "/images/couples/couple-2.jpg", alt: "Brody and Meghan — wedding day celebration", label: "Brody & Meghan", width: 1200, height: 900 },
+  { src: "/images/couples/couple-3.jpg", alt: "Brody and Meghan — ceremony moment", label: "Brody & Meghan", width: 1200, height: 800 },
+  { src: "/images/couples/couple-4.jpg", alt: "Bronson and Alisha — wedding couple portrait", label: "Bronson & Alisha", width: 1200, height: 1600 },
+  { src: "/images/couples/couple-5.jpg", alt: "Wedding celebration group photo", label: "Celebrating Together", width: 1200, height: 800 },
+  { src: "/images/couples/couple-6.jpg", alt: "Wedding party group photo", label: "The Wedding Party", width: 1200, height: 795 },
+  { src: "/images/couples/couple-7.jpg", alt: "Friends and family wedding gathering", label: "Friends & Family", width: 1200, height: 800 },
 ] as const;
 
 /* --- Wedding Resources ---
@@ -588,3 +592,162 @@ export function generateServiceSchema(
       : {}),
   };
 }
+
+/* --- FAQ Schema ---
+ * Generates FAQPage structured data for service pages.
+ * Eligible for rich results with expandable Q&A in SERPs.
+ */
+export function generateFAQSchema(
+  faqs: { question: string; answer: string }[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+/* --- Breadcrumb Schema ---
+ * Generates BreadcrumbList structured data.
+ * Shows navigation breadcrumbs in Google search results.
+ */
+export function generateBreadcrumbSchema(
+  items: { name: string; url: string }[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}
+
+/* --- WebSite Schema ---
+ * Generates WebSite structured data with SearchAction.
+ * Can trigger a sitelinks search box in Google results.
+ */
+export function generateWebSiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    description: siteConfig.description,
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${siteConfig.url}/blog?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
+  };
+}
+
+/* --- Review Schema ---
+ * Generates individual Review structured data for testimonials.
+ * Can trigger star ratings in search results.
+ */
+export function generateReviewSchema(
+  testimonials: readonly { quote: string; author: string; service: string }[]
+) {
+  return testimonials.map((t) => ({
+    "@type": "Review",
+    author: {
+      "@type": "Person",
+      name: t.author,
+    },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: "5",
+      bestRating: "5",
+      worstRating: "1",
+    },
+    reviewBody: t.quote,
+    itemReviewed: {
+      "@type": "LocalBusiness",
+      name: siteConfig.name,
+    },
+  }));
+}
+
+/* --- FAQ Data for Service Pages ---
+ * Centralized FAQ content used both for visible FAQ sections
+ * and FAQPage structured data on service pages.
+ */
+export const serviceFAQs = {
+  premaritalCounseling: [
+    {
+      question: "How many premarital counseling sessions will we need?",
+      answer: "Our premarital counseling program typically consists of 5–6 sessions, each lasting 1.5–2 hours. The exact number depends on your unique needs and goals as a couple. Sessions can be scheduled weekly, biweekly, or monthly to fit your calendar.",
+    },
+    {
+      question: "What is the Prepare/Enrich assessment?",
+      answer: "Prepare/Enrich is one of the most widely researched and validated relationship assessment tools available. It evaluates 12 key areas of your relationship — including communication, conflict resolution, financial management, and family dynamics — giving us deep insight into your strengths and growth areas. Research shows couples who complete Prepare/Enrich-based counseling lower their divorce risk by 31%.",
+    },
+    {
+      question: "Can we do premarital counseling online?",
+      answer: "Yes! Virtual premarital counseling sessions are available via Google Meet for couples anywhere in the country. All you need is a stable internet connection and a device with a camera and microphone. Virtual sessions are just as effective as in-person meetings.",
+    },
+    {
+      question: "How much does premarital counseling cost?",
+      answer: "Premarital counseling is $600 for the full program (5–6 sessions). If Matt also officiates your wedding, counseling is discounted to $400. There is also a one-time $35 fee for the Prepare/Enrich relationship assessment. Your first consultation is always free.",
+    },
+    {
+      question: "Do we get a discount on our Minnesota marriage license?",
+      answer: "Yes! Minnesota law provides a discount on the marriage license fee for couples who complete at least 12 hours of premarital counseling. Our program meets and exceeds this requirement, making you eligible for the reduced fee.",
+    },
+  ],
+  weddingOfficiant: [
+    {
+      question: "What areas do you serve as a wedding officiant?",
+      answer: "Matt serves as a wedding officiant throughout St. Cloud, Central Minnesota, and the Twin Cities metro area. Travel beyond 30 miles from St. Cloud may incur an additional travel fee. Whether you're planning an outdoor ceremony, a church wedding, or a courthouse service, Matt can be there.",
+    },
+    {
+      question: "Can we write our own wedding vows?",
+      answer: "Absolutely! Matt encourages couples to incorporate their own personal vows. With the Custom Ceremony package, you'll work together to craft a fully personalized ceremony script — including your vows, readings, and any traditions that are meaningful to you. Matt provides guidance and unlimited revisions.",
+    },
+    {
+      question: "What's included in each wedding officiant package?",
+      answer: "The Custom Ceremony ($750) includes a face-to-face planning session, fully customized script, unlimited revisions, rehearsal coordination, early arrival and vendor coordination on the wedding day, professional officiation, and legal certificate filing. The Personalized Ceremony ($600) includes a phone consultation, professionally written ceremony, and legal filing. The Simple & Intimate ($500) is a 15-minute ceremony to legalize your union with legal filing included.",
+    },
+    {
+      question: "Do you perform non-religious or interfaith ceremonies?",
+      answer: "Yes. While Matt's background is in Christian ministry, he works with couples of all backgrounds and beliefs. He'll craft a ceremony that authentically reflects your values, faith tradition, or personal philosophy — whether that's deeply religious, spiritual, interfaith, or secular.",
+    },
+  ],
+  marriageCoaching: [
+    {
+      question: "What's the difference between marriage coaching and marriage counseling?",
+      answer: "Marriage coaching is forward-focused and goal-oriented — it helps couples build skills, improve communication, and strengthen their relationship proactively. Unlike clinical counseling or therapy, coaching doesn't diagnose or treat mental health conditions. It's for any couple who wants to invest in their relationship, not just those in crisis.",
+    },
+    {
+      question: "How long are marriage coaching sessions?",
+      answer: "Each coaching session is 1–2 hours long, typically scheduled weekly or biweekly. The length and frequency are flexible based on your needs and schedule. You can choose between in-person sessions in the St. Cloud, Minnesota area or virtual sessions from anywhere in the country.",
+    },
+    {
+      question: "Do you offer virtual marriage coaching?",
+      answer: "Yes! Virtual coaching sessions are available nationwide via video call. Many couples find virtual sessions equally effective — the connection and the work happen regardless of physical distance. All you need is a smartphone or computer with a camera and a reliable internet connection.",
+    },
+    {
+      question: "How much does marriage coaching cost?",
+      answer: "A single coaching session is $150. The 4-Session Package is $525 (saving $75). The comprehensive Marriage Coaching Program, which includes a relationship assessment and 4–6 personalized sessions, is $600. Your first consultation is always free with no obligation.",
+    },
+  ],
+} as const;
