@@ -8,6 +8,24 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/ui/ContactForm";
 import { siteConfig, generateBreadcrumbSchema } from "@/lib/config";
 
+function generateContactPointSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": siteConfig.url,
+    name: siteConfig.name,
+    url: siteConfig.url,
+    contactPoint: {
+      "@type": "ContactPoint",
+      ...(siteConfig.contact.phone ? { telephone: siteConfig.contact.phone } : {}),
+      email: siteConfig.contact.email,
+      contactType: "customer service",
+      areaServed: "US",
+      availableLanguage: "en",
+    },
+  };
+}
+
 export const metadata: Metadata = {
   title: "Contact & Book a Free Consultation",
   description:
@@ -22,12 +40,17 @@ export default function ContactPage() {
     { name: "Home", url: siteConfig.url },
     { name: "Contact", url: `${siteConfig.url}/contact` },
   ]);
+  const contactPointSchema = generateContactPointSchema();
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPointSchema) }}
       />
 
       {/* ========== PAGE HERO ========== */}

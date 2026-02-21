@@ -114,8 +114,8 @@ export default function AboutPage() {
 
               <h3>More Than an Officiant</h3>
               <p>
-                When I officiate your wedding, I&apos;m your minister all the way
-                through: the planning, the tension you&apos;re under, the last-minute
+                When I officiate your wedding, I&apos;m with you all the way
+                through — the planning, the tension you&apos;re under, the last-minute
                 surprises. I arrive early, offer a calm presence, check in with your
                 other vendors, and handle the unexpected with grace and ease.
               </p>

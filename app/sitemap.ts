@@ -22,15 +22,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
    * update frequency hints for search engines.
    */
   const staticPages: MetadataRoute.Sitemap = [
-    { url: baseUrl, lastModified: new Date(), changeFrequency: "monthly", priority: 1.0 },
-    { url: `${baseUrl}/premarital-counseling`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/wedding-officiant`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/marriage-coaching`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/testimonials`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/services`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
+    { url: baseUrl,                                lastModified: new Date(), changeFrequency: "monthly", priority: 1.0  },
+    // Premarital counseling = highest-intent service; ranked above others
+    { url: `${baseUrl}/premarital-counseling`,     lastModified: new Date(), changeFrequency: "monthly", priority: 0.95 },
+    { url: `${baseUrl}/wedding-officiant`,         lastModified: new Date(), changeFrequency: "monthly", priority: 0.9  },
+    { url: `${baseUrl}/marriage-coaching`,         lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${baseUrl}/services`,                  lastModified: new Date(), changeFrequency: "monthly", priority: 0.8  },
+    { url: `${baseUrl}/contact`,                   lastModified: new Date(), changeFrequency: "monthly", priority: 0.8  },
+    { url: `${baseUrl}/testimonials`,              lastModified: new Date(), changeFrequency: "monthly", priority: 0.75 },
+    { url: `${baseUrl}/about`,                     lastModified: new Date(), changeFrequency: "monthly", priority: 0.7  },
+    { url: `${baseUrl}/blog`,                      lastModified: new Date(), changeFrequency: "weekly",  priority: 0.7  },
   ];
 
   /* --- Dynamic Blog Posts ---
