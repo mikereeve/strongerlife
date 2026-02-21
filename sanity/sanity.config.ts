@@ -22,8 +22,8 @@ export default defineConfig({
   /* --- Project Identity ---
    * These must match the values in .env.local
    */
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "your-project-id",
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
+  projectId: "ijhoknpo",
+  dataset: "production",
 
   /* --- Studio Metadata --- */
   name: "the-stronger-life",

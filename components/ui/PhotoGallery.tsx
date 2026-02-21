@@ -93,6 +93,9 @@ export default function PhotoGallery({ photos }: PhotoGalleryProps) {
               className="w-full h-auto rounded-xl transition-transform duration-500
                          group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              quality={70}
+              priority={index < 3}
+              loading={index < 3 ? "eager" : "lazy"}
             />
             {/* Hover overlay with label */}
             <div

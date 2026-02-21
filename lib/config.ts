@@ -24,10 +24,11 @@ export const siteConfig = {
 
   /* --- Social Media Profiles --- */
   social: {
-    facebook: "https://www.facebook.com/thestrongerlife",
-    instagram: "https://www.instagram.com/mattreeve.tsl",
-    twitter: "https://twitter.com/tsl_mattreeve",
-    linkedin: "https://www.linkedin.com/in/mattreeve02",
+    facebook: "https://www.facebook.com/share/1Cbxd2gBEf/?mibextid=wwXIfr",
+    instagram: "https://www.instagram.com/mattreeve.tsl?igsh=MWJ3cDExOGpld2JmaQ%3D%3D&utm_source=qr",
+    linkedin: "https://www.linkedin.com/in/mattreeve02?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    whatsapp: "https://whatsapp.com/channel/0029VbCUPwh9hXF9ZLBfoJ2F",
+    threads: "https://www.threads.com/@mattreeve.tsl/post/DUmsZxBAArv?xmt=AQF0VEhO7lyK8nr8lXPwCHV4K8dKiFxD4TFyQzlzfwD2vQ",
   },
 
   /* --- SEO Defaults ---
@@ -438,6 +439,12 @@ export const galleryPhotos = [
   { src: "/images/couples/couple-5.jpg", alt: "Wedding celebration group photo", label: "Celebrating Together", width: 1200, height: 800 },
   { src: "/images/couples/couple-6.jpg", alt: "Wedding party group photo", label: "The Wedding Party", width: 1200, height: 795 },
   { src: "/images/couples/couple-7.jpg", alt: "Friends and family wedding gathering", label: "Friends & Family", width: 1200, height: 800 },
+  { src: "/images/couples/couple-8.jpg", alt: "Wedding couple portrait", label: "A Beautiful Day", width: 800, height: 1200 },
+  { src: "/images/couples/couple-9.jpg", alt: "Wedding couple celebration", label: "Celebrating Love", width: 1200, height: 1233 },
+  { src: "/images/couples/couple-10.jpg", alt: "Wedding couple moment", label: "A Perfect Moment", width: 1200, height: 1196 },
+  { src: "/images/couples/couple-11.jpg", alt: "Wedding couple portrait", label: "Together Forever", width: 1200, height: 1259 },
+  { src: "/images/couples/couple-12.jpg", alt: "Wedding couple photo", label: "Stronger Together", width: 1200, height: 1200 },
+  { src: "/images/couples/couple-13.jpg", alt: "Wedding couple portrait", label: "A Joyful Union", width: 1200, height: 1196 },
 ] as const;
 
 /* --- Wedding Resources ---
@@ -729,7 +736,7 @@ export const serviceFAQs = {
     },
     {
       question: "Do you perform non-religious ceremonies?",
-      answer: "Yes. While Matt's background is in Christian ministry, he works with couples of all backgrounds and beliefs. He'll craft a ceremony that authentically reflects your values, faith tradition, or personal philosophy — whether that's deeply religious, spiritual, or secular.",
+      answer: "Yes. While Matt's foundation is in the Christian faith, he serves couples from a variety of backgrounds. Each ceremony is crafted to reflect your values and story, while remaining true to The Stronger Life's commitment to biblical marriage and grace-filled guidance.",
     },
   ],
   marriageCoaching: [
