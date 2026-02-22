@@ -11,6 +11,7 @@ import Script from "next/script";
 import { Playfair_Display, Source_Sans_3 } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import WebVitals from "@/components/WebVitals";
 import { siteConfig, generateLocalBusinessSchema } from "@/lib/config";
 import "@/styles/globals.css";
 
@@ -153,6 +154,9 @@ export default function RootLayout({
         </main>
 
         <Footer />
+
+        {/* Core Web Vitals reporting — sends LCP, CLS, INP to GA */}
+        {GA_ID && <WebVitals />}
 
         {/* Google Analytics — only loads when Measurement ID is configured */}
         {GA_ID && (
