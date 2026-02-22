@@ -114,6 +114,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteConfig.url,
   },
+  // Google Search Console verification
+  ...(process.env.NEXT_PUBLIC_GSC_VERIFICATION_ID && {
+    verification: {
+      google: process.env.NEXT_PUBLIC_GSC_VERIFICATION_ID,
+    },
+  }),
 };
 
 /* --- Root Layout Component --- */
