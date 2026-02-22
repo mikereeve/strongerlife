@@ -85,52 +85,57 @@ export const musicTracks = [
   {
     title: "Always You",
     subtitle: undefined,
-    url: "/audio/AlwaysYou.wav",
+    url: "/audio/AlwaysYou.mp3",
   },
   {
     title: "Holy Hallelujah",
     subtitle: undefined,
-    url: "/audio/HolyHallelujah.wav",
+    url: "/audio/HolyHallelujah.mp3",
   },
   {
     title: "Kiss You Back",
     subtitle: undefined,
-    url: "/audio/KissYouBack.wav",
+    url: "/audio/KissYouBack.mp3",
   },
   {
     title: "Last First Dance",
     subtitle: undefined,
-    url: "/audio/LastFirstDance.wav",
+    url: "/audio/LastFirstDance.mp3",
   },
   {
     title: "Only You Always",
     subtitle: undefined,
-    url: "/audio/OnlyYouAlways.wav",
+    url: "/audio/OnlyYouAlways.mp3",
   },
   {
     title: "Our Forever",
     subtitle: undefined,
-    url: "/audio/OurForever.wav",
+    url: "/audio/OurForever.mp3",
   },
   {
     title: "Starts Tonight",
     subtitle: undefined,
-    url: "/audio/StartsTonight.wav",
+    url: "/audio/StartsTonight.mp3",
   },
   {
     title: "Your Hand",
     subtitle: undefined,
-    url: "/audio/YourHand.wav",
+    url: "/audio/YourHand.mp3",
   },
   {
     title: "Two Made One",
     subtitle: undefined,
-    url: "/audio/TwoMadeOne.wav",
+    url: "/audio/TwoMadeOne.mp3",
   },
   {
     title: "Covenant",
     subtitle: undefined,
-    url: "/audio/Covenant.wav",
+    url: "/audio/Covenant.mp3",
+  },
+  {
+    title: "Breath",
+    subtitle: undefined,
+    url: "/audio/Breath.mp3",
   },
 ] as const;
 
