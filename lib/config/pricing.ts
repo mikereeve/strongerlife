@@ -234,4 +234,26 @@ export const serviceFAQs = {
       answer: "A single coaching session is $150. The 4-Session Package is $525 (saving $75). The comprehensive Marriage Coaching Program, which includes a relationship assessment and 4–6 personalized sessions, is $600. Your first consultation is always free with no obligation.",
     },
   ],
+  homepage: [
+    {
+      question: "What services does The Stronger Life offer?",
+      answer:
+        "The Stronger Life offers three core services: Prepare/Enrich certified premarital counseling, personalized wedding officiant services, and marriage and relationship coaching. All services are available in person in St. Cloud, Minnesota, or virtually nationwide.",
+    },
+    {
+      question: "Do I need to be Christian to work with you?",
+      answer:
+        "Not at all. While Matt's foundation is rooted in the Christian faith, he warmly serves couples from all backgrounds. Every session is tailored to your values and your story, with a focus on building a strong, lasting relationship.",
+    },
+    {
+      question: "How do I get started?",
+      answer:
+        "The first step is a free 30-minute consultation — no commitment, no pressure. It's a chance to share your story, ask questions, and see if The Stronger Life is the right fit for you as a couple. Call (952) 393-8826 to get started.",
+    },
+    {
+      question: "Do you offer virtual sessions?",
+      answer:
+        "Yes! Virtual sessions are available for all services — premarital counseling, marriage coaching, and ceremony planning. All you need is a device with a camera and a reliable internet connection. Virtual sessions are just as effective as meeting in person.",
+    },
+  ],
 } as const;

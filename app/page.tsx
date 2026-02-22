@@ -6,7 +6,8 @@
  *   2. Services overview (3 service cards)
  *   3. About/trust section with Matt's credentials
  *   4. Featured testimonials
- *   5. Call-to-action banner
+ *   5. FAQ section (with FAQPage schema for rich results)
+ *   6. Call-to-action banner
  *
  * SEO: Page-specific metadata exported below.
  * Schema: LocalBusiness JSON-LD is injected via root layout.
@@ -20,7 +21,8 @@ import ServiceCard from "@/components/ui/ServiceCard";
 import TestimonialCard from "@/components/ui/TestimonialCard";
 import CTABanner from "@/components/sections/CTABanner";
 import MusicPlayer from "@/components/ui/MusicPlayer";
-import { siteConfig, services, featuredTestimonials, generateBreadcrumbSchema, generateWebSiteSchema } from "@/lib/config";
+import { siteConfig, services, featuredTestimonials, generateBreadcrumbSchema, generateWebSiteSchema, generateFAQSchema } from "@/lib/config";
+import { serviceFAQs } from "@/lib/config/pricing";
 
 /* --- Page Metadata ---
  * Overrides the default metadata from root layout.
@@ -41,6 +43,7 @@ export default function HomePage() {
     { name: "Home", url: siteConfig.url },
   ]);
   const webSiteSchema = generateWebSiteSchema();
+  const faqSchema = generateFAQSchema([...serviceFAQs.homepage]);
 
   return (
     <>
@@ -52,6 +55,10 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
       {/* ========== HERO SECTION ========== */}
@@ -221,6 +228,30 @@ export default function HomePage() {
               hover:text-brand-navy transition-colors no-underline">
               View All Testimonials →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== FAQ SECTION ========== */}
+      <section className="section-block bg-brand-cream bg-texture">
+        <div className="section-wrapper max-w-narrow">
+          <SectionHeading
+            title="Frequently Asked Questions"
+            subtitle="Answers to the questions couples ask most."
+            tag="h2"
+          />
+
+          <div className="mt-10 space-y-6">
+            {serviceFAQs.homepage.map((faq, index) => (
+              <div key={index} className="card bg-white">
+                <h3 className="text-lg font-heading font-semibold text-brand-navy mb-3">
+                  {faq.question}
+                </h3>
+                <p className="text-brand-charcoal leading-relaxed text-sm">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
