@@ -124,6 +124,11 @@ export const musicTracks = [
     subtitle: undefined,
     url: "/audio/Your%20Hand.wav",
   },
+  {
+    title: "Two Made One",
+    subtitle: undefined,
+    url: "/audio/Two%20Made%20One.wav",
+  },
 ] as const;
 
 /* --- Primary Navigation ---
