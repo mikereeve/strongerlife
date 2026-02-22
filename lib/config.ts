@@ -72,6 +72,60 @@ export const featuredMedia = {
     "A personal song about the journey of love and the One who knew your story before it began.",
 } as const;
 
+/* --- Music Tracks ---
+ * Full track list for the jukebox-style MusicPlayer on the homepage.
+ * Add new tracks here — they appear automatically in the player.
+ * Only "Somebody Knew" carries a subtitle; all others show title only.
+ * Note: encode spaces as %20 and commas as %2C for reliable browser support.
+ */
+export const musicTracks = [
+  {
+    title: "Somebody Knew",
+    subtitle: "Lyrics by Matt Reeve",
+    url: "/audio/SomebodyKnew.mp3",
+  },
+  {
+    title: "Always You",
+    subtitle: undefined,
+    url: "/audio/Always%20You.wav",
+  },
+  {
+    title: "Holy Hallelujah",
+    subtitle: undefined,
+    url: "/audio/Holy%20Hallelujah.wav",
+  },
+  {
+    title: "Kiss You Back",
+    subtitle: undefined,
+    url: "/audio/Kiss%20You%20Back.wav",
+  },
+  {
+    title: "Last First Dance",
+    subtitle: undefined,
+    url: "/audio/Last%20First%20Dance.wav",
+  },
+  {
+    title: "Only You, Always",
+    subtitle: undefined,
+    url: "/audio/Only%20You%2C%20Always.wav",
+  },
+  {
+    title: "Our Forever",
+    subtitle: undefined,
+    url: "/audio/Our%20Forever.wav",
+  },
+  {
+    title: "Starts Tonight",
+    subtitle: undefined,
+    url: "/audio/Starts%20Tonight.wav",
+  },
+  {
+    title: "Your Hand",
+    subtitle: undefined,
+    url: "/audio/Your%20Hand.wav",
+  },
+] as const;
+
 /* --- Primary Navigation ---
  * Consolidated from the original 12 items down to 6.
  * "Home" removed (logo links to /) and "Services & Pricing"

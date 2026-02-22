@@ -105,6 +105,33 @@
     margin-bottom: 1.5rem;
   }
 
+  /* Track list scrollbar — wide enough to tap on mobile */
+  .track-scroll {
+    scrollbar-width: auto;
+    scrollbar-color: rgba(200, 145, 58, 0.6) rgba(255, 255, 255, 0.08);
+  }
+
+  .track-scroll::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .track-scroll::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 5px;
+  }
+
+  .track-scroll::-webkit-scrollbar-thumb {
+    background: rgba(200, 145, 58, 0.6);
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  .track-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(200, 145, 58, 0.9);
+    background-clip: padding-box;
+  }
+
   /* Audio player range input — custom thumb styling */
   .audio-range::-webkit-slider-thumb {
     -webkit-appearance: none;

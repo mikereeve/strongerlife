@@ -18,7 +18,7 @@
 
 "use client";
 
-import React, { useState, useCallback, useRef } from "react";
+import React, { useState, useCallback, useRef, useEffect } from "react";
 import dynamic from "next/dynamic";
 
 interface ExternalPlayerProps {
@@ -44,6 +44,10 @@ interface AudioPlayerProps {
   title: string;
   /** Optional subtitle/description */
   subtitle?: string;
+  /** If true, begins playback immediately on mount (requires prior user gesture) */
+  autoPlay?: boolean;
+  /** Called when the track finishes playing */
+  onEnded?: () => void;
 }
 
 /* Detect direct audio files by extension */
@@ -59,7 +63,7 @@ function formatTime(seconds: number): string {
   return `${m}:${s.toString().padStart(2, "0")}`;
 }
 
-export default function AudioPlayer({ url, title, subtitle }: AudioPlayerProps) {
+export default function AudioPlayer({ url, title, subtitle, autoPlay = false, onEnded }: AudioPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
@@ -71,6 +75,17 @@ export default function AudioPlayer({ url, title, subtitle }: AudioPlayerProps) 
 
   const handleError = useCallback(() => {
     setHasError(true);
+  }, []);
+
+  // Auto-play on mount when triggered by a user gesture (e.g. track selection)
+  useEffect(() => {
+    if (autoPlay && audioRef.current) {
+      audioRef.current.play()
+        .then(() => setIsPlaying(true))
+        .catch(() => {}); // browser blocked autoplay; user can click play manually
+    }
+    // Intentionally runs only on mount — `key` prop forces remount on track change
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const togglePlay = useCallback(() => {
@@ -88,7 +103,8 @@ export default function AudioPlayer({ url, title, subtitle }: AudioPlayerProps) 
   const handleEnded = useCallback(() => {
     setIsPlaying(false);
     setCurrentTime(0);
-  }, []);
+    onEnded?.();
+  }, [onEnded]);
 
   const handleTimeUpdate = useCallback(() => {
     if (audioRef.current) {
@@ -162,44 +178,44 @@ export default function AudioPlayer({ url, title, subtitle }: AudioPlayerProps) 
 
     return (
       <div className="rounded-xl overflow-hidden">
-        <div className="bg-brand-navy rounded-xl p-6 md:p-8">
+        <div className="bg-brand-navy rounded-xl p-4 md:p-5">
           {/* Top row: play button + info + time */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <button
               onClick={togglePlay}
-              className="shrink-0 w-12 h-12 rounded-full bg-brand-gold
+              className="shrink-0 w-10 h-10 rounded-full bg-brand-gold
                          flex items-center justify-center
-                         hover:bg-brand-gold-light transition-colors shadow-lg"
+                         hover:bg-brand-gold-light transition-colors shadow-md"
               aria-label={isPlaying ? `Pause ${title}` : `Play ${title}`}
             >
               {isPlaying ? (
-                <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
                 </svg>
               ) : (
-                <svg className="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <svg className="w-4 h-4 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M8 5v14l11-7z" />
                 </svg>
               )}
             </button>
 
             <div className="min-w-0 flex-grow">
-              <p className="text-white font-heading font-semibold text-lg truncate">
+              <p className="text-white font-heading font-semibold text-base truncate">
                 {title}
               </p>
               {subtitle && (
-                <p className="text-white/50 text-sm truncate">{subtitle}</p>
+                <p className="text-white/50 text-xs truncate">{subtitle}</p>
               )}
             </div>
 
             {/* Time display */}
-            <p className="shrink-0 text-white/60 text-sm font-mono tabular-nums">
+            <p className="shrink-0 text-white/60 text-xs font-mono tabular-nums">
               {formatTime(currentTime)}<span className="text-white/30 mx-1">/</span>{formatTime(duration)}
             </p>
           </div>
 
           {/* Progress bar */}
-          <div className="mt-4">
+          <div className="mt-3">
             <input
               type="range"
               min={0}
@@ -216,7 +232,7 @@ export default function AudioPlayer({ url, title, subtitle }: AudioPlayerProps) 
           </div>
 
           {/* Volume control */}
-          <div className="flex items-center justify-end gap-2 mt-3">
+          <div className="flex items-center justify-end gap-2 mt-2">
             <button
               onClick={toggleMute}
               className="text-white/60 hover:text-white transition-colors p-1"

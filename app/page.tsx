@@ -19,8 +19,8 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import ServiceCard from "@/components/ui/ServiceCard";
 import TestimonialCard from "@/components/ui/TestimonialCard";
 import CTABanner from "@/components/sections/CTABanner";
-import AudioPlayer from "@/components/ui/AudioPlayer";
-import { siteConfig, services, featuredTestimonials, featuredMedia, generateBreadcrumbSchema, generateWebSiteSchema } from "@/lib/config";
+import MusicPlayer from "@/components/ui/MusicPlayer";
+import { siteConfig, services, featuredTestimonials, generateBreadcrumbSchema, generateWebSiteSchema } from "@/lib/config";
 
 /* --- Page Metadata ---
  * Overrides the default metadata from root layout.
@@ -188,18 +188,14 @@ export default function HomePage() {
 
       {/* ========== FEATURED SONG SECTION ========== */}
       <section className="section-block bg-white">
-        <div className="section-wrapper max-w-2xl">
+        <div className="section-wrapper max-w-4xl">
           <SectionHeading
             title="Listen"
-            subtitle={featuredMedia.description}
+            subtitle="A curated collection of original songs by Matt Reeve — tap a title to listen."
             tag="h2"
           />
           <div className="mt-8">
-            <AudioPlayer
-              url={featuredMedia.url}
-              title={featuredMedia.title}
-              subtitle={featuredMedia.subtitle}
-            />
+            <MusicPlayer />
           </div>
         </div>
       </section>
