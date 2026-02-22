@@ -92,7 +92,7 @@ export default function WeddingOfficiantPage() {
             <p>
               Whether you envision a romantic ceremony in the park, an elegant
               ballroom wedding, a quirky backyard BBQ, or just the two of you
-              on a mountaintop — I&apos;ll work with you to create a ceremony
+              on a mountaintop, I&apos;ll work with you to create a ceremony
               that reflects who you are as a couple.
             </p>
 

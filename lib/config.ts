@@ -96,21 +96,21 @@ export const services = [
     slug: "premarital-counseling",
     shortDescription:
       "Comprehensive sessions to build a strong foundation before you say 'I Do.'",
-    icon: "heart", // Maps to an icon component
+    icon: "premarital-counseling", // Maps to an icon component
   },
   {
     title: "Wedding Officiant",
     slug: "wedding-officiant",
     shortDescription:
       "Personalized, passionate ceremonies that reflect your unique love story.",
-    icon: "rings",
+    icon: "wedding-officiant",
   },
   {
     title: "Marriage Coaching",
     slug: "marriage-coaching",
     shortDescription:
       "Ongoing support to help your relationship thrive — in person or virtually.",
-    icon: "users",
+    icon: "marriage-coaching",
   },
 ] as const;
 
