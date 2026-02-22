@@ -75,7 +75,6 @@ export const featuredMedia = {
  * Full track list for the jukebox-style MusicPlayer on the homepage.
  * Add new tracks here — they appear automatically in the player.
  * Only "Somebody Knew" carries a subtitle; all others show title only.
- * Note: encode spaces as %20 and commas as %2C for reliable browser support.
  */
 export const musicTracks = [
   {
@@ -86,47 +85,52 @@ export const musicTracks = [
   {
     title: "Always You",
     subtitle: undefined,
-    url: "/audio/Always%20You.wav",
+    url: "/audio/AlwaysYou.wav",
   },
   {
     title: "Holy Hallelujah",
     subtitle: undefined,
-    url: "/audio/Holy%20Hallelujah.wav",
+    url: "/audio/HolyHallelujah.wav",
   },
   {
     title: "Kiss You Back",
     subtitle: undefined,
-    url: "/audio/Kiss%20You%20Back.wav",
+    url: "/audio/KissYouBack.wav",
   },
   {
     title: "Last First Dance",
     subtitle: undefined,
-    url: "/audio/Last%20First%20Dance.wav",
+    url: "/audio/LastFirstDance.wav",
   },
   {
-    title: "Only You, Always",
+    title: "Only You Always",
     subtitle: undefined,
-    url: "/audio/Only%20You%2C%20Always.wav",
+    url: "/audio/OnlyYouAlways.wav",
   },
   {
     title: "Our Forever",
     subtitle: undefined,
-    url: "/audio/Our%20Forever.wav",
+    url: "/audio/OurForever.wav",
   },
   {
     title: "Starts Tonight",
     subtitle: undefined,
-    url: "/audio/Starts%20Tonight.wav",
+    url: "/audio/StartsTonight.wav",
   },
   {
     title: "Your Hand",
     subtitle: undefined,
-    url: "/audio/Your%20Hand.wav",
+    url: "/audio/YourHand.wav",
   },
   {
     title: "Two Made One",
     subtitle: undefined,
-    url: "/audio/Two%20Made%20One.wav",
+    url: "/audio/TwoMadeOne.wav",
+  },
+  {
+    title: "Covenant",
+    subtitle: undefined,
+    url: "/audio/Covenant.wav",
   },
 ] as const;
 
