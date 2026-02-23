@@ -99,7 +99,7 @@ export async function generateMetadata({
         ...(post.mainImage?.url && {
           images: [
             {
-              url: urlFor(post.mainImage).width(1200).height(630).url(),
+              url: urlFor(post.mainImage).width(1200).height(630).quality(80).auto("format").url(),
               width: 1200,
               height: 630,
               alt: post.mainImage.alt || post.title,
@@ -173,7 +173,7 @@ export default async function BlogPostPage({
       url: siteConfig.url,
     },
     ...(post.mainImage?.url && {
-      image: urlFor(post.mainImage).width(1200).height(630).url(),
+      image: urlFor(post.mainImage).width(1200).height(630).quality(80).auto("format").url(),
     }),
   };
 
