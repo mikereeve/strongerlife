@@ -49,8 +49,8 @@
 @layer components {
   /* Primary call-to-action button */
   .btn-primary {
-    @apply inline-block px-8 py-3.5 bg-brand-gold text-white font-body font-semibold
-           rounded-md hover:brightness-90 transition-all duration-300
+    @apply inline-block px-8 py-3.5 bg-brand-gold-btn text-white font-body font-semibold
+           rounded-md hover:bg-brand-gold transition-all duration-300
            shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
   }
 

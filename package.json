@@ -17,6 +17,12 @@
     "react-dom": "^19.0.0",
     "react-player": "^3.4.0"
   },
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 Edge versions"
+  ],
   "devDependencies": {
     "sanity": "^3.40.0",
     "@sanity/vision": "^3.40.0",

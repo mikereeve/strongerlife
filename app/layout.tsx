@@ -136,6 +136,8 @@ export default function RootLayout({
       <head>
         {/* Preconnect to external domains for faster resource loading */}
         <link rel="preconnect" href="https://cdn.sanity.io" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
         {/* JSON-LD Structured Data — helps Google understand the business */}
         <script

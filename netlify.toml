@@ -1,0 +1,6 @@
+# Redirect www to non-www (301 permanent) at the CDN edge
+[[redirects]]
+  from = "https://www.thestrongerlife.org/*"
+  to = "https://thestrongerlife.org/:splat"
+  status = 301
+  force = true

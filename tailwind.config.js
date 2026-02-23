@@ -17,9 +17,10 @@ module.exports = {
           navy: "#1B2A4A",
           "navy-light": "#2A3F6E",
           cream: "#FAF7F2",
-          gold: "#C8913A",          // Buttons, decorative accents
-          "gold-dark": "#A67620",   // Text on light backgrounds (WCAG AA)
+          gold: "#C8913A",          // Decorative accents, hover states
+          "gold-dark": "#8B6514",   // Text on light backgrounds (WCAG AA ≥ 4.5:1)
           "gold-light": "#E5C88E",
+          "gold-btn": "#996515",    // Button background (WCAG AA with white text)
           sage: "#7A9E7E",
           "sage-light": "#B5CDB8",
           charcoal: "#33302B",      // Warm charcoal — harmonizes with cream
@@ -55,8 +56,8 @@ module.exports = {
         },
       },
       animation: {
-        "fade-in-up": "fade-in-up 0.6s ease-out forwards",
-        "fade-in": "fade-in 0.8s ease-out forwards",
+        "fade-in-up": "fade-in-up 0.6s ease-out both",
+        "fade-in": "fade-in 0.8s ease-out both",
       },
     },
   },

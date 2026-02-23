@@ -84,7 +84,6 @@ export default function MusicPlayer() {
                                 : "hover:bg-white/5 active:bg-white/10"
                               }`}
                   aria-current={isActive ? "true" : undefined}
-                  aria-label={`Play ${t.title}`}
                 >
                   {/* Track number / playing indicator */}
                   <span className="shrink-0 w-5 h-5 flex items-center justify-center">

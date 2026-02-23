@@ -35,7 +35,7 @@ export default function CTABanner({
     transition-all duration-300 shadow-lg hover:shadow-xl
     transform hover:-translate-y-0.5 no-underline cursor-pointer
     ${isNavy
-      ? "bg-brand-gold text-white hover:bg-brand-gold-light"
+      ? "bg-brand-gold-btn text-white hover:bg-brand-gold"
       : "bg-brand-navy text-white hover:bg-brand-navy-light"
     }`;
 

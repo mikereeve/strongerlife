@@ -16,11 +16,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ServiceCard from "@/components/ui/ServiceCard";
 import TestimonialCard from "@/components/ui/TestimonialCard";
 import CTABanner from "@/components/sections/CTABanner";
-import MusicPlayer from "@/components/ui/MusicPlayer";
+
+const MusicPlayer = dynamic(() => import("@/components/ui/MusicPlayer"), {
+  loading: () => (
+    <div className="rounded-2xl bg-brand-navy animate-pulse h-[200px]" />
+  ),
+});
 import { siteConfig, services, featuredTestimonials, generateBreadcrumbSchema, generateWebSiteSchema, generateFAQSchema } from "@/lib/config";
 import { serviceFAQs } from "@/lib/config/pricing";
 

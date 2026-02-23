@@ -270,7 +270,7 @@ export default function AudioPlayer({ url, title, subtitle, autoPlay = false, on
           <audio
             ref={audioRef}
             src={url}
-            preload="auto"
+            preload="metadata"
             onEnded={handleEnded}
             onError={handleError}
             onTimeUpdate={handleTimeUpdate}
