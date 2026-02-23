@@ -8,12 +8,15 @@
 
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
+import dynamic from "next/dynamic";
 import { Playfair_Display, Source_Sans_3 } from "next/font/google";
 import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import WebVitals from "@/components/WebVitals";
 import { siteConfig, generateLocalBusinessSchema } from "@/lib/config";
 import "@/styles/globals.css";
+
+/* --- Defer non-critical JS: Footer is below the fold --- */
+const Footer = dynamic(() => import("@/components/layout/Footer"), { ssr: true });
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
@@ -166,14 +169,14 @@ export default function RootLayout({
         {/* Core Web Vitals reporting — sends LCP, CLS, INP to GA */}
         {GA_ID && <WebVitals />}
 
-        {/* Google Analytics — only loads when Measurement ID is configured */}
+        {/* Google Analytics — lazyOnload so it doesn't block render or compete with LCP */}
         {GA_ID && (
           <>
             <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-              strategy="afterInteractive"
+              strategy="lazyOnload"
             />
-            <Script id="google-analytics" strategy="afterInteractive">
+            <Script id="google-analytics" strategy="lazyOnload">
               {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}

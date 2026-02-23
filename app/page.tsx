@@ -19,16 +19,28 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ServiceCard from "@/components/ui/ServiceCard";
-import TestimonialCard from "@/components/ui/TestimonialCard";
-import CTABanner from "@/components/sections/CTABanner";
+import { siteConfig, services, featuredTestimonials, generateBreadcrumbSchema, generateWebSiteSchema, generateFAQSchema } from "@/lib/config";
+import { serviceFAQs } from "@/lib/config/pricing";
 
 const MusicPlayer = dynamic(() => import("@/components/ui/MusicPlayer"), {
   loading: () => (
-    <div className="rounded-2xl bg-brand-navy animate-pulse h-[200px]" />
+    <div className="rounded-2xl bg-brand-navy animate-pulse h-[200px] min-h-[200px]" aria-hidden />
   ),
 });
-import { siteConfig, services, featuredTestimonials, generateBreadcrumbSchema, generateWebSiteSchema, generateFAQSchema } from "@/lib/config";
-import { serviceFAQs } from "@/lib/config/pricing";
+
+/* Below-fold sections: separate chunks so initial bundle is smaller (helps LCP + unused JS). */
+const HomeTestimonialsSection = dynamic(
+  () => import("@/components/sections/HomeTestimonialsSection"),
+  { ssr: true, loading: () => <div className="section-block bg-white min-h-[420px]" aria-hidden /> }
+);
+const HomeFAQSection = dynamic(
+  () => import("@/components/sections/HomeFAQSection"),
+  { ssr: true, loading: () => <div className="section-block bg-brand-cream min-h-[380px]" aria-hidden /> }
+);
+const CTABanner = dynamic(() => import("@/components/sections/CTABanner"), {
+  ssr: true,
+  loading: () => <div className="section-block bg-brand-navy min-h-[220px]" aria-hidden />,
+});
 
 /* --- Page Metadata ---
  * Overrides the default metadata from root layout.
@@ -148,6 +160,7 @@ export default function HomePage() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 500px"
                   className="w-full h-full object-cover"
                   priority
+                  fetchPriority="high"
                 />
               </div>
 
@@ -213,56 +226,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ========== TESTIMONIALS SECTION ========== */}
-      <section className="section-block bg-white">
-        <div className="section-wrapper">
-          <SectionHeading
-            title="What Couples Are Saying"
-            subtitle="Hear from couples who have experienced The Stronger Life firsthand."
-          />
+      {/* ========== TESTIMONIALS SECTION (below fold, dynamic chunk) ========== */}
+      <HomeTestimonialsSection testimonials={featuredTestimonials} />
 
-          {/* Testimonial cards — 3 columns on desktop */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            {featuredTestimonials.map((testimonial, index) => (
-              <TestimonialCard key={index} {...testimonial} />
-            ))}
-          </div>
+      {/* ========== FAQ SECTION (below fold, dynamic chunk) ========== */}
+      <HomeFAQSection faqs={[...serviceFAQs.homepage]} />
 
-          {/* Link to full testimonials page */}
-          <div className="text-center mt-10">
-            <Link href="/testimonials" className="text-brand-gold-dark font-medium
-              hover:text-brand-navy transition-colors no-underline">
-              View All Testimonials →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ========== FAQ SECTION ========== */}
-      <section className="section-block bg-brand-cream bg-texture">
-        <div className="section-wrapper max-w-narrow">
-          <SectionHeading
-            title="Frequently Asked Questions"
-            subtitle="Answers to the questions couples ask most."
-            tag="h2"
-          />
-
-          <div className="mt-10 space-y-6">
-            {serviceFAQs.homepage.map((faq, index) => (
-              <div key={index} className="card bg-white">
-                <h3 className="text-lg font-heading font-semibold text-brand-navy mb-3">
-                  {faq.question}
-                </h3>
-                <p className="text-brand-charcoal leading-relaxed text-sm">
-                  {faq.answer}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ========== BOTTOM CTA ========== */}
+      {/* ========== BOTTOM CTA (below fold, dynamic chunk) ========== */}
       <CTABanner />
     </>
   );
