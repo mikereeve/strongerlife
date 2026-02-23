@@ -147,7 +147,7 @@ export default function HomePage() {
                   height={1200}
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 500px"
                   className="w-full h-full object-cover"
-                  priority={false}
+                  priority
                 />
               </div>
 
