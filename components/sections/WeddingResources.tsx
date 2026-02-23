@@ -1,9 +1,10 @@
 /* =============================================================
  * WeddingResources Section — The Stronger Life
  *
- * Renders two sub-sections on the wedding officiant page:
+ * Renders three sub-sections on the wedding officiant page:
  *   1. Free Downloads — Wedding Day Emergency Kit PDFs
- *   2. Trusted Partners — Vendor cards
+ *   2. Curated Playlists — Spotify embeds
+ *   3. Trusted Partners — Vendor cards
  *
  * All data sourced from lib/config.ts.
  * ============================================================= */
@@ -11,12 +12,18 @@
 "use client";
 
 import SectionHeading from "@/components/ui/SectionHeading";
-import { weddingDownloads, trustedPartners } from "@/lib/config";
+import { weddingDownloads, weddingPlaylists, trustedPartners } from "@/lib/config";
 
 /* --- Inline SVG Icons --- */
 const DownloadIcon = () => (
   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m.75 12 3 3m0 0 3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+  </svg>
+);
+
+const MusicIcon = () => (
+  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" d="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.66a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.66A2.25 2.25 0 0 0 9 15.553Z" />
   </svg>
 );
 
@@ -32,7 +39,7 @@ export default function WeddingResources() {
       <div className="section-wrapper">
         <SectionHeading
           title="Wedding Resources"
-          subtitle="Free tools and trusted partners to help make your big day unforgettable."
+          subtitle="Free tools, curated music, and trusted partners to help make your big day unforgettable."
           tag="h2"
         />
 
@@ -66,6 +73,30 @@ export default function WeddingResources() {
                   Download PDF
                 </span>
               </a>
+            ))}
+          </div>
+        </div>
+
+        {/* ========== CURATED PLAYLISTS ========== */}
+        <div className="mt-16">
+          <h3 className="text-xl font-heading font-semibold text-brand-navy mb-6 flex items-center gap-2">
+            <MusicIcon />
+            Matt&apos;s Curated Playlists
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {weddingPlaylists.map((playlist) => (
+              <div key={playlist.url} className="rounded-xl overflow-hidden shadow-md bg-white">
+                <iframe
+                  src={`https://open.spotify.com/embed/${playlist.url.includes("/album/") ? "album" : "playlist"}/${playlist.url.split("/").pop()?.split("?")[0]}`}
+                  width="100%"
+                  height="152"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox"
+                  loading="lazy"
+                  className="border-0"
+                  title={playlist.title}
+                />
+              </div>
             ))}
           </div>
         </div>
