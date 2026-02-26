@@ -20,6 +20,7 @@ export default function MusicPlayer() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [autoPlay, setAutoPlay] = useState(false);
   const activeItemRef = useRef<HTMLLIElement>(null);
+  const hasMounted = useRef(false);
 
   const track = musicTracks[selectedIndex];
 
@@ -37,7 +38,12 @@ export default function MusicPlayer() {
   };
 
   // Scroll the active track into view whenever the selection changes
+  // (skip the initial mount to avoid scrolling the whole page down)
   useEffect(() => {
+    if (!hasMounted.current) {
+      hasMounted.current = true;
+      return;
+    }
     activeItemRef.current?.scrollIntoView({ block: "nearest", behavior: "smooth" });
   }, [selectedIndex]);
 
