@@ -190,7 +190,7 @@ export default async function BlogPostPage({
       />
 
       {/* ========== POST HEADER ========== */}
-      <section className="bg-brand-navy pt-32 pb-16 md:pt-40 md:pb-20">
+      <section className="bg-brand-navy pt-36 pb-16 md:pt-44 md:pb-20">
         <div className="section-wrapper max-w-narrow text-center">
           {/* Category badge */}
           {post.category && (
