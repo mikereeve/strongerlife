@@ -8,7 +8,7 @@
 
 // Required: Sanity project ID from https://sanity.io/manage
 export const projectId =
-  process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "your-project-id";
+  process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "ijhoknpo";
 
 // Dataset name — typically "production"
 export const dataset =
