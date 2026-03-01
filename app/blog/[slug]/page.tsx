@@ -262,6 +262,15 @@ export default async function BlogPostPage({
         </div>
       </article>
 
+      {/* ========== RELATED SERVICE ========== */}
+      {post.category && (
+        <section className="bg-white">
+          <div className="section-wrapper max-w-narrow">
+            <RelatedService categorySlug={post.category.slug} />
+          </div>
+        </section>
+      )}
+
       {/* ========== POST FOOTER ========== */}
       <section className="bg-white pb-16">
         <div className="section-wrapper max-w-narrow">
@@ -284,5 +293,56 @@ export default async function BlogPostPage({
         subheading="Schedule a free consultation to talk about your relationship goals."
       />
     </>
+  );
+}
+
+/* --- Related Service Card ---
+ * Maps blog post categories to relevant service pages,
+ * creating internal links that strengthen the content cluster.
+ */
+const serviceMap: Record<string, { href: string; title: string; description: string }> = {
+  communication: {
+    href: "/premarital-counseling",
+    title: "Premarital Counseling",
+    description: "Build stronger communication skills before and after you say \"I do.\" Learn more about our Prepare/Enrich certified counseling sessions.",
+  },
+  premarital: {
+    href: "/premarital-counseling",
+    title: "Premarital Counseling",
+    description: "Prepare for a lasting marriage with personalized counseling sessions covering communication, finances, conflict resolution, and more.",
+  },
+  marriage: {
+    href: "/marriage-coaching",
+    title: "Marriage Coaching",
+    description: "Strengthen your marriage at any stage with ongoing coaching designed to deepen connection and navigate challenges together.",
+  },
+  "faith-and-relationships": {
+    href: "/premarital-counseling",
+    title: "Premarital Counseling",
+    description: "Build your marriage on a foundation of faith, grace, and intentional growth. Explore our faith-centered counseling approach.",
+  },
+};
+
+function RelatedService({ categorySlug }: { categorySlug: string }) {
+  const service = serviceMap[categorySlug];
+  if (!service) return null;
+
+  return (
+    <div className="mt-8 p-6 bg-brand-cream rounded-xl border border-brand-gold/20">
+      <p className="text-xs font-medium text-brand-stone uppercase tracking-wide mb-2">
+        Related Service
+      </p>
+      <Link
+        href={service.href}
+        className="group no-underline block"
+      >
+        <h3 className="text-lg font-heading font-semibold text-brand-navy group-hover:text-brand-gold-dark transition-colors mb-2">
+          {service.title} →
+        </h3>
+        <p className="text-sm text-brand-stone leading-relaxed">
+          {service.description}
+        </p>
+      </Link>
+    </div>
   );
 }

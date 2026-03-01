@@ -18,16 +18,16 @@ import { siteConfig, generateServiceSchema, generateFAQSchema, generateBreadcrum
 
 /* --- Page-Specific SEO Metadata --- */
 export const metadata: Metadata = {
-  title: "Christian Premarital Counseling in St. Cloud, MN",
+  title: "Christian Premarital Counseling — Build a Stronger Foundation",
   description:
-    "Prepare/Enrich certified premarital counseling in St. Cloud, Minnesota. 5–6 personalized sessions covering communication, finances, and conflict resolution. In-person or virtual. Book a free consultation.",
+    "Start your marriage on solid ground. Prepare/Enrich certified counseling with 30+ years of experience. 5–6 personalized sessions — in-person or virtual. Book your free consultation today.",
   alternates: {
     canonical: `${siteConfig.url}/premarital-counseling`,
   },
   openGraph: {
-    title: "Christian Premarital Counseling in St. Cloud, MN | The Stronger Life",
+    title: "Christian Premarital Counseling — Build a Stronger Foundation | The Stronger Life",
     description:
-      "Prepare/Enrich certified premarital counseling helping couples build a strong foundation for a lasting, thriving marriage.",
+      "Start your marriage on solid ground. Prepare/Enrich certified premarital counseling helping couples build a lasting, thriving marriage. Book a free consultation.",
     url: `${siteConfig.url}/premarital-counseling`,
   },
 };

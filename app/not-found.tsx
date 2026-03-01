@@ -7,10 +7,19 @@ export const metadata: Metadata = {
   robots: { index: false, follow: true },
 };
 
+const popularPages = [
+  { href: "/premarital-counseling", label: "Premarital Counseling" },
+  { href: "/wedding-officiant", label: "Wedding Officiant" },
+  { href: "/marriage-coaching", label: "Marriage Coaching" },
+  { href: "/blog", label: "Blog" },
+  { href: "/testimonials", label: "Testimonials" },
+  { href: "/services", label: "Services & Pricing" },
+];
+
 export default function NotFound() {
   return (
     <section className="min-h-[70vh] flex items-center justify-center bg-brand-cream">
-      <div className="text-center px-6">
+      <div className="text-center px-6 py-16">
         <p className="text-6xl font-heading font-bold text-brand-gold-dark mb-4">
           404
         </p>
@@ -21,13 +30,31 @@ export default function NotFound() {
           The page you&apos;re looking for doesn&apos;t exist or may have been
           moved. Let&apos;s get you back on track.
         </p>
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
           <Link href="/" className="btn-primary no-underline">
             Go Home
           </Link>
           <Link href="/contact" className="btn-secondary no-underline">
             Contact Matt
           </Link>
+        </div>
+
+        <div className="max-w-md mx-auto">
+          <p className="text-sm font-medium text-brand-navy mb-4">
+            Popular pages you might be looking for:
+          </p>
+          <ul className="space-y-2">
+            {popularPages.map((page) => (
+              <li key={page.href}>
+                <Link
+                  href={page.href}
+                  className="text-brand-gold-dark hover:text-brand-navy transition-colors text-sm no-underline"
+                >
+                  {page.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

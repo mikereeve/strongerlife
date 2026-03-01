@@ -66,6 +66,50 @@ const nextConfig = {
         destination: "/blog",
         permanent: true,
       },
+
+      // Old Weebly blog post URLs still receiving traffic
+      {
+        source: "/thestrongerlifeinsightsblogspotcom/silent-invaders-three-enemies-of-a-strong-marriage",
+        destination: "/blog/silent-invaders-three-enemies-of-a-strong-marriage",
+        permanent: true,
+      },
+      {
+        source: "/3/post/2025/10/silent-invaders-three-enemies-of-a-strong-marriage.html",
+        destination: "/blog/silent-invaders-three-enemies-of-a-strong-marriage",
+        permanent: true,
+      },
+
+      // Common shorthand and alternate URL patterns
+      {
+        source: "/premarital",
+        destination: "/premarital-counseling",
+        permanent: true,
+      },
+      {
+        source: "/counseling",
+        destination: "/premarital-counseling",
+        permanent: true,
+      },
+      {
+        source: "/officiant",
+        destination: "/wedding-officiant",
+        permanent: true,
+      },
+      {
+        source: "/coaching",
+        destination: "/marriage-coaching",
+        permanent: true,
+      },
+      {
+        source: "/pricing",
+        destination: "/services",
+        permanent: true,
+      },
+      {
+        source: "/prices",
+        destination: "/services",
+        permanent: true,
+      },
     ];
   },
 

@@ -27,11 +27,17 @@ function generateContactPointSchema() {
 }
 
 export const metadata: Metadata = {
-  title: "Contact & Book a Free Consultation",
+  title: "Book Your Free 30-Minute Consultation",
   description:
-    "Schedule a free 30-minute consultation with Matt Reeve in St. Cloud, MN or virtually. Premarital counseling, wedding officiant, and marriage coaching inquiries welcome.",
+    "Take the first step toward a stronger marriage. Book a free 30-minute consultation with Matt Reeve — no pressure, no obligation. In-person in St. Cloud, MN or virtual.",
   alternates: {
     canonical: `${siteConfig.url}/contact`,
+  },
+  openGraph: {
+    title: "Book Your Free 30-Minute Consultation | The Stronger Life",
+    description:
+      "Take the first step toward a stronger marriage. Book a free consultation for premarital counseling, wedding officiant, or marriage coaching services.",
+    url: `${siteConfig.url}/contact`,
   },
 };
 
