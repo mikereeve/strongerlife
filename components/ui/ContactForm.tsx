@@ -174,6 +174,15 @@ export default function ContactForm() {
         setStatus("success");
         setFormData({ name: "", email: "", phone: "", service: "", message: "" });
         setErrors({});
+
+        // Track successful form submission as a GA4 conversion event
+        if (typeof window.gtag === "function") {
+          window.gtag("event", "generate_lead", {
+            event_category: "Contact",
+            event_label: formData.service || "Not specified",
+            value: 1,
+          });
+        }
       } else {
         setStatus("error");
       }
