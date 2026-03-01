@@ -197,6 +197,26 @@ export const serviceFAQs = {
       question: "Do we get a discount on our Minnesota marriage license?",
       answer: "Yes! Minnesota law provides a discount on the marriage license fee for couples who complete at least 12 hours of premarital counseling. Our program meets and exceeds this requirement, making you eligible for the reduced fee.",
     },
+    {
+      question: "When should we start premarital counseling?",
+      answer: "We recommend starting premarital counseling 4–8 months before your wedding date. This gives you enough time to complete all 5–6 sessions at a comfortable pace without feeling rushed. That said, it's never too early — some couples start a year or more before their wedding, and we've also worked with couples on shorter timelines. The most important thing is that you start.",
+    },
+    {
+      question: "Is premarital counseling required to get married in Minnesota?",
+      answer: "Premarital counseling is not legally required to get married in Minnesota. However, Minnesota Statute 517.08 offers a reduced marriage license fee for couples who complete at least 12 hours of premarital education with a qualified provider. Our Prepare/Enrich-based program exceeds this 12-hour requirement, so you'll qualify for the discount. Many churches and religious organizations also require or strongly recommend premarital counseling before performing a wedding ceremony.",
+    },
+    {
+      question: "What's the difference between premarital counseling and premarital therapy?",
+      answer: "Premarital counseling focuses on building skills, deepening understanding, and preparing you for marriage proactively. It's educational and forward-looking. Premarital therapy, on the other hand, typically addresses specific mental health concerns or unresolved relationship issues and is conducted by a licensed therapist. Our premarital counseling is designed for healthy couples who want to invest in their relationship — not just couples who are struggling. If deeper therapeutic work is needed, we can provide referrals to licensed therapists in the St. Cloud area.",
+    },
+    {
+      question: "Do both partners need to attend every premarital counseling session?",
+      answer: "Yes, both partners attend every session together. Premarital counseling is most effective when both people are present and engaged. The Prepare/Enrich assessment is also completed individually by each partner, which gives us insight into how your perspectives align and where you may see things differently. That said, if scheduling is a challenge, we offer flexible options including evening and weekend appointments.",
+    },
+    {
+      question: "Do you offer premarital counseling for non-religious or interfaith couples?",
+      answer: "Absolutely. While Matt's foundation is rooted in the Christian faith, he warmly serves couples from all backgrounds — including non-religious, interfaith, and spiritually diverse couples. Every session is tailored to your values, beliefs, and goals. The Prepare/Enrich assessment covers spiritual beliefs as one of its 12 categories, and we approach that conversation with respect and openness regardless of where you are in your faith journey.",
+    },
   ],
   weddingOfficiant: [
     {
