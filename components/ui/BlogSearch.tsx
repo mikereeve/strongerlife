@@ -183,7 +183,7 @@ export default function BlogSearch({ posts }: BlogSearchProps) {
                     className="text-brand-gold-dark font-medium text-sm mt-4 inline-flex
                                items-center gap-1 no-underline group-hover:gap-2 transition-all"
                   >
-                    Read more &rarr;
+                    Read {post.title} &rarr;
                   </Link>
                 </div>
               </div>

@@ -46,7 +46,7 @@ const components: Partial<PortableTextReactComponents> = {
       </h3>
     ),
 
-    h4: ({ children, value }) => (
+    h4: ({ children }) => (
       <h4 className="text-xl font-heading font-semibold text-brand-navy mt-8 mb-3">
         {children}
       </h4>
@@ -119,7 +119,7 @@ const components: Partial<PortableTextReactComponents> = {
                      hover:text-brand-navy transition-colors"
           {...(isExternal && {
             target: "_blank",
-            rel: "noopener noreferrer",
+            rel: "noopener noreferrer nofollow",
           })}
         >
           {children}
