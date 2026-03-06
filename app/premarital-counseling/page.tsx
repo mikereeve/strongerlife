@@ -18,16 +18,16 @@ import { siteConfig, generateServiceSchema, generateFAQSchema, generateBreadcrum
 
 /* --- Page-Specific SEO Metadata --- */
 export const metadata: Metadata = {
-  title: "Premarital Counseling in St. Cloud, MN — Prepare/Enrich Certified",
+  title: "Best Premarital Counseling in St. Cloud, MN | Prepare/Enrich Certified",
   description:
-    "Premarital counseling in St. Cloud, MN and Central Minnesota. Prepare/Enrich certified with 32+ years experience. 5–6 personalized sessions, in-person or virtual. Free consultation — eligible for MN marriage license discount.",
+    "Premarital counseling in St. Cloud, MN — Prepare/Enrich certified, 32+ years experience. 5–6 personalized sessions, in-person or virtual. Free consultation — MN marriage license discount eligible.",
   alternates: {
     canonical: `${siteConfig.url}/premarital-counseling`,
   },
   openGraph: {
-    title: "Premarital Counseling in St. Cloud, MN — Prepare/Enrich Certified | The Stronger Life",
+    title: "Best Premarital Counseling in St. Cloud, MN | Prepare/Enrich Certified | The Stronger Life",
     description:
-      "Premarital counseling in St. Cloud, MN and Central Minnesota. Prepare/Enrich certified with 32+ years experience. Free consultation — no pressure, no obligation.",
+      "Premarital counseling in St. Cloud, MN — Prepare/Enrich certified, 32+ years experience. Free consultation — no pressure, no obligation.",
     url: `${siteConfig.url}/premarital-counseling`,
   },
 };

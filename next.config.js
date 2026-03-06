@@ -110,6 +110,13 @@ const nextConfig = {
         destination: "/services",
         permanent: true,
       },
+
+      // Fix Google crawl 404s — old Weebly index.html and common crawl targets
+      {
+        source: "/index.html",
+        destination: "/",
+        permanent: true,
+      },
     ];
   },
 

@@ -2,7 +2,7 @@
  * CTABanner Component — The Stronger Life
  *
  * Full-width call-to-action section with a link to the
- * contact page.
+ * contact page. Tracks CTA clicks via GA4.
  *
  * Props:
  *   heading       — Primary CTA heading
@@ -12,7 +12,10 @@
  *   variant       — "navy" (dark bg) or "cream" (light bg)
  * ============================================================= */
 
+"use client";
+
 import Link from "next/link";
+import { trackCTAClick } from "@/lib/analytics";
 
 interface CTABannerProps {
   heading?: string;
@@ -62,7 +65,11 @@ export default function CTABanner({
           {subheading}
         </p>
 
-        <Link href={buttonHref} className={buttonStyle}>
+        <Link
+          href={buttonHref}
+          className={buttonStyle}
+          onClick={() => trackCTAClick(buttonText, "cta_banner", buttonHref)}
+        >
           {buttonText}
         </Link>
       </div>

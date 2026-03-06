@@ -19,6 +19,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ServiceCard from "@/components/ui/ServiceCard";
+import TrackedLink from "@/components/ui/TrackedLink";
 import { siteConfig, services, featuredTestimonials, generateBreadcrumbSchema, generateWebSiteSchema, generateFAQSchema } from "@/lib/config";
 import { serviceFAQs } from "@/lib/config/pricing";
 
@@ -112,17 +113,19 @@ export default function HomePage() {
             {/* Dual CTAs — primary action + secondary exploration */}
             <div className="flex flex-wrap gap-4 animate-fade-in-up"
                  style={{ animationDelay: "0.4s" }}>
-              <Link href="/contact" className="btn-primary text-base md:text-lg no-underline">
+              <TrackedLink href="/contact" className="btn-primary text-base md:text-lg no-underline" ctaLocation="hero" ctaText="Book a Free Consultation">
                 Book a Free Consultation
-              </Link>
-              <Link
+              </TrackedLink>
+              <TrackedLink
                 href="/services"
                 className="inline-block px-8 py-3.5 border-2 border-white/30
                            text-white font-semibold rounded-md
                            hover:text-white hover:bg-white/10 transition-all duration-300 no-underline"
+                ctaLocation="hero"
+                ctaText="View Services"
               >
                 View Services
-              </Link>
+              </TrackedLink>
             </div>
           </div>
         </div>

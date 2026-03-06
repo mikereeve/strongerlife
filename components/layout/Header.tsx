@@ -135,8 +135,8 @@ export default function Header() {
               className={`px-4 py-2 rounded-md text-sm font-medium transition-colors no-underline
                 ${pathname === item.href
                   ? isScrolled
-                    ? "text-brand-gold-dark bg-brand-gold-dark/10"
-                    : "text-brand-gold bg-white/10"
+                    ? "text-brand-gold-dark bg-brand-gold-dark/10 hover:text-brand-gold-dark"
+                    : "text-brand-gold bg-white/10 hover:text-brand-gold"
                   : isScrolled
                     ? "text-brand-charcoal hover:text-brand-gold-dark hover:bg-brand-gold-dark/5"
                     : "text-white/80 hover:text-brand-gold hover:bg-white/10"
@@ -207,8 +207,8 @@ export default function Header() {
               href={item.href}
               className={`px-4 py-3 rounded-lg text-lg font-medium no-underline transition-colors
                 ${pathname === item.href
-                  ? "text-brand-gold-dark bg-brand-gold-dark/10"
-                  : "text-brand-charcoal hover:bg-brand-cream"
+                  ? "text-brand-gold-dark bg-brand-gold-dark/10 hover:text-brand-gold-dark"
+                  : "text-brand-charcoal hover:text-brand-charcoal hover:bg-brand-cream"
                 }`}
               aria-current={pathname === item.href ? "page" : undefined}
             >
