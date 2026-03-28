@@ -13,6 +13,10 @@ import {
   getTopPages,
   getTrafficSources,
   getDeviceBreakdown,
+  getNewVsReturning,
+  getLandingPages,
+  getGeoBreakdown,
+  getCountryBreakdown,
 } from "@/lib/ga4";
 
 export async function GET(request: NextRequest) {
@@ -29,13 +33,18 @@ export async function GET(request: NextRequest) {
   const startDate = `${range}daysAgo`;
 
   try {
-    const [overview, daily, topPages, sources, devices] = await Promise.all([
-      getOverviewMetrics(startDate, endDate),
-      getDailySessions(startDate, endDate),
-      getTopPages(startDate, endDate),
-      getTrafficSources(startDate, endDate),
-      getDeviceBreakdown(startDate, endDate),
-    ]);
+    const [overview, daily, topPages, sources, devices, newVsReturning, landingPages, geo, countries] =
+      await Promise.all([
+        getOverviewMetrics(startDate, endDate),
+        getDailySessions(startDate, endDate),
+        getTopPages(startDate, endDate),
+        getTrafficSources(startDate, endDate),
+        getDeviceBreakdown(startDate, endDate),
+        getNewVsReturning(startDate, endDate),
+        getLandingPages(startDate, endDate),
+        getGeoBreakdown(startDate, endDate),
+        getCountryBreakdown(startDate, endDate),
+      ]);
 
     return NextResponse.json({
       overview,
@@ -43,6 +52,10 @@ export async function GET(request: NextRequest) {
       topPages,
       sources,
       devices,
+      newVsReturning,
+      landingPages,
+      geo,
+      countries,
     });
   } catch (error) {
     console.error("GA4 API error:", error);

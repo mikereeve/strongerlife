@@ -153,6 +153,13 @@
   }
 }
 
+/* --- Admin Dashboard — remove focus outlines on Recharts containers --- */
+.recharts-wrapper:focus,
+.recharts-wrapper svg:focus,
+.recharts-surface:focus {
+  outline: none;
+}
+
 /* --- Utility Overrides --- */
 @layer utilities {
   /* Text gradient for decorative headings */

@@ -32,6 +32,9 @@ interface OverviewMetrics {
   totalUsers: number;
   avgSessionDuration: number;
   bounceRate: number;
+  engagementRate: number;
+  pagesPerSession: number;
+  avgEngagementTimePerPage: number;
 }
 
 interface DailySessions {
@@ -56,12 +59,41 @@ interface DeviceBreakdown {
   sessions: number;
 }
 
+interface NewVsReturning {
+  userType: string;
+  users: number;
+}
+
+interface LandingPage {
+  path: string;
+  sessions: number;
+  bounceRate: number;
+  avgDuration: number;
+}
+
+interface GeoBreakdown {
+  city: string;
+  region: string;
+  sessions: number;
+  users: number;
+}
+
+interface CountryBreakdown {
+  country: string;
+  sessions: number;
+  users: number;
+}
+
 interface AnalyticsData {
   overview: OverviewMetrics;
   daily: DailySessions[];
   topPages: TopPage[];
   sources: TrafficSource[];
   devices: DeviceBreakdown[];
+  newVsReturning: NewVsReturning[];
+  landingPages: LandingPage[];
+  geo: GeoBreakdown[];
+  countries: CountryBreakdown[];
 }
 
 /* ---- Constants ---- */
@@ -112,6 +144,62 @@ function MetricCard({
       <p className="text-sm text-brand-stone mb-1">{label}</p>
       <p className="text-2xl font-heading text-brand-navy">{value}</p>
       {sub && <p className="text-xs text-brand-stone mt-1">{sub}</p>}
+    </div>
+  );
+}
+
+function PageTable({
+  title,
+  pages,
+  columns,
+}: {
+  title: string;
+  pages: { path: string; primary: string; secondary?: string }[];
+  columns: { label: string; key: "primary" | "secondary" }[];
+}) {
+  return (
+    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+      <h2 className="font-heading text-lg text-brand-navy mb-4">{title}</h2>
+      <div className="space-y-2">
+        <div className="flex items-center justify-between pb-2 border-b border-gray-100">
+          <span className="text-xs text-brand-stone uppercase tracking-wide">Page</span>
+          <div className="flex gap-6">
+            {columns.map((col) => (
+              <span
+                key={col.key}
+                className="text-xs text-brand-stone uppercase tracking-wide w-16 text-right"
+              >
+                {col.label}
+              </span>
+            ))}
+          </div>
+        </div>
+        {pages.map((page, i) => (
+          <div
+            key={`${page.path}-${i}`}
+            className="flex items-center justify-between py-2 border-b border-gray-50 last:border-0"
+          >
+            <div className="flex items-center gap-3 min-w-0">
+              <span className="text-xs text-brand-stone w-5 text-right shrink-0">
+                {i + 1}
+              </span>
+              <span className="text-sm text-brand-charcoal truncate">
+                {page.path === "/" ? "Homepage" : page.path}
+              </span>
+            </div>
+            <div className="flex gap-6">
+              <span className="text-sm font-medium text-brand-navy w-16 text-right shrink-0">
+                {page.primary}
+              </span>
+              {page.secondary && (
+                <span className="text-sm text-brand-stone w-16 text-right shrink-0">
+                  {page.secondary}
+                </span>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
@@ -199,8 +287,8 @@ export default function AdminDashboard() {
 
         {data && (
           <div className="space-y-8">
-            {/* Overview Cards */}
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            {/* Overview Cards — Row 1 */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <MetricCard
                 label="Total Users"
                 value={formatNumber(data.overview.totalUsers)}
@@ -217,9 +305,28 @@ export default function AdminDashboard() {
                 label="Avg. Duration"
                 value={formatDuration(data.overview.avgSessionDuration)}
               />
+            </div>
+
+            {/* Overview Cards — Row 2 */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <MetricCard
                 label="Bounce Rate"
                 value={`${(data.overview.bounceRate * 100).toFixed(1)}%`}
+              />
+              <MetricCard
+                label="Engagement Rate"
+                value={`${(data.overview.engagementRate * 100).toFixed(1)}%`}
+                sub="Sessions with meaningful interaction"
+              />
+              <MetricCard
+                label="Pages / Session"
+                value={data.overview.pagesPerSession.toFixed(1)}
+                sub="How deep visitors explore"
+              />
+              <MetricCard
+                label="Avg. Engagement / Page"
+                value={formatDuration(data.overview.avgEngagementTimePerPage)}
+                sub="Time actively engaged per page"
               />
             </div>
 
@@ -259,35 +366,32 @@ export default function AdminDashboard() {
               </ResponsiveContainer>
             </div>
 
-            {/* Two Column: Top Pages + Traffic Sources */}
+            {/* Two Column: Top Pages + Landing Pages */}
             <div className="grid md:grid-cols-2 gap-6">
-              {/* Top Pages */}
-              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-                <h2 className="font-heading text-lg text-brand-navy mb-4">
-                  Top Pages
-                </h2>
-                <div className="space-y-2">
-                  {data.topPages.map((page, i) => (
-                    <div
-                      key={page.path}
-                      className="flex items-center justify-between py-2 border-b border-gray-50 last:border-0"
-                    >
-                      <div className="flex items-center gap-3 min-w-0">
-                        <span className="text-xs text-brand-stone w-5 text-right shrink-0">
-                          {i + 1}
-                        </span>
-                        <span className="text-sm text-brand-charcoal truncate">
-                          {page.path === "/" ? "Homepage" : page.path}
-                        </span>
-                      </div>
-                      <span className="text-sm font-medium text-brand-navy shrink-0 ml-3">
-                        {formatNumber(page.pageViews)}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <PageTable
+                title="Top Pages"
+                columns={[{ label: "Views", key: "primary" }]}
+                pages={data.topPages.map((p) => ({
+                  path: p.path,
+                  primary: formatNumber(p.pageViews),
+                }))}
+              />
+              <PageTable
+                title="Landing Pages"
+                columns={[
+                  { label: "Sessions", key: "primary" },
+                  { label: "Bounce", key: "secondary" },
+                ]}
+                pages={data.landingPages.map((p) => ({
+                  path: p.path,
+                  primary: formatNumber(p.sessions),
+                  secondary: `${(p.bounceRate * 100).toFixed(0)}%`,
+                }))}
+              />
+            </div>
 
+            {/* Two Column: Traffic Sources + New vs Returning */}
+            <div className="grid md:grid-cols-2 gap-6">
               {/* Traffic Sources */}
               <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
                 <h2 className="font-heading text-lg text-brand-navy mb-4">
@@ -305,12 +409,110 @@ export default function AdminDashboard() {
                       dataKey="source"
                       type="category"
                       tick={{ fontSize: 12, fill: "#6B655A" }}
-                      width={100}
+                      width={120}
                     />
                     <Tooltip />
                     <Bar dataKey="sessions" fill="#1B2A4A" radius={[0, 4, 4, 0]} />
                   </BarChart>
                 </ResponsiveContainer>
+              </div>
+
+              {/* New vs Returning Users */}
+              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                <h2 className="font-heading text-lg text-brand-navy mb-4">
+                  New vs Returning Users
+                </h2>
+                <ResponsiveContainer width="100%" height={280}>
+                  <PieChart>
+                    <Pie
+                      data={data.newVsReturning}
+                      cx="50%"
+                      cy="50%"
+                      outerRadius={100}
+                      dataKey="users"
+                      nameKey="userType"
+                      label={(props) => {
+                        const name = (props.name as string) ?? "";
+                        const pct = ((props.percent ?? 0) * 100).toFixed(0);
+                        return `${name} ${pct}%`;
+                      }}
+                    >
+                      {data.newVsReturning.map((_, i) => (
+                        <Cell
+                          key={i}
+                          fill={CHART_COLORS[i % CHART_COLORS.length]}
+                        />
+                      ))}
+                    </Pie>
+                    <Tooltip />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+
+            {/* Two Column: Countries + City/Region */}
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Top Countries */}
+              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                <h2 className="font-heading text-lg text-brand-navy mb-4">
+                  Top Countries
+                </h2>
+                <ResponsiveContainer width="100%" height={300}>
+                  <BarChart data={data.countries} layout="vertical">
+                    <CartesianGrid
+                      strokeDasharray="3 3"
+                      stroke="#e5e7eb"
+                      horizontal={false}
+                    />
+                    <XAxis type="number" tick={{ fontSize: 12, fill: "#6B655A" }} />
+                    <YAxis
+                      dataKey="country"
+                      type="category"
+                      tick={{ fontSize: 12, fill: "#6B655A" }}
+                      width={120}
+                    />
+                    <Tooltip />
+                    <Bar dataKey="sessions" fill="#7A9E7E" radius={[0, 4, 4, 0]} name="Sessions" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+
+              {/* City / Region */}
+              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                <h2 className="font-heading text-lg text-brand-navy mb-4">
+                  Top Cities &amp; Regions
+                </h2>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between pb-2 border-b border-gray-100">
+                    <span className="text-xs text-brand-stone uppercase tracking-wide">City</span>
+                    <div className="flex gap-6">
+                      <span className="text-xs text-brand-stone uppercase tracking-wide w-20 text-right">Region</span>
+                      <span className="text-xs text-brand-stone uppercase tracking-wide w-16 text-right">Sessions</span>
+                      <span className="text-xs text-brand-stone uppercase tracking-wide w-14 text-right">Users</span>
+                    </div>
+                  </div>
+                  {data.geo.map((g, i) => (
+                    <div
+                      key={`${g.city}-${g.region}-${i}`}
+                      className="flex items-center justify-between py-2 border-b border-gray-50 last:border-0"
+                    >
+                      <span className="text-sm text-brand-charcoal truncate">
+                        {g.city === "(not set)" ? "Unknown" : g.city}
+                      </span>
+                      <div className="flex gap-6">
+                        <span className="text-sm text-brand-stone w-20 text-right truncate">
+                          {g.region === "(not set)" ? "-" : g.region}
+                        </span>
+                        <span className="text-sm font-medium text-brand-navy w-16 text-right">
+                          {formatNumber(g.sessions)}
+                        </span>
+                        <span className="text-sm text-brand-stone w-14 text-right">
+                          {formatNumber(g.users)}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
