@@ -108,13 +108,17 @@ const components: Partial<PortableTextReactComponents> = {
       </code>
     ),
 
-    // External links — open in new tab with security attributes
+    // External links — open in new tab with security attributes (allow only https:)
     link: ({ children, value }) => {
-      const href = value?.href || "#";
-      const isExternal = href.startsWith("http");
+      const raw = value?.href || "#";
+      const safeHref =
+        typeof raw === "string" && (raw.startsWith("https:") || raw.startsWith("http:"))
+          ? raw
+          : "#";
+      const isExternal = safeHref.startsWith("http");
       return (
         <a
-          href={href}
+          href={safeHref}
           className="text-brand-gold-dark underline underline-offset-2
                      hover:text-brand-navy transition-colors"
           {...(isExternal && {
@@ -127,16 +131,23 @@ const components: Partial<PortableTextReactComponents> = {
       );
     },
 
-    // Internal links — use Next.js Link for client-side navigation
-    internalLink: ({ children, value }) => (
-      <Link
-        href={value?.href || "/"}
-        className="text-brand-gold-dark underline underline-offset-2
-                   hover:text-brand-navy transition-colors"
-      >
-        {children}
-      </Link>
-    ),
+    // Internal links — use Next.js Link; allow only relative paths to prevent javascript:/data:
+    internalLink: ({ children, value }) => {
+      const raw = value?.href || "/";
+      const safeHref =
+        typeof raw === "string" && raw.startsWith("/") && !raw.startsWith("//")
+          ? raw
+          : "/";
+      return (
+        <Link
+          href={safeHref}
+          className="text-brand-gold-dark underline underline-offset-2
+                     hover:text-brand-navy transition-colors"
+        >
+          {children}
+        </Link>
+      );
+    },
   },
 
   /* --- Custom Block Types --- */

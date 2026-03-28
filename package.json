@@ -7,15 +7,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "studio": "npm run dev --prefix sanity"
   },
   "dependencies": {
+    "@google-analytics/data": "^5.2.1",
     "@sanity/image-url": "^1.0.2",
     "next": "^15.5.0",
     "next-sanity": "^9.4.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-player": "^3.4.0"
+    "react-player": "^3.4.0",
+    "recharts": "^3.8.1"
   },
   "browserslist": [
     "last 2 Chrome versions",
@@ -24,13 +27,13 @@
     "last 2 Edge versions"
   ],
   "devDependencies": {
-    "sanity": "^3.40.0",
     "@sanity/vision": "^3.40.0",
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "autoprefixer": "^10.4.0",
     "postcss": "^8.4.0",
+    "sanity": "^3.40.0",
     "tailwindcss": "^3.4.0",
     "typescript": "^5.4.0"
   }
