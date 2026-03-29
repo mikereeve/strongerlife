@@ -137,6 +137,11 @@ export const musicTracks = [
     subtitle: undefined,
     url: "/audio/Breath.mp3",
   },
+  {
+    title: "Carried By Your Hand",
+    subtitle: undefined,
+    url: "/audio/CarriedByYourHand.mp3",
+  },
 ] as const;
 
 /* --- Primary Navigation ---
