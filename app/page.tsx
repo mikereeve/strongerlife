@@ -105,7 +105,7 @@ export default function HomePage() {
             <p className="text-white/70 text-lg md:text-xl leading-relaxed mb-8
                           max-w-xl animate-fade-in-up"
                style={{ animationDelay: "0.2s" }}>
-              The goal isn&apos;t just to get you married — it&apos;s to get you
+              The goal isn&apos;t just to get you married; it&apos;s to get you
               90 years down the road, together. Personalized counseling, coaching,
               and wedding ceremonies that reflect who you are.
             </p>
