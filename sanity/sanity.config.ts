@@ -4,7 +4,7 @@
  * This configures the Sanity Studio content management interface.
  *
  * Sanity Studio can be:
- *   A) Hosted separately at a URL like studio.thestrongerlife.org
+ *   A) Hosted on Sanity at https://<studioHost>.sanity.studio (see sanity.cli.ts)
  *   B) Embedded in the Next.js app at /studio (using next-sanity)
  *
  * For option B, create app/studio/[[...index]]/page.tsx.

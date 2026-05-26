@@ -86,7 +86,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteConfig.url,
   },
-  // Google Search Console verification
+  // Google Search Console — prefer meta tag via NEXT_PUBLIC_GSC_VERIFICATION_ID for
+  // thestrongerlifemn.org. public/googlef5d39f328c8fe547.html is an HTML-file token;
+  // confirm in GSC which property it belongs to (may be legacy). Replace the file or
+  // set the env var when verifying the new domain.
   ...(process.env.NEXT_PUBLIC_GSC_VERIFICATION_ID && {
     verification: {
       google: process.env.NEXT_PUBLIC_GSC_VERIFICATION_ID,

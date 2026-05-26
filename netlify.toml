@@ -5,19 +5,6 @@
   status = 301
   force = true
 
-# Redirect legacy strongerlife.org domains to the new host
-[[redirects]]
-  from = "https://www.thestrongerlife.org/*"
-  to = "https://thestrongerlifemn.org/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://thestrongerlife.org/*"
-  to = "https://thestrongerlifemn.org/:splat"
-  status = 301
-  force = true
-
 # Cache static assets for repeat visits (addresses PageSpeed "efficient cache policy")
 [[headers]]
   for = "/_next/static/*"
