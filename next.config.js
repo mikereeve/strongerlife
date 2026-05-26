@@ -127,7 +127,11 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "www.thestrongerlife.org",
+        hostname: "thestrongerlifemn.org",
+      },
+      {
+        protocol: "https",
+        hostname: "www.thestrongerlifemn.org",
       },
       {
         // Sanity CDN for CMS-hosted images
@@ -206,7 +210,7 @@ const nextConfig = {
               `script-src 'self' 'unsafe-inline'${process.env.NODE_ENV === "development" ? " 'unsafe-eval'" : ""} https://www.googletagmanager.com`,
               "style-src 'self' 'unsafe-inline'",
               // Restrict images to known domains instead of blanket https:
-              "img-src 'self' https://cdn.sanity.io https://www.thestrongerlife.org https://www.google-analytics.com data:",
+              "img-src 'self' https://cdn.sanity.io https://thestrongerlifemn.org https://www.thestrongerlifemn.org https://www.google-analytics.com data:",
               "font-src 'self' data:",
               "connect-src 'self' https://cdn.sanity.io https://api.sanity.io https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com",
               "frame-src https://open.spotify.com https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com https://w.soundcloud.com",

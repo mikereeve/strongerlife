@@ -1,7 +1,20 @@
 # Redirect www to non-www (301 permanent) at the CDN edge
 [[redirects]]
+  from = "https://www.thestrongerlifemn.org/*"
+  to = "https://thestrongerlifemn.org/:splat"
+  status = 301
+  force = true
+
+# Redirect legacy strongerlife.org domains to the new host
+[[redirects]]
   from = "https://www.thestrongerlife.org/*"
-  to = "https://thestrongerlife.org/:splat"
+  to = "https://thestrongerlifemn.org/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://thestrongerlife.org/*"
+  to = "https://thestrongerlifemn.org/:splat"
   status = 301
   force = true
 
