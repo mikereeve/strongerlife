@@ -17,7 +17,7 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "*",
         allow: "/",
         // Block any admin or draft paths from indexing
-        disallow: ["/api/", "/admin/", "/draft/"],
+        disallow: ["/api/", "/admin", "/admin/", "/draft/"],
       },
     ],
     sitemap: `${siteConfig.url}/sitemap.xml`,

@@ -14,23 +14,22 @@ import Link from "next/link";
 import SectionHeading from "@/components/ui/SectionHeading";
 import TestimonialCard from "@/components/ui/TestimonialCard";
 import CTABanner from "@/components/sections/CTABanner";
-import { siteConfig, generateServiceSchema, generateFAQSchema, generateBreadcrumbSchema, allTestimonials, pricing, serviceFAQs } from "@/lib/config";
+import { siteConfig, generateServiceSchema, generateFAQSchema, generateBreadcrumbSchema, allTestimonials, pricing, serviceFAQs, buildPageMetadata } from "@/lib/config";
 
 /* --- Page-Specific SEO Metadata --- */
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Best Premarital Counseling in St. Cloud, MN | Prepare/Enrich Certified",
   description:
     "Premarital counseling in St. Cloud, MN — Prepare/Enrich certified, 32+ years experience. 5–6 personalized sessions, in-person or virtual. Free consultation — MN marriage license discount eligible.",
-  alternates: {
-    canonical: `${siteConfig.url}/premarital-counseling`,
-  },
+  path: "/premarital-counseling",
   openGraph: {
     title: "Best Premarital Counseling in St. Cloud, MN | Prepare/Enrich Certified | The Stronger Life",
     description:
       "Premarital counseling in St. Cloud, MN — Prepare/Enrich certified, 32+ years experience. Free consultation — no pressure, no obligation.",
-    url: `${siteConfig.url}/premarital-counseling`,
   },
-};
+});
+
+export const revalidate = 3600;
 
 export default function PremaritalCounselingPage() {
   const faqSchema = generateFAQSchema([...serviceFAQs.premaritalCounseling]);

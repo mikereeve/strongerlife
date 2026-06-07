@@ -157,7 +157,7 @@ export default function ContactForm() {
     lastSubmitRef.current = now;
 
     try {
-      const response = await fetch("/__forms.html", {
+      const response = await fetch("/contact", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({

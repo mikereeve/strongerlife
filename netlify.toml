@@ -1,3 +1,7 @@
+# Env vars (set in Netlify UI, not here): NEXT_PUBLIC_GA_MEASUREMENT_ID,
+# NEXT_PUBLIC_GSC_VERIFICATION_ID (optional), Sanity, GA4 API, ADMIN_PASSWORD.
+# See .env.example. Redeploy after changing NEXT_PUBLIC_* values.
+
 # Redirect www to non-www (301 permanent) at the CDN edge
 [[redirects]]
   from = "https://www.thestrongerlifemn.org/*"

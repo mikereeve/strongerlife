@@ -11,22 +11,21 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import TestimonialCard from "@/components/ui/TestimonialCard";
 import CTABanner from "@/components/sections/CTABanner";
 import Link from "next/link";
-import { siteConfig, generateServiceSchema, generateFAQSchema, generateBreadcrumbSchema, featuredTestimonials, pricing, serviceFAQs } from "@/lib/config";
+import { siteConfig, generateServiceSchema, generateFAQSchema, generateBreadcrumbSchema, featuredTestimonials, pricing, serviceFAQs, buildPageMetadata } from "@/lib/config";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Marriage & Relationship Coaching — Virtual & In-Person",
   description:
     "Marriage and relationship coaching in St. Cloud, MN and virtually nationwide. Single sessions from $150 or save with packages. Strengthen communication, resolve conflict, and grow together.",
-  alternates: {
-    canonical: `${siteConfig.url}/marriage-coaching`,
-  },
+  path: "/marriage-coaching",
   openGraph: {
     title: "Marriage & Relationship Coaching | The Stronger Life",
     description:
       "Ongoing relationship coaching to help your relationship thrive. Available in-person in St. Cloud, Minnesota and virtually nationwide.",
-    url: `${siteConfig.url}/marriage-coaching`,
   },
-};
+});
+
+export const revalidate = 3600;
 
 export default function MarriageCoachingPage() {
   const faqSchema = generateFAQSchema([...serviceFAQs.marriageCoaching]);

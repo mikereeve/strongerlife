@@ -11,16 +11,16 @@ import TestimonialGrid from "@/components/ui/TestimonialGrid";
 import PhotoGallery from "@/components/ui/PhotoGallery";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CTABanner from "@/components/sections/CTABanner";
-import { siteConfig, allTestimonials, galleryPhotos, generateBreadcrumbSchema, generateReviewSchema } from "@/lib/config";
+import { siteConfig, allTestimonials, galleryPhotos, generateBreadcrumbSchema, generateReviewSchema, buildPageMetadata } from "@/lib/config";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Testimonials — What Couples Are Saying",
   description:
     "Read 26+ five-star reviews from real couples about their premarital counseling, wedding officiant, and marriage coaching experience with Matt Reeve in St. Cloud, MN.",
-  alternates: {
-    canonical: `${siteConfig.url}/testimonials`,
-  },
-};
+  path: "/testimonials",
+});
+
+export const revalidate = 3600;
 
 export default function TestimonialsPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([

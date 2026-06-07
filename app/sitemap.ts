@@ -14,6 +14,9 @@ import { sitemapPostsQuery } from "@/lib/sanity/queries";
 import { assertSanityConfig } from "@/lib/sanity/env";
 import { siteConfig } from "@/lib/config";
 
+/** Regenerate sitemap hourly so new blog posts appear without redeploy. */
+export const revalidate = 3600;
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = siteConfig.url;
 

@@ -17,3 +17,4 @@ export {
   generateWebSiteSchema,
   generateReviewSchema,
 } from "./schemas";
+export { buildPageMetadata } from "./metadata";

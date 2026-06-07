@@ -12,7 +12,8 @@ import dynamic from "next/dynamic";
 import { Playfair_Display, Source_Sans_3 } from "next/font/google";
 import Header from "@/components/layout/Header";
 import WebVitals from "@/components/WebVitals";
-import { siteConfig, generateLocalBusinessSchema } from "@/lib/config";
+import SiteJsonLd from "@/components/seo/SiteJsonLd";
+import { siteConfig } from "@/lib/config";
 import "@/styles/globals.css";
 
 /* --- Defer non-critical JS: Footer is below the fold --- */
@@ -103,9 +104,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // Generate structured data for the business
-  const jsonLd = generateLocalBusinessSchema();
-
   return (
     <html lang="en" className={`${playfair.variable} ${sourceSans.variable}`}>
       <head>
@@ -114,11 +112,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
-        {/* JSON-LD Structured Data — helps Google understand the business */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <SiteJsonLd />
       </head>
       <body className="min-h-screen flex flex-col">
         {/* Skip to main content link for accessibility */}

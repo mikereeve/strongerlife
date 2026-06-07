@@ -1,0 +1,146 @@
+# The Stronger Life — Full Site Guide
+
+> Christian premarital counseling, marriage coaching, and wedding officiant services in St. Cloud, Minnesota. Matt Reeve — licensed premarital counselor, Prepare/Enrich certified, certified relationship coach, ordained minister, 32+ years experience.
+
+This document provides expanded context about The Stronger Life for language models. For a concise overview, see [llms.txt](https://thestrongerlifemn.org/llms.txt).
+
+## About the Business
+
+**Name:** The Stronger Life  
+**Tagline:** Strengthening Marriages Before They Begin  
+**Owner / Practitioner:** Matt Reeve  
+**Location:** St. Cloud, Minnesota (Central Minnesota)  
+**Website:** https://thestrongerlifemn.org  
+**Locale:** en_US
+
+Matt Reeve has served as a licensed premarital counselor, certified relationship coach, and ordained minister for over 32 years. He lives in Central Minnesota with his wife of 34+ years. He has two grown daughters and three grandchildren.
+
+**Philosophy:** The goal is not just to get couples married — it is to help them build a foundation for a marriage that lasts and thrives. Matt starts every relationship with a free, no-obligation consultation so couples can determine if they are a good fit. He tailors his approach to each couple's values, goals, and circumstances rather than using a one-size-fits-all method.
+
+**Faith approach:** Matt's foundation is rooted in the Christian faith and biblical marriage. He warmly serves couples from all backgrounds — including non-religious, interfaith, and spiritually diverse couples — tailoring sessions to each couple's values and story.
+
+## Services & Pricing
+
+### Premarital Counseling
+
+- **URL:** https://thestrongerlifemn.org/premarital-counseling
+- **Standalone price:** $600 (5–6 sessions)
+- **Bundled with wedding officiant:** $400
+- **Prepare/Enrich assessment fee:** $35 (one-time)
+- **Session length:** 1.5–2 hours each
+- **Scheduling:** Weekly, biweekly, or monthly
+- **Format:** In-person (St. Cloud area) or virtual via Google Meet (nationwide)
+- **Recommended start:** 4–8 months before wedding date
+
+**Includes:**
+- Customized Prepare/Enrich relationship assessment (12 key relationship areas)
+- 5–6 personalized counseling sessions
+- Communication and conflict resolution tools
+- Take-home resources
+- 1 free post-marital session within 1 year of wedding
+- Eligibility for discounted Minnesota marriage license (program exceeds 12-hour MN requirement)
+
+**Key distinction:** Premarital counseling is educational and forward-looking for healthy couples preparing for marriage. It is not clinical therapy; referrals to licensed therapists are available when deeper therapeutic work is needed.
+
+### Wedding Officiant
+
+- **URL:** https://thestrongerlifemn.org/wedding-officiant
+- **Service area:** St. Cloud, Central Minnesota, Twin Cities metro (travel fee may apply beyond 30 miles)
+
+| Package | Price | Summary |
+|---------|-------|---------|
+| Custom Ceremony | Starting at $750 | Face-to-face planning, fully customized script, unlimited revisions, rehearsal coordination, early arrival and vendor coordination, legal filing |
+| Personalized Ceremony | Starting at $600 | Phone consultation, professionally written ceremony with minor customization, legal filing |
+| Simple & Intimate | Starting at $500 | 15-minute ceremony to legalize union, legal filing |
+
+**Also available:** Vow renewals, house blessings, commitment ceremonies, memorial services.
+
+**Notes:** Additional fees may apply for travel beyond 30 miles and weddings on major holidays (Valentine's Day, Memorial Day, Independence Day, Thanksgiving, New Year's Eve). Couples may write their own vows; Matt encourages personalization.
+
+### Marriage & Relationship Coaching
+
+- **URL:** https://thestrongerlifemn.org/marriage-coaching
+- **Session length:** 1–2 hours
+- **Frequency:** Weekly or biweekly
+- **Format:** In-person (St. Cloud area) or virtual nationwide
+
+| Package | Price | Summary |
+|---------|-------|---------|
+| Single Session | $150 | One coaching session for couples or individuals |
+| 4-Session Package | $525 | Save $75 vs. single sessions |
+| Marriage Coaching Program | $600 | Relationship assessment plus 4–6 personalized sessions |
+
+**Formats offered:** In-person couples coaching, individual coaching, phone/virtual sessions, family relationship coaching.
+
+**Key distinction:** Marriage coaching is forward-focused and goal-oriented — it builds skills and strengthens relationships proactively. It does not diagnose or treat mental health conditions (that is the role of clinical counseling/therapy).
+
+**Cancellation policy:** 24-hour notice required to avoid charges. Unused package sessions can be applied to future dates.
+
+## Key Pages
+
+- [Home](https://thestrongerlifemn.org/): Hero value proposition, service cards, about/trust section, featured testimonials, FAQ, music player with original songs by Matt Reeve, CTA to book consultation.
+- [Services & Pricing](https://thestrongerlifemn.org/services): Full pricing overview for all services with links to detail pages.
+- [About Matt Reeve](https://thestrongerlifemn.org/about): Bio, approach, credentials, and personal background.
+- [Contact / Book Consultation](https://thestrongerlifemn.org/contact): Contact form; response within 24 hours. Free 30-minute consultation booking.
+- [Testimonials](https://thestrongerlifemn.org/testimonials): 26+ five-star client reviews and ceremony photo gallery.
+- [Blog](https://thestrongerlifemn.org/blog): "Before and After You Say 'I Do'" — articles on communication, conflict resolution, wedding planning, and marriage growth. Individual posts at `/blog/[slug]`. Content sourced from Sanity CMS.
+
+## Credentials & Experience
+
+- Licensed Premarital Counselor
+- Certified Relationship Coach
+- Ordained Minister — 32+ years
+- Prepare/Enrich certified facilitator
+- Trained in family dynamics, pastoral counseling, and professional ethics
+- Hundreds of couples counseled and ceremonies performed
+
+## Frequently Asked Questions
+
+**Do I need to be Christian to work with Matt?**  
+No. Matt serves couples from all backgrounds while remaining rooted in his Christian faith.
+
+**How do I get started?**  
+Book a free 30-minute consultation via the contact page or call (952) 393-8826.
+
+**Are virtual sessions available?**  
+Yes, for all services — premarital counseling, marriage coaching, and ceremony planning.
+
+**Do both partners attend premarital counseling?**  
+Yes, both partners attend every session together for best results.
+
+**Is premarital counseling required in Minnesota?**  
+Not legally required, but completing 12+ hours qualifies couples for a reduced marriage license fee. The Stronger Life program exceeds this requirement.
+
+## Contact
+
+- **Email:** thestrongerlife@gmail.com
+- **Phone:** (952) 393-8826
+- **Location:** St. Cloud, Minnesota
+- **Consultation:** Free 30-minute meeting, in person or virtual, no obligation
+
+## Wedding Resources (Optional)
+
+Free PDF downloads on the wedding officiant page:
+- Bride Edition wedding kit
+- Groom Edition wedding kit
+- Wedding Planner Edition checklist
+
+Curated Spotify playlists for ceremonies and celebrations are linked from the wedding officiant page.
+
+**Trusted partners (referrals):**
+- Northern Oaks Events (venue, Sauk Rapids, MN)
+- Bridesmaid Gifts Boutique
+- The Groom's Shop
+
+## Social Profiles
+
+- [Facebook](https://www.facebook.com/share/1Cbxd2gBEf/?mibextid=wwXIfr)
+- [Instagram](https://www.instagram.com/mattreeve.tsl)
+- [LinkedIn](https://www.linkedin.com/in/mattreeve02)
+- [WhatsApp Channel](https://whatsapp.com/channel/0029VbCUPwh9hXF9ZLBfoJ2F)
+- [Threads](https://www.threads.com/@mattreeve.tsl)
+
+## Optional
+
+- Admin pages (`/admin`, `/admin/login`) are internal CMS login routes — not public-facing content.
+- Original music by Matt Reeve is featured on the homepage (e.g., "Somebody Knew," "Always You," "Covenant") — personal creative work, not a commercial music service.

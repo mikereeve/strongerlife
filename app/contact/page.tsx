@@ -6,7 +6,7 @@
 
 import type { Metadata } from "next";
 import ContactForm from "@/components/ui/ContactForm";
-import { siteConfig, generateBreadcrumbSchema } from "@/lib/config";
+import { siteConfig, generateBreadcrumbSchema, buildPageMetadata } from "@/lib/config";
 
 function generateContactPointSchema() {
   return {
@@ -26,20 +26,19 @@ function generateContactPointSchema() {
   };
 }
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Book Your Free 30-Minute Consultation",
   description:
     "Book a free 30-minute consultation for premarital counseling, wedding officiant, or marriage coaching in St. Cloud, MN. Meet with Matt Reeve in person or virtually — no pressure, no obligation.",
-  alternates: {
-    canonical: `${siteConfig.url}/contact`,
-  },
+  path: "/contact",
   openGraph: {
     title: "Book Your Free 30-Minute Consultation | The Stronger Life",
     description:
       "Book a free 30-minute consultation for premarital counseling, wedding officiant, or marriage coaching in St. Cloud, MN. No pressure, no obligation.",
-    url: `${siteConfig.url}/contact`,
   },
-};
+});
+
+export const revalidate = 3600;
 
 export default function ContactPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([

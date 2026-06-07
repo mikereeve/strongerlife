@@ -12,23 +12,22 @@ import TestimonialCard from "@/components/ui/TestimonialCard";
 import CTABanner from "@/components/sections/CTABanner";
 import WeddingResources from "@/components/sections/WeddingResources";
 import Link from "next/link";
-import { siteConfig, generateServiceSchema, generateFAQSchema, generateBreadcrumbSchema, featuredTestimonials, pricing, serviceFAQs } from "@/lib/config";
+import { siteConfig, generateServiceSchema, generateFAQSchema, generateBreadcrumbSchema, featuredTestimonials, pricing, serviceFAQs, buildPageMetadata } from "@/lib/config";
 
 /* --- Page-Specific SEO Metadata --- */
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Wedding Officiant in St. Cloud & Central Minnesota",
   description:
     "Personalized wedding ceremonies in St. Cloud, MN and Central Minnesota. Ordained minister with 32+ years experience. Custom, personalized, or intimate packages from $500. Book a free meeting.",
-  alternates: {
-    canonical: `${siteConfig.url}/wedding-officiant`,
-  },
+  path: "/wedding-officiant",
   openGraph: {
     title: "Wedding Officiant in St. Cloud & Central Minnesota | The Stronger Life",
     description:
       "Personalized, passionate wedding ceremonies that reflect your unique love story. 32+ years of ministry experience.",
-    url: `${siteConfig.url}/wedding-officiant`,
   },
-};
+});
+
+export const revalidate = 3600;
 
 export default function WeddingOfficiantPage() {
   const faqSchema = generateFAQSchema([...serviceFAQs.weddingOfficiant]);

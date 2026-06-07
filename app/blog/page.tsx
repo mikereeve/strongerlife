@@ -21,17 +21,15 @@ import { allPostsQuery } from "@/lib/sanity/queries";
 import { assertSanityConfig } from "@/lib/sanity/env";
 import type { PostListItem } from "@/lib/sanity/types";
 import BlogSearch from "@/components/ui/BlogSearch";
-import { siteConfig, generateBreadcrumbSchema } from "@/lib/config";
+import { siteConfig, generateBreadcrumbSchema, buildPageMetadata } from "@/lib/config";
 
 /* --- Page Metadata --- */
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Blog — Before and After You Say 'I Do'",
   description:
     "Insights, advice, and encouragement for couples before and after the wedding. Articles on communication, conflict resolution, wedding planning, and building a thriving marriage.",
-  alternates: {
-    canonical: `${siteConfig.url}/blog`,
-  },
-};
+  path: "/blog",
+});
 
 /* --- ISR Revalidation ---
  * Rebuild this page every 60 seconds when new requests come in.

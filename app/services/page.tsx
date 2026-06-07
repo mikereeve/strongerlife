@@ -10,16 +10,16 @@ import Link from "next/link";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ServiceCard from "@/components/ui/ServiceCard";
 import CTABanner from "@/components/sections/CTABanner";
-import { siteConfig, services, pricing, generateBreadcrumbSchema } from "@/lib/config";
+import { siteConfig, services, pricing, generateBreadcrumbSchema, buildPageMetadata } from "@/lib/config";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Services & Pricing — Premarital Counseling, Officiant & Coaching",
   description:
     "Transparent pricing for premarital counseling ($400–$600), wedding officiant ($500–$750), and marriage coaching ($150/session) in St. Cloud, MN. Free first consultation.",
-  alternates: {
-    canonical: `${siteConfig.url}/services`,
-  },
-};
+  path: "/services",
+});
+
+export const revalidate = 3600;
 
 export default function ServicesPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([

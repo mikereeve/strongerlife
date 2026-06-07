@@ -187,11 +187,13 @@ export function generateWebSiteSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": `${siteConfig.url}/#website`,
     name: siteConfig.name,
     url: siteConfig.url,
     description: siteConfig.description,
     publisher: {
       "@type": "Organization",
+      "@id": siteConfig.url,
       name: siteConfig.name,
       url: siteConfig.url,
     },

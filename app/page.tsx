@@ -20,7 +20,7 @@ import dynamic from "next/dynamic";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ServiceCard from "@/components/ui/ServiceCard";
 import TrackedLink from "@/components/ui/TrackedLink";
-import { siteConfig, services, featuredTestimonials, generateBreadcrumbSchema, generateWebSiteSchema, generateFAQSchema } from "@/lib/config";
+import { siteConfig, services, featuredTestimonials, buildPageMetadata, generateBreadcrumbSchema, generateFAQSchema } from "@/lib/config";
 import { serviceFAQs } from "@/lib/config/pricing";
 
 const MusicPlayer = dynamic(() => import("@/components/ui/MusicPlayer"), {
@@ -48,20 +48,19 @@ const CTABanner = dynamic(() => import("@/components/sections/CTABanner"), {
  * Uses title.absolute to bypass the layout's title template
  * and prevent the brand name from being appended twice.
  */
-export const metadata: Metadata = {
-  title: { absolute: siteConfig.seo.defaultTitle },
+export const metadata: Metadata = buildPageMetadata({
+  title: siteConfig.seo.defaultTitle,
   description:
     "Christian premarital counseling, wedding officiant, and marriage coaching in St. Cloud, MN. 32+ years experience helping couples grow stronger together. Book a free consultation.",
-  alternates: {
-    canonical: siteConfig.url,
-  },
-};
+  titleAbsolute: true,
+});
+
+export const revalidate = 3600;
 
 export default function HomePage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", url: siteConfig.url },
   ]);
-  const webSiteSchema = generateWebSiteSchema();
   const faqSchema = generateFAQSchema([...serviceFAQs.homepage]);
 
   return (
@@ -70,10 +69,6 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
       />
       <script
         type="application/ld+json"

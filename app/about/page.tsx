@@ -9,16 +9,16 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CTABanner from "@/components/sections/CTABanner";
-import { siteConfig, generatePersonSchema, generateBreadcrumbSchema } from "@/lib/config";
+import { siteConfig, generatePersonSchema, generateBreadcrumbSchema, buildPageMetadata } from "@/lib/config";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "About Matt Reeve — Premarital Counselor & Wedding Officiant",
   description:
     "Meet Matt Reeve — licensed premarital counselor, Prepare/Enrich certified, and ordained minister with 32+ years experience. Serving St. Cloud, MN and Central Minnesota.",
-  alternates: {
-    canonical: `${siteConfig.url}/about`,
-  },
-};
+  path: "/about",
+});
+
+export const revalidate = 3600;
 
 export default function AboutPage() {
   const personSchema = generatePersonSchema();
