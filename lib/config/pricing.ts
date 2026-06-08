@@ -183,7 +183,7 @@ export const serviceFAQs = {
     },
     {
       question: "What is the Prepare/Enrich assessment?",
-      answer: "Prepare/Enrich is one of the most widely researched and validated relationship assessment tools available. It evaluates 12 key areas of your relationship — including communication, conflict resolution, financial management, and family dynamics — giving us deep insight into your strengths and growth areas. Research shows couples who complete Prepare/Enrich-based counseling lower their divorce risk by 31%.",
+      answer: "Prepare/Enrich is one of the most widely researched and validated relationship assessment tools available. It evaluates 12 key areas of your relationship, including communication, conflict resolution, financial management, and family dynamics, giving us deep insight into your strengths and growth areas. Research shows couples who complete Prepare/Enrich-based counseling lower their divorce risk by 31%.",
     },
     {
       question: "Can we do premarital counseling online?",
@@ -199,7 +199,7 @@ export const serviceFAQs = {
     },
     {
       question: "When should we start premarital counseling?",
-      answer: "We recommend starting premarital counseling 4–8 months before your wedding date. This gives you enough time to complete all 5–6 sessions at a comfortable pace without feeling rushed. That said, it's never too early — some couples start a year or more before their wedding, and we've also worked with couples on shorter timelines. The most important thing is that you start.",
+      answer: "We recommend starting premarital counseling 4–8 months before your wedding date. This gives you enough time to complete all 5–6 sessions at a comfortable pace without feeling rushed. That said, it's never too early; some couples start a year or more before their wedding, and we've also worked with couples on shorter timelines. The most important thing is that you start.",
     },
     {
       question: "Is premarital counseling required to get married in Minnesota?",
@@ -207,7 +207,7 @@ export const serviceFAQs = {
     },
     {
       question: "What's the difference between premarital counseling and premarital therapy?",
-      answer: "Premarital counseling focuses on building skills, deepening understanding, and preparing you for marriage proactively. It's educational and forward-looking. Premarital therapy, on the other hand, typically addresses specific mental health concerns or unresolved relationship issues and is conducted by a licensed therapist. Our premarital counseling is designed for healthy couples who want to invest in their relationship — not just couples who are struggling. If deeper therapeutic work is needed, we can provide referrals to licensed therapists in the St. Cloud area.",
+      answer: "Premarital counseling focuses on building skills, deepening understanding, and preparing you for marriage proactively. It's educational and forward-looking. Premarital therapy, on the other hand, typically addresses specific mental health concerns or unresolved relationship issues and is conducted by a licensed therapist. Our premarital counseling is designed for healthy couples who want to invest in their relationship, not just couples who are struggling. If deeper therapeutic work is needed, we can provide referrals to licensed therapists in the St. Cloud area.",
     },
     {
       question: "Do both partners need to attend every premarital counseling session?",
@@ -215,7 +215,7 @@ export const serviceFAQs = {
     },
     {
       question: "Do you offer premarital counseling for non-religious or interfaith couples?",
-      answer: "Absolutely. While Matt's foundation is rooted in the Christian faith, he warmly serves couples from all backgrounds — including non-religious, interfaith, and spiritually diverse couples. Every session is tailored to your values, beliefs, and goals. The Prepare/Enrich assessment covers spiritual beliefs as one of its 12 categories, and we approach that conversation with respect and openness regardless of where you are in your faith journey.",
+      answer: "Absolutely. While Matt's foundation is rooted in the Christian faith, he warmly serves couples from all backgrounds, including non-religious, interfaith, and spiritually diverse couples. Every session is tailored to your values, beliefs, and goals. The Prepare/Enrich assessment covers spiritual beliefs as one of its 12 categories, and we approach that conversation with respect and openness regardless of where you are in your faith journey.",
     },
   ],
   weddingOfficiant: [
@@ -239,7 +239,7 @@ export const serviceFAQs = {
   marriageCoaching: [
     {
       question: "What's the difference between marriage coaching and marriage counseling?",
-      answer: "Marriage coaching is forward-focused and goal-oriented — it helps couples build skills, improve communication, and strengthen their relationship proactively. Unlike clinical counseling or therapy, coaching doesn't diagnose or treat mental health conditions. It's for any couple who wants to invest in their relationship, not just those in crisis.",
+      answer: "Marriage coaching is forward-focused and goal-oriented; it helps couples build skills, improve communication, and strengthen their relationship proactively. Unlike clinical counseling or therapy, coaching doesn't diagnose or treat mental health conditions. It's for any couple who wants to invest in their relationship, not just those in crisis.",
     },
     {
       question: "How long are marriage coaching sessions?",
@@ -247,7 +247,7 @@ export const serviceFAQs = {
     },
     {
       question: "Do you offer virtual marriage coaching?",
-      answer: "Yes! Virtual coaching sessions are available nationwide via video call. Many couples find virtual sessions equally effective — the connection and the work happen regardless of physical distance. All you need is a smartphone or computer with a camera and a reliable internet connection.",
+      answer: "Yes! Virtual coaching sessions are available nationwide via video call. Many couples find virtual sessions equally effective; the connection and the work happen regardless of physical distance. All you need is a smartphone or computer with a camera and a reliable internet connection.",
     },
     {
       question: "How much does marriage coaching cost?",

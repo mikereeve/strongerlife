@@ -7,13 +7,23 @@
  * ============================================================= */
 
 import { siteConfig } from "./site";
-import { allTestimonials } from "./testimonials";
+
+/** Stable @id shared by LocalBusiness blocks site-wide (layout + testimonials page). */
+export const localBusinessId = `${siteConfig.url}/#localbusiness`;
+
+const WEEKDAYS = [
+  "https://schema.org/Monday",
+  "https://schema.org/Tuesday",
+  "https://schema.org/Wednesday",
+  "https://schema.org/Thursday",
+  "https://schema.org/Friday",
+] as const;
 
 export function generateLocalBusinessSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": siteConfig.url,
+    "@id": localBusinessId,
     name: siteConfig.name,
     description: siteConfig.description,
     url: siteConfig.url,
@@ -31,12 +41,14 @@ export function generateLocalBusinessSchema() {
       latitude: 45.5579,
       longitude: -94.1632,
     },
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "09:00",
-      closes: "17:00",
-    },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [...WEEKDAYS],
+        opens: "09:00",
+        closes: "17:00",
+      },
+    ],
     priceRange: "$$",
     image: `${siteConfig.url}/images/og-default.jpg`,
     serviceType: [
@@ -60,13 +72,7 @@ export function generateLocalBusinessSchema() {
       { "@type": "Country", name: "United States" },
     ],
     sameAs: Object.values(siteConfig.social).filter(Boolean),
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: allTestimonials.length,
-      bestRating: "5",
-      worstRating: "1",
-    },
+    // aggregateRating lives only on /testimonials where all reviews are visible
   };
 }
 
@@ -192,10 +198,7 @@ export function generateWebSiteSchema() {
     url: siteConfig.url,
     description: siteConfig.description,
     publisher: {
-      "@type": "Organization",
-      "@id": siteConfig.url,
-      name: siteConfig.name,
-      url: siteConfig.url,
+      "@id": localBusinessId,
     },
     potentialAction: {
       "@type": "SearchAction",
@@ -230,6 +233,7 @@ export function generateReviewSchema(
     reviewBody: t.quote,
     itemReviewed: {
       "@type": "LocalBusiness",
+      "@id": localBusinessId,
       name: siteConfig.name,
     },
   }));

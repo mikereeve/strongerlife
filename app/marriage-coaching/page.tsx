@@ -14,7 +14,7 @@ import Link from "next/link";
 import { siteConfig, generateServiceSchema, generateFAQSchema, generateBreadcrumbSchema, featuredTestimonials, pricing, serviceFAQs, buildPageMetadata } from "@/lib/config";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Marriage & Relationship Coaching — Virtual & In-Person",
+  title: "Marriage & Relationship Coaching, Virtual & In-Person",
   description:
     "Marriage and relationship coaching in St. Cloud, MN and virtually nationwide. Single sessions from $150 or save with packages. Strengthen communication, resolve conflict, and grow together.",
   path: "/marriage-coaching",
@@ -40,9 +40,9 @@ export default function MarriageCoachingPage() {
     "Ongoing coaching and support for couples at any stage of their relationship. Available in person and virtually nationwide.",
     `${siteConfig.url}/marriage-coaching`,
     [
-      { price: "150", description: "Single Session — 1–2 hour coaching session" },
-      { price: "525", description: "4-Session Package — save $75 with a 4-session commitment" },
-      { price: "600", description: "Marriage Coaching Program — comprehensive program with assessment" },
+      { price: "150", description: "Single Session, 1–2 hour coaching session" },
+      { price: "525", description: "4-Session Package; save $75 with a 4-session commitment" },
+      { price: "600", description: "Marriage Coaching Program, comprehensive program with assessment" },
     ]
   );
 
@@ -86,7 +86,7 @@ export default function MarriageCoachingPage() {
           <div className="max-w-prose space-y-6 text-brand-charcoal leading-relaxed">
             <p>
               Marriage coaching isn&apos;t just for couples in crisis. It&apos;s
-              for any couple who wants to invest in their relationship — to learn
+              for any couple who wants to invest in their relationship, to learn
               to resolve issues, communicate better, and recapture the spark.
             </p>
 
@@ -96,7 +96,7 @@ export default function MarriageCoachingPage() {
               virtual sessions for couples anywhere in the country. All you need
               is a strong WiFi connection and a smartphone or computer with a
               camera and microphone. Virtual coaching is just as effective as
-              meeting face to face — the connection and the work happen regardless
+              meeting face to face; the connection and the work happen regardless
               of distance.
             </p>
 
@@ -119,7 +119,7 @@ export default function MarriageCoachingPage() {
         <div className="section-wrapper">
           <SectionHeading
             title="Coaching Options"
-            subtitle="Flexible packages to fit your needs — from a single session to a comprehensive program."
+            subtitle="Flexible packages to fit your needs, from a single session to a comprehensive program."
             tag="h2"
           />
 
@@ -231,7 +231,7 @@ export default function MarriageCoachingPage() {
 
       <CTABanner
         heading="Your Relationship Deserves Investment"
-        subheading="Start with a free consultation — in person or via video. Let's talk about where you are and how I can help."
+        subheading="Start with a free consultation; in person or via video. Let's talk about where you are and how I can help."
       />
     </>
   );

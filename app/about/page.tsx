@@ -12,9 +12,9 @@ import CTABanner from "@/components/sections/CTABanner";
 import { siteConfig, generatePersonSchema, generateBreadcrumbSchema, buildPageMetadata } from "@/lib/config";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "About Matt Reeve — Premarital Counselor & Wedding Officiant",
+  title: "About Matt Reeve, Premarital Counselor & Wedding Officiant",
   description:
-    "Meet Matt Reeve — licensed premarital counselor, Prepare/Enrich certified, and ordained minister with 32+ years experience. Serving St. Cloud, MN and Central Minnesota.",
+    "Meet Matt Reeve, licensed premarital counselor, Prepare/Enrich certified, and ordained minister with 32+ years experience. Serving St. Cloud, MN and Central Minnesota.",
   path: "/about",
 });
 
@@ -79,8 +79,8 @@ export default function AboutPage() {
 
               <p>
                 For over 32 years I&apos;ve served as a licensed premarital
-                counselor, certified relationship coach, and ordained minister
-                — helping couples grow stronger both personally and relationally.
+                counselor, certified relationship coach, and ordained minister,
+                helping couples grow stronger both personally and relationally.
                 I live in Central Minnesota with my wife of 34+ years (my best
                 friend and partner in everything). We have two grown daughters
                 and three grandchildren.
@@ -90,7 +90,7 @@ export default function AboutPage() {
                 When I&apos;m not working with couples, you&apos;ll probably find me
                 enjoying strong coffee, trying a new IPA, grilling outdoors, or
                 just connecting with people. I try not to take myself too
-                seriously — and I think that&apos;s exactly what makes the
+                seriously, and I think that&apos;s exactly what makes the
                 counseling and coaching feel comfortable.
               </p>
 
@@ -98,7 +98,7 @@ export default function AboutPage() {
               <p>
                 I believe the best officiant and counselor for you is one you click
                 with and trust fully. That&apos;s why I always start with a
-                no-obligation meeting — either video or in person — so we can get
+                no-obligation meeting, either video or in person, so we can get
                 to know each other. I&apos;m not going to &ldquo;sell&rdquo; myself
                 or have you sign something right away. I want you to figure out
                 whether we&apos;re a great match.
@@ -115,7 +115,7 @@ export default function AboutPage() {
               <h3>More Than an Officiant</h3>
               <p>
                 When I officiate your wedding, I&apos;m with you all the way
-                through — the planning, the tension you&apos;re under, the last-minute
+                through, including the planning, the tension you&apos;re under, the last-minute
                 surprises. I arrive early, offer a calm presence, check in with your
                 other vendors, and handle the unexpected with grace and ease.
               </p>
@@ -132,7 +132,7 @@ export default function AboutPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-brand-sage mt-1">✓</span>
-                  Ordained Minister — 32+ years
+                  Ordained Minister, 32+ years
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-brand-sage mt-1">✓</span>

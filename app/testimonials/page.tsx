@@ -11,7 +11,7 @@ import TestimonialGrid from "@/components/ui/TestimonialGrid";
 import PhotoGallery from "@/components/ui/PhotoGallery";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CTABanner from "@/components/sections/CTABanner";
-import { siteConfig, allTestimonials, galleryPhotos, generateBreadcrumbSchema, generateReviewSchema, buildPageMetadata } from "@/lib/config";
+import { siteConfig, allTestimonials, galleryPhotos, generateBreadcrumbSchema, generateReviewSchema, localBusinessId, buildPageMetadata } from "@/lib/config";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Testimonials — What Couples Are Saying",
@@ -31,6 +31,7 @@ export default function TestimonialsPage() {
   const reviewSchemaData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": localBusinessId,
     name: siteConfig.name,
     url: siteConfig.url,
     review: generateReviewSchema(allTestimonials),

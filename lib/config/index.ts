@@ -16,5 +16,6 @@ export {
   generateBreadcrumbSchema,
   generateWebSiteSchema,
   generateReviewSchema,
+  localBusinessId,
 } from "./schemas";
 export { buildPageMetadata } from "./metadata";

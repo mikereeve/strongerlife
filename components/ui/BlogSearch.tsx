@@ -13,7 +13,8 @@
 
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { urlFor } from "@/lib/sanity/image";
@@ -23,9 +24,15 @@ interface BlogSearchProps {
   posts: PostListItem[];
 }
 
-export default function BlogSearch({ posts }: BlogSearchProps) {
+function BlogSearchInner({ posts }: BlogSearchProps) {
+  const searchParams = useSearchParams();
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
+
+  useEffect(() => {
+    const q = searchParams.get("q");
+    if (q) setQuery(q);
+  }, [searchParams]);
 
   // Extract unique categories
   const categories = useMemo(() => {
@@ -199,5 +206,13 @@ export default function BlogSearch({ posts }: BlogSearchProps) {
         </div>
       )}
     </div>
+  );
+}
+
+export default function BlogSearch(props: BlogSearchProps) {
+  return (
+    <Suspense fallback={<div className="min-h-[200px]" aria-hidden />}>
+      <BlogSearchInner {...props} />
+    </Suspense>
   );
 }

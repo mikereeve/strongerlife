@@ -20,12 +20,12 @@ import { siteConfig, generateServiceSchema, generateFAQSchema, generateBreadcrum
 export const metadata: Metadata = buildPageMetadata({
   title: "Best Premarital Counseling in St. Cloud, MN | Prepare/Enrich Certified",
   description:
-    "Premarital counseling in St. Cloud, MN — Prepare/Enrich certified, 32+ years experience. 5–6 personalized sessions, in-person or virtual. Free consultation — MN marriage license discount eligible.",
+    "Premarital counseling in St. Cloud, MN; Prepare/Enrich certified, 32+ years experience. 5–6 personalized sessions, in-person or virtual. Free consultation; MN marriage license discount eligible.",
   path: "/premarital-counseling",
   openGraph: {
     title: "Best Premarital Counseling in St. Cloud, MN | Prepare/Enrich Certified | The Stronger Life",
     description:
-      "Premarital counseling in St. Cloud, MN — Prepare/Enrich certified, 32+ years experience. Free consultation — no pressure, no obligation.",
+      "Premarital counseling in St. Cloud, MN; Prepare/Enrich certified, 32+ years experience. Free consultation; no pressure, no obligation.",
   },
 });
 
@@ -78,7 +78,7 @@ export default function PremaritalCounselingPage() {
           <p className="text-white/70 text-lg max-w-2xl mx-auto leading-relaxed">
             Deciding to get married is one of the biggest decisions of your life.
             Let&apos;s make sure you have everything you need for a marriage
-            that lasts — and thrives. Serving couples in St. Cloud, Central
+            that lasts, and thrives. Serving couples in St. Cloud, Central
             Minnesota, and virtually nationwide.
           </p>
         </div>
@@ -94,7 +94,7 @@ export default function PremaritalCounselingPage() {
 
           <div className="prose prose-lg max-w-prose space-y-6 text-brand-charcoal leading-relaxed">
             <p>
-              Premarital counseling isn&apos;t about finding problems — it&apos;s
+              Premarital counseling isn&apos;t about finding problems; it&apos;s
               about building strengths. Together, we&apos;ll explore the areas
               that matter most for a healthy, lasting marriage and equip you with
               tools to navigate them confidently.
@@ -110,7 +110,7 @@ export default function PremaritalCounselingPage() {
             <h3>Serving St. Cloud &amp; Central Minnesota</h3>
             <p>
               Our office is in St. Cloud, Minnesota, and we serve engaged couples
-              throughout Stearns County, Benton County, and Wright County —
+              throughout Stearns County, Benton County, and Wright County,
               including Sartell, Sauk Rapids, Waite Park, Monticello, and Elk River.
               If you&apos;re planning a wedding anywhere in Central Minnesota,
               premarital counseling sessions can be scheduled in person. For couples
@@ -122,9 +122,9 @@ export default function PremaritalCounselingPage() {
             <p>
               Our program uses <strong>Prepare/Enrich</strong>, one of the most
               widely researched relationship assessment tools available. It covers
-              12 distinct categories — including commitment, communication, family
+              12 distinct categories, including commitment, communication, family
               systems, relationship dynamics, personality traits, leisure activities,
-              and spiritual beliefs — giving us deep insight into
+              and spiritual beliefs, giving us deep insight into
               your strengths and growth areas. Research shows couples who complete
               Prepare/Enrich-based counseling lower their divorce risk by 31%.
             </p>
@@ -142,7 +142,7 @@ export default function PremaritalCounselingPage() {
             <p>
               Premarital counseling is for any engaged couple who wants to start
               their marriage with confidence and clarity. You don&apos;t need to
-              be in crisis or have concerns about your relationship — most couples
+              be in crisis or have concerns about your relationship; most couples
               who come to us are excited and simply want to invest in their future
               together.
             </p>
@@ -208,12 +208,12 @@ export default function PremaritalCounselingPage() {
               {
                 title: "Communication Skills",
                 description:
-                  "Learn to express your needs clearly and listen deeply — the foundation of every healthy relationship. We'll practice active listening techniques, explore your communication styles using your Prepare/Enrich results, and build habits that prevent misunderstandings.",
+                  "Learn to express your needs clearly and listen deeply; the foundation of every healthy relationship. We'll practice active listening techniques, explore your communication styles using your Prepare/Enrich results, and build habits that prevent misunderstandings.",
               },
               {
                 title: "Conflict Resolution",
                 description:
-                  "Develop strategies to navigate disagreements constructively, without letting them erode your connection. Every couple disagrees — what matters is how you handle it. We'll identify your conflict patterns and replace destructive habits with healthy ones.",
+                  "Develop strategies to navigate disagreements constructively, without letting them erode your connection. Every couple disagrees; what matters is how you handle it. We'll identify your conflict patterns and replace destructive habits with healthy ones.",
               },
               {
                 title: "Financial Partnership",
@@ -233,7 +233,7 @@ export default function PremaritalCounselingPage() {
               {
                 title: "Shared Vision & Values",
                 description:
-                  "Clarify your shared goals, spiritual life, and the vision you have for your life together. From career ambitions to where you want to live, from faith practices to whether and when to have children — we'll make sure you're on the same page.",
+                  "Clarify your shared goals, spiritual life, and the vision you have for your life together. From career ambitions to where you want to live, from faith practices to whether and when to have children; we'll make sure you're on the same page.",
               },
             ].map((topic, index) => (
               <div key={index} className="card">
@@ -254,7 +254,7 @@ export default function PremaritalCounselingPage() {
         <div className="section-wrapper max-w-narrow">
           <SectionHeading
             title="What to Expect"
-            subtitle="A clear, step-by-step look at how premarital counseling works — from first call to wedding day."
+            subtitle="A clear, step-by-step look at how premarital counseling works, from first call to wedding day."
             tag="h2"
           />
 
@@ -263,7 +263,7 @@ export default function PremaritalCounselingPage() {
             <p>
               It starts with a free 30-minute phone or video call. We&apos;ll get
               to know each other, talk about your relationship, and make sure
-              we&apos;re a good fit. No pressure, no obligation — just a
+              we&apos;re a good fit. No pressure, no obligation; just a
               conversation.
             </p>
 
@@ -279,7 +279,7 @@ export default function PremaritalCounselingPage() {
             <p>
               Over 5–6 sessions (each 1.5–2 hours), we&apos;ll work through your
               assessment results together. Sessions are tailored to your specific
-              needs — no cookie-cutter curriculum. We&apos;ll go deeper on the
+              needs; no cookie-cutter curriculum. We&apos;ll go deeper on the
               areas that matter most to you as a couple, whether that&apos;s
               communication, finances, family dynamics, intimacy, or all of the
               above.
@@ -289,7 +289,7 @@ export default function PremaritalCounselingPage() {
             <p>
               You&apos;ll leave each session with practical tools and take-home
               resources you can use immediately and throughout your marriage.
-              These aren&apos;t just abstract concepts — they&apos;re concrete
+              These aren&apos;t just abstract concepts; they&apos;re concrete
               strategies for the real challenges couples face.
             </p>
 
@@ -374,7 +374,7 @@ export default function PremaritalCounselingPage() {
       {/* ========== BOTTOM CTA ========== */}
       <CTABanner
         heading="Ready to Invest in Your Future Together?"
-        subheading="Start with a free 30-minute consultation. No pressure, no sales pitch — just a conversation to see if we're a great fit."
+        subheading="Start with a free 30-minute consultation. No pressure, no sales pitch; just a conversation to see if we're a great fit."
       />
     </>
   );
