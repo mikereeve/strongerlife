@@ -27,7 +27,7 @@ interface CTABannerProps {
 
 export default function CTABanner({
   heading = "Ready to Start Your Journey?",
-  subheading = "Schedule a free 30-minute consultation to see if we're a great fit.",
+  subheading = "Schedule a free 30-minute consultation to see if we're a great fit. Counseling and coaching available in St. Cloud or through virtual sessions via Google Meet across the continental United States.",
   buttonText = "Book Your Free Consultation",
   buttonHref = "/contact",
   variant = "navy",

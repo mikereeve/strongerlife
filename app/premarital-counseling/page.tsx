@@ -20,7 +20,7 @@ import { siteConfig, generateServiceSchema, generateFAQSchema, generateBreadcrum
 export const metadata: Metadata = buildPageMetadata({
   title: "Best Premarital Counseling in St. Cloud, MN | Prepare/Enrich Certified",
   description:
-    "Premarital counseling in St. Cloud, MN; Prepare/Enrich certified, 32+ years experience. 5–6 personalized sessions, in-person or virtual. Free consultation; MN marriage license discount eligible.",
+    "Premarital counseling in St. Cloud, MN; Prepare/Enrich certified, 32+ years experience. 5–6 personalized sessions, in-person or virtual sessions through Google Meet across the continental United States. Free consultation; MN marriage license discount eligible.",
   path: "/premarital-counseling",
   openGraph: {
     title: "Best Premarital Counseling in St. Cloud, MN | Prepare/Enrich Certified | The Stronger Life",
@@ -79,7 +79,7 @@ export default function PremaritalCounselingPage() {
             Deciding to get married is one of the biggest decisions of your life.
             Let&apos;s make sure you have everything you need for a marriage
             that lasts, and thrives. Serving couples in St. Cloud, Central
-            Minnesota, and virtually nationwide.
+            Minnesota, and across the continental United States.
           </p>
         </div>
       </section>
@@ -109,13 +109,16 @@ export default function PremaritalCounselingPage() {
 
             <h3>Serving St. Cloud &amp; Central Minnesota</h3>
             <p>
-              Our office is in St. Cloud, Minnesota, and we serve engaged couples
-              throughout Stearns County, Benton County, and Wright County,
-              including Sartell, Sauk Rapids, Waite Park, Monticello, and Elk River.
-              If you&apos;re planning a wedding anywhere in Central Minnesota,
-              premarital counseling sessions can be scheduled in person. For couples
-              outside the area or those who prefer the convenience of meeting from
-              home, virtual sessions via Google Meet are equally effective.
+              Our office is located in St. Cloud, Minnesota, and we proudly serve
+              engaged couples throughout Central Minnesota and across the continental
+              United States. Couples in Central Minnesota can schedule convenient
+              in-person premarital counseling sessions, while those outside the
+              area, or anyone who prefers the flexibility of meeting from home, can
+              participate in virtual sessions through Google Meet. Whether
+              you&apos;re planning a wedding in Minnesota, Florida, Texas,
+              California, or anywhere in between, our proven premarital counseling
+              process is designed to help you build a strong foundation for a
+              lasting marriage.
             </p>
 
             <h3>The Prepare/Enrich Assessment</h3>
@@ -146,14 +149,13 @@ export default function PremaritalCounselingPage() {
               who come to us are excited and simply want to invest in their future
               together.
             </p>
-            <p>You&apos;ll especially benefit from premarital counseling if:</p>
-            <ul>
-              <li>You&apos;re newly engaged and want to prepare intentionally for marriage</li>
-              <li>Your church or officiant requires or recommends premarital counseling</li>
-              <li>You want to learn how to navigate conflict before it becomes a pattern</li>
-              <li>You come from different backgrounds (cultural, religious, or family) and want help bridging those differences</li>
-              <li>You&apos;ve been together a long time and want fresh perspective before making it official</li>
-              <li>You want to qualify for Minnesota&apos;s marriage license fee discount</li>
+            <p className="mb-0">You&apos;ll especially benefit from premarital counseling if:</p>
+            <ul className="list-disc list-outside ml-4 md:ml-6 !mt-2 space-y-2">
+              <li className="leading-relaxed">You&apos;re newly engaged and want to prepare intentionally for marriage</li>
+              <li className="leading-relaxed">Your church or officiant requires or recommends premarital counseling</li>
+              <li className="leading-relaxed">You want to learn how to navigate conflict before it becomes a pattern</li>
+              <li className="leading-relaxed">You come from different backgrounds (cultural, religious, or family) and want help bridging those differences</li>
+              <li className="leading-relaxed">You&apos;ve been together a long time and want fresh perspective before making it official</li>
             </ul>
             <p>
               Whether you&apos;ve been together six months or six years, premarital
@@ -187,7 +189,13 @@ export default function PremaritalCounselingPage() {
           <p className="mt-6 text-sm text-brand-stone">
             {pricing.premaritalCounseling.sessions} &middot;{" "}
             {pricing.premaritalCounseling.sessionLength} &middot;{" "}
-            In-person or virtual via Google Meet
+            In-person or virtual sessions through Google Meet
+          </p>
+          <p className="mt-3 text-sm text-brand-stone leading-relaxed">
+            Minnesota couples who complete our program may qualify for a reduced
+            marriage license fee when applying in their county. See the FAQ below
+            for eligibility, the Educator&apos;s Statement, and what to confirm
+            with your county registrar.
           </p>
         </div>
       </section>
@@ -261,7 +269,8 @@ export default function PremaritalCounselingPage() {
           <div className="prose prose-lg max-w-prose space-y-6 text-brand-charcoal leading-relaxed mt-10">
             <h3>Step 1: Free Consultation</h3>
             <p>
-              It starts with a free 30-minute phone or video call. We&apos;ll get
+              It starts with a free 30-minute conversation through Google Meet or
+              in person. We&apos;ll get
               to know each other, talk about your relationship, and make sure
               we&apos;re a good fit. No pressure, no obligation; just a
               conversation.
@@ -320,7 +329,7 @@ export default function PremaritalCounselingPage() {
       </section>
 
       {/* ========== FAQ SECTION ========== */}
-      <section className="section-block bg-white">
+      <section id="faq" className="section-block bg-white">
         <div className="section-wrapper max-w-narrow">
           <SectionHeading
             title="Frequently Asked Questions"
@@ -356,7 +365,9 @@ export default function PremaritalCounselingPage() {
                 Wedding Officiant Services
               </h3>
               <p className="text-brand-stone text-sm leading-relaxed">
-                Many couples bundle premarital counseling with officiant services and save $200. Let Matt craft a ceremony as unique as your love story.
+                Many couples bundle premarital counseling with local officiant
+                services and save $200. Build a strong foundation before you say
+                &ldquo;I Do.&rdquo;
               </p>
             </Link>
             <Link href="/marriage-coaching" className="card bg-white hover:shadow-md transition-shadow no-underline group">

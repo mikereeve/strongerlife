@@ -29,12 +29,12 @@ function generateContactPointSchema() {
 export const metadata: Metadata = buildPageMetadata({
   title: "Book Your Free 30-Minute Consultation",
   description:
-    "Book a free 30-minute consultation for premarital counseling, wedding officiant, or marriage coaching in St. Cloud, MN. Meet with Matt Reeve in person or virtually — no pressure, no obligation.",
+    "Book a free 30-minute consultation for premarital counseling or marriage coaching in St. Cloud, MN or through virtual sessions via Google Meet across the continental United States, or to discuss local wedding officiant services in Central Minnesota. No pressure, no obligation.",
   path: "/contact",
   openGraph: {
     title: "Book Your Free 30-Minute Consultation | The Stronger Life",
     description:
-      "Book a free 30-minute consultation for premarital counseling, wedding officiant, or marriage coaching in St. Cloud, MN. No pressure, no obligation.",
+      "Book a free 30-minute consultation for premarital counseling, marriage coaching, or wedding officiant services. No pressure, no obligation.",
   },
 });
 
@@ -128,7 +128,12 @@ export default function ContactPage() {
                     {siteConfig.contact.location} &amp; Central Minnesota
                   </p>
                   <p className="text-brand-stone text-sm mt-1">
-                    Virtual sessions available nationwide
+                    Premarital counseling &amp; marriage coaching: virtual sessions
+                    through Google Meet across the continental United States
+                  </p>
+                  <p className="text-brand-stone text-sm mt-1">
+                    Wedding officiant: in-person ceremonies in St. Cloud, Central
+                    Minnesota &amp; Twin Cities metro
                   </p>
                 </div>
 
@@ -141,22 +146,23 @@ export default function ContactPage() {
                     <div className="flex gap-3">
                       <span className="text-brand-gold-dark font-bold shrink-0">1.</span>
                       <p>
-                        <strong className="text-brand-navy">Reach Out</strong> —
+                        <strong className="text-brand-navy">Reach Out</strong>,
                         Send a message using the form.
                       </p>
                     </div>
                     <div className="flex gap-3">
                       <span className="text-brand-gold-dark font-bold shrink-0">2.</span>
                       <p>
-                        <strong className="text-brand-navy">Meet</strong> —
-                        We&apos;ll have a relaxed 30-minute conversation
-                        (video or in person).
+                        <strong className="text-brand-navy">Meet</strong>,
+                        We&apos;ll have a relaxed 30-minute conversation through
+                        Google Meet or in person (for counseling or coaching), or by
+                        phone or in person (for wedding officiant inquiries).
                       </p>
                     </div>
                     <div className="flex gap-3">
                       <span className="text-brand-gold-dark font-bold shrink-0">3.</span>
                       <p>
-                        <strong className="text-brand-navy">Decide</strong> —
+                        <strong className="text-brand-navy">Decide</strong>,
                         No pressure. Take your time to decide if we&apos;re a
                         great match.
                       </p>

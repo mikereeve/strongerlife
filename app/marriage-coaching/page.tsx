@@ -16,12 +16,12 @@ import { siteConfig, generateServiceSchema, generateFAQSchema, generateBreadcrum
 export const metadata: Metadata = buildPageMetadata({
   title: "Marriage & Relationship Coaching, Virtual & In-Person",
   description:
-    "Marriage and relationship coaching in St. Cloud, MN and virtually nationwide. Single sessions from $150 or save with packages. Strengthen communication, resolve conflict, and grow together.",
+    "Marriage and relationship coaching in St. Cloud, MN and through virtual sessions via Google Meet across the continental United States. Single sessions from $150 or save with packages. Strengthen communication, resolve conflict, and grow together.",
   path: "/marriage-coaching",
   openGraph: {
     title: "Marriage & Relationship Coaching | The Stronger Life",
     description:
-      "Ongoing relationship coaching to help your relationship thrive. Available in-person in St. Cloud, Minnesota and virtually nationwide.",
+      "Ongoing relationship coaching to help your relationship thrive. Available in-person in St. Cloud, Minnesota and through virtual sessions via Google Meet across the continental United States.",
   },
 });
 
@@ -37,7 +37,7 @@ export default function MarriageCoachingPage() {
 
   const serviceSchema = generateServiceSchema(
     "Marriage & Relationship Coaching",
-    "Ongoing coaching and support for couples at any stage of their relationship. Available in person and virtually nationwide.",
+    "Ongoing coaching and support for couples at any stage of their relationship. Available in person in St. Cloud and through virtual sessions via Google Meet across the continental United States.",
     `${siteConfig.url}/marriage-coaching`,
     [
       { price: "150", description: "Single Session, 1–2 hour coaching session" },
@@ -73,7 +73,8 @@ export default function MarriageCoachingPage() {
           <p className="text-white/70 text-lg max-w-2xl mx-auto leading-relaxed">
             Whether you&apos;re navigating a rough patch or simply want to deepen
             your connection, coaching provides the tools and support to help
-            your relationship thrive.
+            your relationship thrive. In-person in St. Cloud or virtual sessions
+            through Google Meet across the continental United States.
           </p>
         </div>
       </section>
@@ -92,12 +93,15 @@ export default function MarriageCoachingPage() {
 
             <h3>In-Person &amp; Virtual Sessions</h3>
             <p>
-              I offer in-person sessions in the St. Cloud, Minnesota area and
-              virtual sessions for couples anywhere in the country. All you need
-              is a strong WiFi connection and a smartphone or computer with a
-              camera and microphone. Virtual coaching is just as effective as
-              meeting face to face; the connection and the work happen regardless
-              of distance.
+              Our office is located in St. Cloud, Minnesota, and we proudly serve
+              couples throughout Central Minnesota and across the continental
+              United States. Couples in Central Minnesota can schedule convenient
+              in-person coaching sessions, while those outside the area, or anyone
+              who prefers the flexibility of meeting from home, can participate in
+              virtual sessions through Google Meet. Whether you&apos;re in
+              Minnesota, Florida, Texas, California, or anywhere in between, our
+              coaching process is designed to help you strengthen communication,
+              resolve conflict, and grow together.
             </p>
 
             <h3>What Coaching Looks Like</h3>
@@ -222,7 +226,8 @@ export default function MarriageCoachingPage() {
                 Wedding Officiant
               </h3>
               <p className="text-brand-stone text-sm leading-relaxed">
-                Planning a vow renewal or know someone getting married? Matt creates personalized ceremonies that tell your story.
+                Planning a wedding in Central Minnesota? Matt creates personalized,
+                in-person ceremonies throughout St. Cloud and the Twin Cities metro.
               </p>
             </Link>
           </div>
@@ -231,7 +236,7 @@ export default function MarriageCoachingPage() {
 
       <CTABanner
         heading="Your Relationship Deserves Investment"
-        subheading="Start with a free consultation; in person or via video. Let's talk about where you are and how I can help."
+        subheading="Start with a free consultation; in person or through Google Meet. Let's talk about where you are and how I can help."
       />
     </>
   );

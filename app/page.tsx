@@ -51,7 +51,7 @@ const CTABanner = dynamic(() => import("@/components/sections/CTABanner"), {
 export const metadata: Metadata = buildPageMetadata({
   title: siteConfig.seo.defaultTitle,
   description:
-    "Christian premarital counseling, wedding officiant, and marriage coaching in St. Cloud, MN. 32+ years experience helping couples grow stronger together. Book a free consultation.",
+    "Christian premarital counseling and marriage coaching in St. Cloud, MN and through virtual sessions across the continental United States, plus local wedding officiant services. 32+ years experience helping couples grow stronger together. Book a free consultation.",
   titleAbsolute: true,
 });
 
@@ -101,8 +101,10 @@ export default function HomePage() {
                           max-w-xl animate-fade-in-up"
                style={{ animationDelay: "0.2s" }}>
               The goal isn&apos;t just to get you married; it&apos;s to get you
-              90 years down the road, together. Personalized counseling, coaching,
-              and wedding ceremonies that reflect who you are.
+              90 years down the road, together. Premarital counseling and marriage
+              coaching in St. Cloud or through virtual sessions via Google Meet
+              across the continental United States. Local, personalized
+              wedding ceremonies throughout Central Minnesota.
             </p>
 
             {/* Dual CTAs — primary action + secondary exploration */}
@@ -152,7 +154,7 @@ export default function HomePage() {
               <div className="aspect-[4/5] rounded-2xl bg-brand-navy/10 overflow-hidden">
                 <Image
                   src="/images/matt-profile.jpg"
-                  alt="Matt Reeve — Premarital Counselor, Marriage Coach & Wedding Officiant"
+                  alt="Matt Reeve, Premarital Counselor, Marriage Coach & Wedding Officiant"
                   width={1044}
                   height={1200}
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 500px"
@@ -182,16 +184,20 @@ export default function HomePage() {
               <div className="space-y-4 text-brand-charcoal leading-relaxed">
                 <p>
                   For over 32 years, I&apos;ve dedicated my life to helping
-                  couples grow stronger — both personally and relationally. As a
+                  couples grow stronger, both personally and relationally. As a
                   licensed premarital counselor and certified relationship coach,
                   I bring extensive training in family dynamics, pastoral
-                  counseling, and professional ethics to every session.
+                  counseling, and professional ethics to every session. I work
+                  with couples in St. Cloud and Central Minnesota in person, and
+                  with couples across the continental United States in virtual
+                  sessions through Google Meet.
                 </p>
                 <p>
                   I believe every couple deserves a great match in their counselor
                   and officiant. That&apos;s why I always start with a no-pressure
-                  meeting so we can see if we click. The best officiant for you is
-                  one you trust fully.
+                  meeting so we can see if we click. As your wedding officiant, I
+                  serve St. Cloud, Central Minnesota, and the Twin Cities metro
+                  with in-person ceremonies only.
                 </p>
               </div>
 
@@ -215,7 +221,7 @@ export default function HomePage() {
         <div className="section-wrapper max-w-4xl">
           <SectionHeading
             title="Listen"
-            subtitle="A curated collection of original songs by Matt Reeve — tap a title to listen."
+            subtitle="A curated collection of original songs by Matt Reeve; tap a title to listen."
             tag="h2"
           />
           <div className="mt-8">

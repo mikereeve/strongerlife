@@ -21,11 +21,11 @@ export const pricing = {
       "Customized Prepare/Enrich relationship assessment",
       "5–6 personalized counseling sessions",
       "Flexible scheduling (weekly, biweekly, or monthly)",
-      "In-person or virtual via Google Meet",
+      "In-person or virtual sessions through Google Meet",
       "Communication & conflict resolution tools",
       "Take-home resources",
       "1 free post-marital session (within 1 year of wedding)",
-      "Eligibility for discounted MN marriage license",
+      "May qualify for Minnesota's reduced marriage license fee",
     ],
   },
   weddingOfficiant: {
@@ -35,7 +35,7 @@ export const pricing = {
         label: "Most Popular",
         price: "Starting at $750",
         includes: [
-          "Face-to-face planning session (in-person or virtual)",
+          "In-person planning session in Central Minnesota",
           "Fully customized ceremony script",
           "Unlimited revisions and edits",
           "Ongoing phone, text & email communication",
@@ -79,7 +79,7 @@ export const pricing = {
   marriageCoaching: {
     sessionLength: "1–2 hours",
     frequency: "Weekly or biweekly",
-    format: "In-person (St. Cloud area) or virtual nationwide",
+    format: "In-person (St. Cloud area) or virtual sessions through Google Meet across the continental United States",
     packages: [
       {
         name: "Single Session",
@@ -125,7 +125,7 @@ export const pricing = {
     formats: [
       "In-person couples coaching",
       "Individual coaching",
-      "Phone or virtual sessions",
+      "Virtual sessions through Google Meet",
       "Family relationship coaching",
     ],
     notes:
@@ -187,7 +187,7 @@ export const serviceFAQs = {
     },
     {
       question: "Can we do premarital counseling online?",
-      answer: "Yes! Virtual premarital counseling sessions are available via Google Meet for couples anywhere in the country. All you need is a stable internet connection and a device with a camera and microphone. Virtual sessions are just as effective as in-person meetings.",
+      answer: "Yes! Virtual premarital counseling sessions are available through Google Meet for couples across the continental United States. All you need is a stable internet connection and a device with a camera and microphone. Virtual sessions are just as effective as in-person meetings.",
     },
     {
       question: "How much does premarital counseling cost?",
@@ -195,7 +195,8 @@ export const serviceFAQs = {
     },
     {
       question: "Do we get a discount on our Minnesota marriage license?",
-      answer: "Yes! Minnesota law provides a discount on the marriage license fee for couples who complete at least 12 hours of premarital counseling. Our program meets and exceeds this requirement, making you eligible for the reduced fee.",
+      answer:
+        "If you're applying for a marriage license in Minnesota, state law (Minn. Stat. § 517.08) allows couples who complete at least 12 hours of qualifying premarital education to pay a reduced license fee instead of the standard rate. Our Prepare/Enrich-based program exceeds the 12-hour requirement and meets the state's criteria, including a premarital inventory and training in communication and conflict management, so you may qualify when you complete premarital counseling with Matt. At the time of application, you'll need a signed Educator's Statement on the provider's letterhead (notarized or marked with a church seal) confirming both partners completed the education. License fees and procedures are set at the county level, so confirm the current reduced fee, paperwork, and deadlines with the county registrar where you'll apply, for example, Stearns County or whichever Minnesota county issues your license. We provide the Educator's Statement when you finish the program.",
     },
     {
       question: "When should we start premarital counseling?",
@@ -203,7 +204,8 @@ export const serviceFAQs = {
     },
     {
       question: "Is premarital counseling required to get married in Minnesota?",
-      answer: "Premarital counseling is not legally required to get married in Minnesota. However, Minnesota Statute 517.08 offers a reduced marriage license fee for couples who complete at least 12 hours of premarital education with a qualified provider. Our Prepare/Enrich-based program exceeds this 12-hour requirement, so you'll qualify for the discount. Many churches and religious organizations also require or strongly recommend premarital counseling before performing a wedding ceremony.",
+      answer:
+        "Premarital counseling is not legally required to get married in Minnesota. Many churches and religious organizations require or strongly recommend premarital counseling before performing a wedding ceremony. Completing qualified premarital education can also qualify Minnesota couples for a reduced marriage license fee; see the FAQ above for how that works with our program.",
     },
     {
       question: "What's the difference between premarital counseling and premarital therapy?",
@@ -221,11 +223,11 @@ export const serviceFAQs = {
   weddingOfficiant: [
     {
       question: "What areas do you serve as a wedding officiant?",
-      answer: "Matt serves as a wedding officiant throughout St. Cloud, Central Minnesota, and the Twin Cities metro area. Travel beyond 30 miles from St. Cloud may incur an additional travel fee. Whether you're planning an outdoor ceremony, a church wedding, or a courthouse service, Matt can be there.",
+      answer: "Matt serves as a wedding officiant throughout St. Cloud, Central Minnesota, and the Twin Cities metro area. All ceremonies are performed in person; officiant services are not available virtually or nationwide. Travel beyond 30 miles from St. Cloud may incur an additional travel fee. Whether you're planning an outdoor ceremony, a church wedding, or a courthouse service, Matt can be there.",
     },
     {
       question: "Can we write our own wedding vows?",
-      answer: "Absolutely! Matt encourages couples to incorporate their own personal vows. With the Custom Ceremony package, you'll work together to craft a fully personalized ceremony script — including your vows, readings, and any traditions that are meaningful to you. Matt provides guidance and unlimited revisions.",
+      answer: "Absolutely! Matt encourages couples to incorporate their own personal vows. With the Custom Ceremony package, you'll work together to craft a fully personalized ceremony script, including your vows, readings, and any traditions that are meaningful to you. Matt provides guidance and unlimited revisions.",
     },
     {
       question: "What's included in each wedding officiant package?",
@@ -243,11 +245,11 @@ export const serviceFAQs = {
     },
     {
       question: "How long are marriage coaching sessions?",
-      answer: "Each coaching session is 1–2 hours long, typically scheduled weekly or biweekly. The length and frequency are flexible based on your needs and schedule. You can choose between in-person sessions in the St. Cloud, Minnesota area or virtual sessions from anywhere in the country.",
+      answer: "Each coaching session is 1–2 hours long, typically scheduled weekly or biweekly. The length and frequency are flexible based on your needs and schedule. You can choose between in-person sessions in the St. Cloud, Minnesota area or virtual sessions through Google Meet across the continental United States.",
     },
     {
       question: "Do you offer virtual marriage coaching?",
-      answer: "Yes! Virtual coaching sessions are available nationwide via video call. Many couples find virtual sessions equally effective; the connection and the work happen regardless of physical distance. All you need is a smartphone or computer with a camera and a reliable internet connection.",
+      answer: "Yes! Virtual coaching sessions are available through Google Meet for couples across the continental United States. Many couples find virtual sessions equally effective; the connection and the work happen regardless of physical distance. All you need is a device with a camera, microphone, and reliable internet connection.",
     },
     {
       question: "How much does marriage coaching cost?",
@@ -258,7 +260,7 @@ export const serviceFAQs = {
     {
       question: "What services does The Stronger Life offer?",
       answer:
-        "The Stronger Life offers three core services: Prepare/Enrich certified premarital counseling, personalized wedding officiant services, and marriage and relationship coaching. All services are available in person in St. Cloud, Minnesota, or virtually nationwide.",
+        "The Stronger Life offers three core services: Prepare/Enrich certified premarital counseling, personalized wedding officiant services, and marriage and relationship coaching. Premarital counseling and marriage coaching are available in person in St. Cloud, Minnesota, or through virtual sessions via Google Meet across the continental United States. Wedding officiant services are in-person only throughout St. Cloud, Central Minnesota, and the Twin Cities metro.",
     },
     {
       question: "Do I need to be Christian to work with you?",
@@ -268,12 +270,12 @@ export const serviceFAQs = {
     {
       question: "How do I get started?",
       answer:
-        "The first step is a free 30-minute consultation — no commitment, no pressure. It's a chance to share your story, ask questions, and see if The Stronger Life is the right fit for you as a couple. Call (952) 393-8826 to get started.",
+        "The first step is a free 30-minute consultation, no commitment, no pressure. It's a chance to share your story, ask questions, and see if The Stronger Life is the right fit for you as a couple. Call (952) 393-8826 to get started.",
     },
     {
       question: "Do you offer virtual sessions?",
       answer:
-        "Yes! Virtual sessions are available for all services — premarital counseling, marriage coaching, and ceremony planning. All you need is a device with a camera and a reliable internet connection. Virtual sessions are just as effective as meeting in person.",
+        "Yes! Virtual sessions through Google Meet are available for premarital counseling and marriage coaching across the continental United States. Wedding ceremonies are performed in person only throughout Central Minnesota and the Twin Cities area. All you need for virtual counseling or coaching is a device with a camera and a reliable internet connection.",
     },
   ],
 } as const;

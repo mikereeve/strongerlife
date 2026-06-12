@@ -13,7 +13,7 @@ import CTABanner from "@/components/sections/CTABanner";
 import { siteConfig, services, pricing, generateBreadcrumbSchema, buildPageMetadata } from "@/lib/config";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Services & Pricing — Premarital Counseling, Officiant & Coaching",
+  title: "Services & Pricing, Premarital Counseling, Officiant & Coaching",
   description:
     "Transparent pricing for premarital counseling ($400–$600), wedding officiant ($500–$750), and marriage coaching ($150/session) in St. Cloud, MN. Free first consultation.",
   path: "/services",
@@ -63,7 +63,7 @@ export default function ServicesPage() {
         <div className="section-wrapper max-w-narrow">
           <SectionHeading
             title="Investment in Your Relationship"
-            subtitle="You're investing in your future — not just the day. Here's what each service includes."
+            subtitle="You're investing in your future, not just the day. Here's what each service includes."
             tag="h2"
           />
 
@@ -78,7 +78,7 @@ export default function ServicesPage() {
                   <p className="text-brand-stone mb-4">
                     {pricing.premaritalCounseling.sessions} of personalized counseling
                     ({pricing.premaritalCounseling.sessionLength}), using the research-backed
-                    Prepare/Enrich assessment. In-person or virtual.
+                    Prepare/Enrich assessment. In-person or virtual sessions through Google Meet.
                   </p>
 
                   <div className="flex flex-wrap gap-4 mb-4">
@@ -109,6 +109,19 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ul>
+                  <p className="text-sm text-brand-stone mt-4 leading-relaxed">
+                    Minnesota couples applying in-state may qualify for a reduced
+                    marriage license fee after completing the program. Confirm current
+                    fees and paperwork with your county registrar (e.g., Stearns
+                    County).{" "}
+                    <Link
+                      href="/premarital-counseling#faq"
+                      className="text-brand-gold-dark hover:underline"
+                    >
+                      Details in our premarital FAQ
+                    </Link>
+                    .
+                  </p>
                 </div>
               </div>
             </div>
@@ -118,6 +131,11 @@ export default function ServicesPage() {
               <h3 className="text-xl font-heading font-semibold text-brand-navy mb-6">
                 Wedding Officiant Packages
               </h3>
+              <p className="text-brand-stone text-sm mb-6">
+                In-person ceremonies throughout St. Cloud, Central Minnesota, and
+                the Twin Cities metro. Officiant services are not available
+                virtually or nationwide.
+              </p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {pricing.weddingOfficiant.packages.map((pkg, index) => (
@@ -202,7 +220,7 @@ export default function ServicesPage() {
 
       <CTABanner
         heading="Your First Consultation Is Free"
-        subheading="Let's talk about your needs and find the right path forward — no obligation."
+        subheading="Let's talk about your needs and find the right path forward, no obligation."
       />
     </>
   );

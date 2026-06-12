@@ -148,10 +148,12 @@ export default function Footer() {
                 </p>
               )}
               <p className="text-white/80">
-                Serving {siteConfig.contact.location} &amp; Central Minnesota
+                Premarital counseling &amp; marriage coaching: virtual sessions
+                through Google Meet across the continental United States
               </p>
               <p className="text-white/80">
-                Virtual sessions available nationwide
+                Wedding officiant: in-person in St. Cloud, Central Minnesota
+                &amp; Twin Cities metro
               </p>
             </div>
           </div>

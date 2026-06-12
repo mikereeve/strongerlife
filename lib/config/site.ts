@@ -10,7 +10,7 @@ export const siteConfig = {
   name: "The Stronger Life",
   tagline: "Strengthening Marriages Before They Begin",
   description:
-    "Christian premarital counseling, marriage coaching, and wedding officiant services helping couples grow stronger together — personally and relationally.",
+    "Christian premarital counseling and marriage coaching in St. Cloud, MN and through virtual sessions across the continental United States, plus local wedding officiant services throughout Central Minnesota and the Twin Cities metro.",
   url: "https://thestrongerlifemn.org",
   locale: "en_US",
 
@@ -45,7 +45,7 @@ export const siteConfig = {
           url: "/images/og-default.jpg", // 1200x630px recommended
           width: 1200,
           height: 630,
-          alt: "The Stronger Life — Christian Premarital Counseling & Wedding Officiant in St. Cloud, MN",
+          alt: "The Stronger Life, Christian Premarital Counseling & Wedding Officiant in St. Cloud, MN",
         },
       ],
     },
@@ -167,21 +167,21 @@ export const services = [
     title: "Premarital Counseling",
     slug: "premarital-counseling",
     shortDescription:
-      "Comprehensive sessions to build a strong foundation before you say 'I Do.'",
+      "Build a strong foundation before you say 'I Do.' In-person in St. Cloud or virtual sessions through Google Meet across the continental United States.",
     icon: "premarital-counseling", // Maps to an icon component
   },
   {
     title: "Wedding Officiant",
     slug: "wedding-officiant",
     shortDescription:
-      "Personalized, passionate ceremonies that reflect your unique love story.",
+      "Personalized, in-person ceremonies throughout St. Cloud, Central Minnesota, and the Twin Cities metro.",
     icon: "wedding-officiant",
   },
   {
     title: "Marriage Coaching",
     slug: "marriage-coaching",
     shortDescription:
-      "Ongoing support to help your relationship thrive — in person or virtually.",
+      "Ongoing support to help your relationship thrive. In-person in St. Cloud or virtual sessions through Google Meet across the continental United States.",
     icon: "marriage-coaching",
   },
 ] as const;

@@ -14,7 +14,7 @@ import { siteConfig, generatePersonSchema, generateBreadcrumbSchema, buildPageMe
 export const metadata: Metadata = buildPageMetadata({
   title: "About Matt Reeve, Premarital Counselor & Wedding Officiant",
   description:
-    "Meet Matt Reeve, licensed premarital counselor, Prepare/Enrich certified, and ordained minister with 32+ years experience. Serving St. Cloud, MN and Central Minnesota.",
+    "Meet Matt Reeve, licensed premarital counselor, Prepare/Enrich certified, and ordained minister with 32+ years experience. Counseling and coaching in St. Cloud, MN, Central Minnesota, and through virtual sessions across the continental United States.",
   path: "/about",
 });
 
@@ -46,7 +46,8 @@ export default function AboutPage() {
           </h1>
           <p className="text-white/70 text-lg max-w-2xl mx-auto leading-relaxed">
             Licensed premarital counselor, certified relationship coach,
-            and ordained minister.
+            and ordained minister. Counseling and coaching available in St. Cloud
+            or through virtual sessions via Google Meet across the continental United States.
           </p>
         </div>
       </section>
@@ -81,9 +82,11 @@ export default function AboutPage() {
                 For over 32 years I&apos;ve served as a licensed premarital
                 counselor, certified relationship coach, and ordained minister,
                 helping couples grow stronger both personally and relationally.
-                I live in Central Minnesota with my wife of 34+ years (my best
-                friend and partner in everything). We have two grown daughters
-                and three grandchildren.
+                I work with couples in St. Cloud and Central Minnesota in person,
+                and with couples across the continental United States in virtual
+                sessions through Google Meet. I live in Central Minnesota with my wife
+                of 34+ years (my best friend and partner in everything). We have
+                two grown daughters and three grandchildren.
               </p>
 
               <p>
@@ -98,10 +101,14 @@ export default function AboutPage() {
               <p>
                 I believe the best officiant and counselor for you is one you click
                 with and trust fully. That&apos;s why I always start with a
-                no-obligation meeting, either video or in person, so we can get
-                to know each other. I&apos;m not going to &ldquo;sell&rdquo; myself
-                or have you sign something right away. I want you to figure out
-                whether we&apos;re a great match.
+                no-obligation meeting so we can get to know each other. For
+                premarital counseling and marriage coaching, that can be through
+                Google Meet or in person. For wedding officiant services, initial conversations
+                happen by phone, and all ceremonies are performed in person
+                throughout St. Cloud, Central Minnesota, and the Twin Cities metro.
+                I&apos;m not going to &ldquo;sell&rdquo; myself or have you sign
+                something right away. I want you to figure out whether we&apos;re
+                a great match.
               </p>
 
               <p>
@@ -118,6 +125,8 @@ export default function AboutPage() {
                 through, including the planning, the tension you&apos;re under, the last-minute
                 surprises. I arrive early, offer a calm presence, check in with your
                 other vendors, and handle the unexpected with grace and ease.
+                Wedding ceremonies are in-person only; I serve couples throughout
+                St. Cloud, Central Minnesota, and the Twin Cities metro area.
               </p>
 
               <h3>Credentials &amp; Experience</h3>

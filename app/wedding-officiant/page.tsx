@@ -18,12 +18,12 @@ import { siteConfig, generateServiceSchema, generateFAQSchema, generateBreadcrum
 export const metadata: Metadata = buildPageMetadata({
   title: "Wedding Officiant in St. Cloud & Central Minnesota",
   description:
-    "Personalized wedding ceremonies in St. Cloud, MN and Central Minnesota. Ordained minister with 32+ years experience. Custom, personalized, or intimate packages from $500. Book a free meeting.",
+    "Personalized, in-person wedding ceremonies in St. Cloud, Central Minnesota, and the Twin Cities metro. Ordained minister with 32+ years experience. Custom, personalized, or intimate packages from $500. Book a free meeting.",
   path: "/wedding-officiant",
   openGraph: {
     title: "Wedding Officiant in St. Cloud & Central Minnesota | The Stronger Life",
     description:
-      "Personalized, passionate wedding ceremonies that reflect your unique love story. 32+ years of ministry experience.",
+      "Personalized, in-person wedding ceremonies throughout St. Cloud, Central Minnesota, and the Twin Cities metro. 32+ years of ministry experience.",
   },
 });
 
@@ -39,12 +39,12 @@ export default function WeddingOfficiantPage() {
 
   const serviceSchema = generateServiceSchema(
     "Wedding Officiant Services",
-    "Personalized, passionate wedding ceremonies crafted to reflect each couple's unique love story. Full-service officiant support from planning through ceremony.",
+    "Personalized, in-person wedding ceremonies crafted to reflect each couple's unique love story. Full-service officiant support throughout St. Cloud, Central Minnesota, and the Twin Cities metro.",
     `${siteConfig.url}/wedding-officiant`,
     [
-      { price: "750", description: "Custom Ceremony — fully customized script, rehearsal coordination, vendor coordination" },
-      { price: "600", description: "Personalized Ceremony — professionally written with minor customization" },
-      { price: "500", description: "Simple & Intimate — 15-minute ceremony to legalize your union" },
+      { price: "750", description: "Custom Ceremony, fully customized script, rehearsal coordination, vendor coordination" },
+      { price: "600", description: "Personalized Ceremony, professionally written with minor customization" },
+      { price: "500", description: "Simple & Intimate, 15-minute ceremony to legalize your union" },
     ]
   );
 
@@ -74,7 +74,8 @@ export default function WeddingOfficiantPage() {
           </h1>
           <p className="text-white/70 text-lg max-w-2xl mx-auto leading-relaxed">
             No more boring wedding ceremonies. If every couple is unique,
-            your ceremony should be too.
+            your ceremony should be too. In-person ceremonies throughout
+            St. Cloud, Central Minnesota, and the Twin Cities metro.
           </p>
         </div>
       </section>
@@ -92,7 +93,9 @@ export default function WeddingOfficiantPage() {
               Whether you envision a romantic ceremony in the park, an elegant
               ballroom wedding, a quirky backyard BBQ, or just the two of you
               on a mountaintop, I&apos;ll work with you to create a ceremony
-              that reflects who you are as a couple.
+              that reflects who you are as a couple. All wedding ceremonies are
+              performed in person; I serve couples throughout St. Cloud, Central
+              Minnesota, and the Twin Cities metro area.
             </p>
 
             <p>
@@ -110,7 +113,7 @@ export default function WeddingOfficiantPage() {
               ceremony. I bring extensive training in family dynamics, pastoral
               counseling, and the professional ethics to handle the complexities
               that come with bringing two families together. You&apos;ll feel
-              confident knowing exactly what your officiant will say — because
+              confident knowing exactly what your officiant will say, because
               we&apos;ll craft it together.
             </p>
           </div>
@@ -234,7 +237,7 @@ export default function WeddingOfficiantPage() {
       {/* ========== BOTTOM CTA ========== */}
       <CTABanner
         heading="Let's Create Your Perfect Ceremony"
-        subheading="Schedule a free meeting to get to know each other. No sales pitch — just a conversation to see if we click."
+        subheading="Schedule a free meeting to get to know each other. No sales pitch, just a conversation to see if we click."
       />
     </>
   );
