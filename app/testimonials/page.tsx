@@ -16,7 +16,7 @@ import { siteConfig, allTestimonials, galleryPhotos, generateBreadcrumbSchema, g
 export const metadata: Metadata = buildPageMetadata({
   title: "Testimonials — What Couples Are Saying",
   description:
-    "Read 26+ five-star reviews from real couples about their premarital counseling, wedding officiant, and marriage coaching experience with Matt Reeve in St. Cloud, MN.",
+    "Read 27+ five-star reviews from real couples about their premarital counseling, wedding officiant, and marriage coaching experience with Matt Reeve in St. Cloud, MN.",
   path: "/testimonials",
 });
 

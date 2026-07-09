@@ -17,6 +17,7 @@ interface Testimonial {
   quote: string;
   author: string;
   service?: string;
+  image?: string;
 }
 
 interface TestimonialGridProps {

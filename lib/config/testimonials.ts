@@ -173,6 +173,13 @@ export const allTestimonials = [
     author: "A & C Nordmark",
     service: "Premarital Counseling",
   },
+  {
+    quote:
+      "Matt was incredibly down to earth and easy to talk to, which made discussing tough topics feel much easier. He was able to present potential conflict areas and ways to navigate them with a solid Christ-centered approach. He helped us prepare not only for a wedding, but for a marriage with a firm foundation. We would recommend Matt to anyone searching for a pre-marital counselor who can balance serious conversation with lighthearted humor and connection.",
+    author: "Engaged Couple",
+    service: "Premarital Counseling",
+    image: "/images/IMG_0342.jpeg",
+  },
 ] as const;
 
 /* --- Featured Testimonials ---
