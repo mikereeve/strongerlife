@@ -38,7 +38,7 @@ export default function TestimonialCard({
       </span>
 
       {/* Testimonial text */}
-      <p className="text-brand-charcoal leading-relaxed mb-6 relative z-10 italic line-clamp-3">
+      <p className="text-brand-charcoal leading-relaxed mb-6 relative z-10 italic">
         &ldquo;{quote}&rdquo;
       </p>
 

@@ -176,7 +176,7 @@ export const allTestimonials = [
   {
     quote:
       "Matt was incredibly down to earth and easy to talk to, which made discussing tough topics feel much easier. He was able to present potential conflict areas and ways to navigate them with a solid Christ-centered approach. He helped us prepare not only for a wedding, but for a marriage with a firm foundation. We would recommend Matt to anyone searching for a pre-marital counselor who can balance serious conversation with lighthearted humor and connection.",
-    author: "Engaged Couple",
+    author: "L & L Sanneman",
     service: "Premarital Counseling",
     image: "/images/IMG_0342.jpeg",
   },
@@ -196,10 +196,10 @@ export const featuredTestimonials = allTestimonials.slice(0, 3);
  * Next.js to calculate aspect ratio and prevent layout shift.
  */
 export const galleryPhotos = [
-  { src: "/images/couples/couple-1.jpg", alt: "Matt and Amanda — wedding ceremony couple", label: "Matt & Amanda", width: 1200, height: 1801 },
-  { src: "/images/couples/couple-2.jpg", alt: "Brody and Meghan — wedding day celebration", label: "Brody & Meghan", width: 1200, height: 900 },
-  { src: "/images/couples/couple-3.jpg", alt: "Brody and Meghan — ceremony moment", label: "Brody & Meghan", width: 1200, height: 800 },
-  { src: "/images/couples/couple-4.jpg", alt: "Bronson and Alisha — wedding couple portrait", label: "Bronson & Alisha", width: 1200, height: 1600 },
+  { src: "/images/couples/couple-1.jpg", alt: "Matt and Amanda, wedding ceremony couple", label: "Matt & Amanda", width: 1200, height: 1801 },
+  { src: "/images/couples/couple-2.jpg", alt: "Brody and Meghan, wedding day celebration", label: "Brody & Meghan", width: 1200, height: 900 },
+  { src: "/images/couples/couple-3.jpg", alt: "Brody and Meghan, ceremony moment", label: "Brody & Meghan", width: 1200, height: 800 },
+  { src: "/images/couples/couple-4.jpg", alt: "Bronson and Alisha, wedding couple portrait", label: "Bronson & Alisha", width: 1200, height: 1600 },
   { src: "/images/couples/couple-5.jpg", alt: "Wedding celebration group photo", label: "Celebrating Together", width: 1200, height: 800 },
   { src: "/images/couples/couple-6.jpg", alt: "Wedding party group photo", label: "The Wedding Party", width: 1200, height: 795 },
   { src: "/images/couples/couple-7.jpg", alt: "Friends and family wedding gathering", label: "Friends & Family", width: 1200, height: 800 },
@@ -209,4 +209,5 @@ export const galleryPhotos = [
   { src: "/images/couples/couple-11.jpg", alt: "Wedding couple portrait", label: "Together Forever", width: 1200, height: 1259 },
   { src: "/images/couples/couple-12.jpg", alt: "Wedding couple photo", label: "Stronger Together", width: 1200, height: 1200 },
   { src: "/images/couples/couple-13.jpg", alt: "Wedding couple portrait", label: "A Joyful Union", width: 1200, height: 1196 },
+  { src: "/images/IMG_0342.jpeg", alt: "L & L Sanneman, premarital counseling", label: "L & L Sanneman", width: 1734, height: 2601 },
 ] as const;
